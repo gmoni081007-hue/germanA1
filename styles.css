@@ -1159,6 +1159,8 @@ body {
   border-color: var(--accent);
 }
 .sp2-topic-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
   color: #fff;
   font-weight: 700;
 }
@@ -1609,6 +1611,23 @@ body {
 }
 .sidebar-backdrop.active {
   display: block;
+}
+.sp3-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 14px;
+}
+
+@media (max-width: 1024px) {
+    .sp3-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sp3-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
