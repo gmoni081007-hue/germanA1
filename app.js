@@ -1061,39 +1061,105 @@ function sp2Speak(id, field) {
 // ════════════════════════════════════════════════
 // SPRECHEN 3 – Object cards
 // ════════════════════════════════════════════════
-function renderSp3() {
-  const key = "sp3";
-  const s = qState[key];
-  const data = D.sprechen3;
-  const q = data[s.idx];
-  const revealed = (s.answered[s.idx] || {}).revealed;
+const sp3State = { category: "Alle", search: "", cards: {} };
 
-  document.getElementById("sp3-layout").innerHTML = `
-    <div class="quiz-meta">
-      <h2>Sprechen Teil 3</h2>
-    </div>
-    <div class="q-progress"><div class="q-progress-bar" style="width:${((s.idx + 1) / data.length) * 100}%"></div></div>
-    <div class="spr-card">
-      <div class="spr-topic">${escHtml(q.category || "")} · ${escHtml(q.difficulty || "")}</div>
-      <div class="spr-keyword" style="font-size:40px">${escHtml(q.emoji || "")} ${escHtml(q.german || "")}</div>
-      <div style="font-size:14px;color:var(--muted);margin-top:4px;margin-bottom:14px">${escHtml(q.english || "")}</div>
-      ${
-        !revealed
-          ? `<button class="reveal-btn" onclick="revealSp3()">Show Question &amp; Answer</button>`
-          : `
-        <div class="spr-question" style="margin-top:12px">❓ ${escHtml(q.example_question || "")}</div>
-        <div class="answer-reveal visible" style="margin-top:10px">${escHtml(q.example_answer || "")}</div>
-        <button class="reveal-btn" style="margin-top:10px;background:#8a7358" onclick="revealSp3()">Hide</button>
-      `
-      }
-    </div>
-    ${quizNavHtml(key, s.idx, data.length)}`;
+function sp3Categories() {
+  return ["Alle", ...new Set(D.sprechen3.map((c) => c.category))];
 }
-function revealSp3() {
-  const s = qState["sp3"];
-  if (!s.answered[s.idx]) s.answered[s.idx] = {};
-  s.answered[s.idx].revealed = !s.answered[s.idx].revealed;
-  renderSp3();
+function sp3Filtered() {
+  const q = sp3State.search.trim().toLowerCase();
+  return D.sprechen3.filter((c) => {
+    const catMatch = sp3State.category === "Alle" || c.category === sp3State.category;
+    const search =
+      q === "" ||
+      (c.german || "").toLowerCase().includes(q) ||
+      (c.english || "").toLowerCase().includes(q) ||
+      (c.category || "").toLowerCase().includes(q);
+    return catMatch && search;
+  });
+}
+function renderSp3() {
+  document.getElementById("sp3-layout").innerHTML = `
+    <div class="sp3-search">
+      <input type="text" id="sp3-search-input" placeholder="🔍 Wort, Übersetzung oder Kategorie suchen…"
+        autocomplete="off" oninput="sp3State.search=this.value;sp3RenderCards()" />
+    </div>
+    <div class="sp2-topics" id="sp3-topics"></div>
+    <div class="sp2-count"><span id="sp3-count">0</span> Karten angezeigt</div>
+    <div class="sp3-grid" id="sp3-grid"></div>
+    <div class="sp2-no-results" id="sp3-no-results" style="display:none">
+      Keine Karten gefunden. Probiere ein anderes Stichwort oder eine andere Kategorie.
+    </div>`;
+  document.getElementById("sp3-search-input").value = sp3State.search;
+  sp3RenderTopics();
+  sp3RenderCards();
+}
+function sp3RenderTopics() {
+  const wrap = document.getElementById("sp3-topics");
+  wrap.innerHTML = sp3Categories()
+    .map((t) => {
+      const active = t === sp3State.category;
+      return `<button class="sp2-topic-btn${active ? " active" : ""}"
+        onclick="sp3SetCategory('${t.replace(/'/g, "\\'")}')">${escHtml(t === "Alle" ? "📚 Alle" : t)}</button>`;
+    })
+    .join("");
+}
+function sp3RenderCards() {
+  const total = D.sprechen3.length;
+  const filtered = sp3Filtered();
+  document.getElementById("sp3-count").textContent = filtered.length;
+  document.getElementById("sp3-no-results").style.display = filtered.length ? "none" : "block";
+  document.getElementById("sp3-grid").innerHTML = filtered
+    .map((c) => {
+      const flipped = !!sp3State.cards[c.id];
+      return `
+      <article class="sp3-card${flipped ? " flipped" : ""}" onclick="sp3Flip(${c.id})">
+        <div class="sp3-card-emoji">${escHtml(c.emoji || "❓")}</div>
+        ${
+          flipped
+            ? `<div class="sp3-card-back">
+            <div class="sp3-card-cat">${escHtml(c.category || "")} · ${escHtml(c.difficulty || "")}</div>
+            <div class="sp3-card-word">${escHtml(c.german || "")}</div>
+            <div class="sp3-card-en">${escHtml(c.english || "")}</div>
+            <div class="sp2-section">
+              <span class="sp2-label">❓ Frage</span>
+              <p class="sp2-question-text">${escHtml(c.example_question || "")}</p>
+              <button class="sp2-speak-btn" onclick="event.stopPropagation();sp3Speak(${c.id},'question')">🔊 Frage hören</button>
+            </div>
+            <div class="sp2-section">
+              <span class="sp2-label">✅ Antwort</span>
+              <p class="sp2-answer-text">${escHtml(c.example_answer || "")}</p>
+              <button class="sp2-speak-btn" onclick="event.stopPropagation();sp3Speak(${c.id},'answer')">🔊 Antwort hören</button>
+            </div>
+          </div>`
+            : `<div class="sp3-card-hint">Tippen →</div>`
+        }
+        <div class="sp3-card-footer">#${c.id} / ${total}</div>
+      </article>`;
+    })
+    .join("");
+}
+function sp3Flip(id) {
+  sp3State.cards[id] = !sp3State.cards[id];
+  sp3RenderCards();
+}
+function sp3SetCategory(t) {
+  sp3State.category = t;
+  sp3RenderTopics();
+  sp3RenderCards();
+}
+function sp3Speak(id, field) {
+  const card = D.sprechen3.find((c) => c.id === id);
+  if (!card) return;
+  const text = field === "answer" ? card.example_answer : card.example_question;
+  if (!text) return;
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "de-DE";
+  u.rate = 0.85;
+  const deVoice = window.speechSynthesis.getVoices().find((v) => v.lang && v.lang.startsWith("de"));
+  if (deVoice) u.voice = deVoice;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
 }
 
 // ════════════════════════════════════════════════
