@@ -390,36 +390,80 @@ function getAudioState(key) {
 
 function playTTS(key, maxPlays) {
   const st = getAudioState(key);
-  if (st.playing || st.played >= maxPlays) return;
+if (st.playing || st.played >= maxPlays) return;
 
-  const data = getQData(key);
-  const q = data[qState[key].idx];
-  const text = q.dialogue || q.audio_transcript || "";
+const data = getQData(key);
+const q = data[qState[key].idx];
+const text = q.dialogue || q.audio_transcript || "";
 
-  st.playing = true;
-  st.played++;
-  renderSection(key);
+st.playing = true;
+st.played++;
+renderSection(key);
 
-  const utter = new SpeechSynthesisUtterance(text);
-  utter.lang = "de-DE";
-  utter.rate = 0.88;
-  utter.pitch = 1.0;
+const voices = window.speechSynthesis.getVoices();
+const deVoice = voices.find(v => v.lang && v.lang.startsWith("de"));
 
-  // Try to find a German voice
-  const voices = window.speechSynthesis.getVoices();
-  const deVoice = voices.find((v) => v.lang && v.lang.startsWith("de"));
-  if (deVoice) utter.voice = deVoice;
+const lines = text.split(/(?=Kunde:|Verkäuferin:)/);
+let index = 0;
 
-  utter.onend = () => {
-    st.playing = false;
-    renderSection(key);
-  };
-  utter.onerror = () => {
-    st.playing = false;
-    renderSection(key);
-  };
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(utter);
+function speakNext() {
+    if (index >= lines.length) {
+        st.playing = false;
+        renderSection(key);
+        return;
+    }
+
+    const line = lines[index].trim();
+    const isKunde = line.startsWith("Kunde:");
+    const isVerkaeuferin = line.startsWith("Verkäuferin:");
+
+    const cleanText = line
+      .replace("Kunde:", "")
+      .replace("Verkäuferin:", "")
+      .trim();
+    const utter = new SpeechSynthesisUtterance(cleanText);
+    if (isKunde) {
+    utter.pitch = 0.8;
+    utter.rate = 0.88;
+}
+
+if (isVerkaeuferin) {
+    utter.pitch = 1.3;
+    utter.rate = 1.0;
+}
+    utter.lang = "de-DE";
+
+   if (isKunde) {
+    utter.voice = deVoice;
+}
+
+if (isVerkaeuferin) {
+    utter.voice = deVoice;
+}
+
+    if (line.startsWith("Kunde:")) {
+        utter.pitch = 0.8;
+        utter.rate = 0.88;
+    } else if (line.startsWith("Verkäuferin:")) {
+        utter.pitch = 1.3;
+        utter.rate = 1.0;
+    }
+
+    utter.onend = () => {
+        index++;
+        setTimeout(speakNext, 250);
+    };
+
+    utter.onerror = () => {
+        index++;
+        setTimeout(speakNext, 250);
+    };
+
+    window.speechSynthesis.speak(utter);
+}
+
+window.speechSynthesis.cancel();
+speakNext();
 }
 
 function audioPlayerHtml(key, maxPlays) {
@@ -1204,3 +1248,12 @@ if (window.innerWidth <= 768) {
   document.getElementById("sidebar").classList.add("closed");
 }
 showPanel("dashboard", document.querySelector('[data-panel="dashboard"]'));
+window.speechSynthesis.onvoiceschanged = () => {
+    console.clear();
+
+    const voices = window.speechSynthesis.getVoices();
+
+    voices.forEach((voice, index) => {
+        console.log(index, voice.name, voice.lang);
+    });
+};
