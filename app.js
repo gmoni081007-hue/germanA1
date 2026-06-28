@@ -439,14 +439,14 @@ function speakNext() {
  
 if (isKunde) {
     utter.voice = maleVoice;
-    utter.pitch = 0.2;
-    utter.rate = 0.75;
-    utter.volume = 1;
+utter.pitch = 0.9;
+utter.rate = 0.9;
+utter.volume = 1;
 } else if (isVerkaeuferin) {
     utter.voice = femaleVoice;
-    utter.pitch = 1.8;
-    utter.rate = 1.1;
-    utter.volume = 1;
+utter.pitch = 1.2;
+utter.rate = 0.95;
+utter.volume = 1;
 } else {
     utter.voice = maleVoice || femaleVoice;
 }
