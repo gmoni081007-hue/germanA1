@@ -1192,3 +1192,12 @@ if (window.innerWidth <= 768) {
   document.getElementById("sidebar").classList.add("closed");
 }
 showPanel("dashboard", document.querySelector('[data-panel="dashboard"]'));
+window.speechSynthesis.onvoiceschanged = () => {
+    console.clear();
+
+    const voices = window.speechSynthesis.getVoices();
+
+    voices.forEach((voice, index) => {
+        console.log(index, voice.name, voice.lang);
+    });
+};
