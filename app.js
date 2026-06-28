@@ -401,7 +401,22 @@ st.played++;
 renderSection(key);
 
 const voices = window.speechSynthesis.getVoices();
-const deVoice = voices.find(v => v.lang && v.lang.startsWith("de"));
+const maleVoice =
+    voices.find(v => v.name.includes("Stefan")) ||
+    voices.find(v => v.name.includes("Microsoft Katja")) ||
+    voices.find(v => v.lang.startsWith("de"));
+
+const femaleVoice =
+    voices.find(v => v.name.includes("Katja")) ||
+    voices.find(v => v.name.includes("Hedda")) ||
+    voices.find(v => v.lang.startsWith("de"));
+  if (isKunde) {
+    utter.voice = maleVoice;
+}
+
+if (isVerkaeuferin) {
+    utter.voice = femaleVoice;
+}
 
 const lines = text.split(/(?=Kunde:|Verkäuferin:)/);
 let index = 0;
@@ -422,14 +437,16 @@ function speakNext() {
       .replace("Verkäuferin:", "")
       .trim();
     const utter = new SpeechSynthesisUtterance(cleanText);
-    if (isKunde) {
-    utter.pitch = 0.8;
-    utter.rate = 0.88;
+   if (isKunde) {
+    utter.pitch = 0.4;
+    utter.rate = 0.75;
+    utter.volume = 1;
 }
 
 if (isVerkaeuferin) {
-    utter.pitch = 1.3;
-    utter.rate = 1.0;
+    utter.pitch = 1.9;
+    utter.rate = 1.15;
+    utter.volume = 1;
 }
     utter.lang = "de-DE";
 
@@ -440,14 +457,6 @@ if (isVerkaeuferin) {
 if (isVerkaeuferin) {
     utter.voice = deVoice;
 }
-
-    if (line.startsWith("Kunde:")) {
-        utter.pitch = 0.8;
-        utter.rate = 0.88;
-    } else if (line.startsWith("Verkäuferin:")) {
-        utter.pitch = 1.3;
-        utter.rate = 1.0;
-    }
 
     utter.onend = () => {
         index++;
@@ -532,7 +541,6 @@ function renderH1() {
     <div class="question-card">
       <div class="question-num">Question ${s.idx + 1} of ${data.length} · Topic: ${escHtml(q.topic || "")}</div>
       ${audioPlayerHtml("h1", 2)}
-      ${transHtml}
       <div class="question-text">${escHtml(q.question)}</div>
       <div class="options">${optHtml}</div>
       ${expl}
@@ -585,7 +593,6 @@ function renderH2() {
     <div class="question-card">
       <div class="question-num">Question ${s.idx + 1} of ${data.length} · Context: ${escHtml(q.context || "")}</div>
       ${audioPlayerHtml("h2", 1)}
-      ${transHtmlH2}
       <div class="question-text">${escHtml(q.statement)}</div>
       <div class="tf-options">
         <button class="${tfCls("Richtig")}" onclick="answerH2(true)" ${ans !== undefined ? "disabled" : ""}>✔ Richtig</button>
@@ -646,8 +653,6 @@ function renderH3() {
     <div class="question-card">
       <div class="question-num">Question ${s.idx + 1} of ${data.length}</div>
       ${audioPlayerHtml("h3", 2)}
-      <div style="margin-bottom:8px">${transBtn}</div>
-      ${transBox}
       <div class="question-text">${escHtml(q.question || "")}</div>
       <div class="options">${optHtml}</div>
     </div>
