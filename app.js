@@ -389,7 +389,6 @@ function getAudioState(key) {
   if (!audioState[key][idx]) audioState[key][idx] = { played: 0, playing: false };
   return audioState[key][idx];
 }
-audioPaused = false;
 function playTTS(key, maxPlays) {
   const st = getAudioState(key);
 if (st.playing || st.played >= maxPlays) return;
@@ -400,17 +399,19 @@ const text = q.dialogue || q.audio_transcript || "";
 
 st.playing = true;
 st.played++;
+audioPaused = false;
 renderSection(key);
 
-const voices = window.speechSynthesis.getVoices();
 const maleVoice =
     voices.find(v => v.name.includes("Stefan")) ||
-    voices.find(v => v.name.includes("Microsoft Katja")) ||
+    voices.find(v => v.name.includes("Mark")) ||
+    voices.find(v => v.name.includes("David")) ||
     voices.find(v => v.lang.startsWith("de"));
 
 const femaleVoice =
     voices.find(v => v.name.includes("Katja")) ||
     voices.find(v => v.name.includes("Hedda")) ||
+    voices.find(v => v.name.includes("Anna")) ||
     voices.find(v => v.lang.startsWith("de"));
  
 
@@ -420,6 +421,7 @@ let index = 0;
 function speakNext() {
     if (index >= lines.length) {
         st.playing = false;
+        audioPaused=false;
         renderSection(key);
         return;
     }
@@ -433,6 +435,7 @@ function speakNext() {
       .replace("Verkäuferin:", "")
       .trim();
     const utter = new SpeechSynthesisUtterance(cleanText);
+  utter.lang = "de-DE";
   const isKunde = line.startsWith("Kunde:");
 const isVerkaeuferin = line.startsWith("Verkäuferin:");
 
@@ -471,9 +474,11 @@ function togglePause() {
     if (window.speechSynthesis.paused) {
         window.speechSynthesis.resume();
         audioPaused = false;
+      renderSection(key);
     } else {
         window.speechSynthesis.pause();
         audioPaused = true;
+      renderSection(key);
     }
 
     renderSection(currentPanel === "hoeren1" ? "h1" :
