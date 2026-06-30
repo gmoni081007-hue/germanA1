@@ -1035,6 +1035,19 @@ body {
   color: var(--accent);
   flex-shrink: 0;
 }
+.sample-action-row {
+  margin-top: 18px;
+}
+.sample-answer-card {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #faf7f1;
+  border: 1px solid var(--border);
+  color: var(--text2);
+  font-size: 13px;
+  line-height: 1.7;
+}
 /* ── SPRECHEN ── */
 .sprechen-layout {
   max-width: 720px;

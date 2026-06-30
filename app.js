@@ -975,6 +975,10 @@ function renderS2() {
   const data = D.schreiben2;
   const q = data[s.idx];
   const pts = (q.required_points || []).map((p) => `<li>${escHtml(p)}</li>`).join("");
+  const sampleVisible = (s.answered[s.idx] || {}).sampleVisible;
+  const sampleText = [q.salutation, q.model_answer, q.closing]
+    .filter(Boolean)
+    .join("\n\n");
 
   document.getElementById("s2-layout").innerHTML = `
     <div class="quiz-meta">
@@ -986,8 +990,21 @@ function renderS2() {
       <div class="email-scenario">${escHtml(q.scenario || "")}</div>
       <div class="required-label">Required points:</div>
       <ul class="points-list">${pts}</ul>
+      <div class="sample-action-row">
+        <button class="q-btn" onclick="toggleS2Sample()">
+          ${sampleVisible ? "Hide Sample Answer" : "Sample Answer"}
+        </button>
+      </div>
+      ${sampleVisible ? `<div class="sample-answer-card" style="white-space: pre-wrap">${escHtml(sampleText)}</div>` : ""}
     </div>
     ${quizNavHtml(key, s.idx, data.length)}`;
+}
+
+function toggleS2Sample() {
+  const s = qState["s2"];
+  if (!s.answered[s.idx]) s.answered[s.idx] = {};
+  s.answered[s.idx].sampleVisible = !s.answered[s.idx].sampleVisible;
+  renderS2();
 }
 
 // ════════════════════════════════════════════════
