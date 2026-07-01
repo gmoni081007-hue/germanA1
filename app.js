@@ -391,20 +391,29 @@ function getAudioState(key) {
 }
 function playTTS(key, maxPlays) {
   const st = getAudioState(key);
-if (st.playing || st.played >= maxPlays) return;
+  const data = getQData(key);
+  const q = data[qState[key].idx];
+  const text = q.dialogue || q.audio_transcript || "";
 
-const data = getQData(key);
-const q = data[qState[key].idx];
-const text = q.dialogue || q.audio_transcript || "";
+  if (st.playing) {
+    if (audioPaused && window.speechSynthesis.paused) {
+      window.speechSynthesis.resume();
+      audioPaused = false;
+      renderSection(key);
+    }
+    return;
+  }
 
-st.playing = true;
-st.played++;
-audioPaused = false;
-renderSection(key);
-const voices = window.speechSynthesis.getVoices();
-const maleVoice =
-    voices.find(v => v.lang === "de-DE" && v.name.includes("Stefan")) ||
-    voices.find(v => v.lang.startsWith("de"));
+  if (st.played >= maxPlays) return;
+
+  st.playing = true;
+  st.played++;
+  audioPaused = false;
+  renderSection(key);
+  const voices = window.speechSynthesis.getVoices();
+  const maleVoice =
+    voices.find((v) => v.lang === "de-DE" && v.name.includes("Stefan")) ||
+    voices.find((v) => v.lang.startsWith("de"));
 
 const femaleVoice =
     voices.find(v => v.lang === "de-DE" && v.name.includes("Katja")) ||
@@ -465,28 +474,40 @@ window.speechSynthesis.cancel();
 speakNext();
 }
 function togglePause() {
-    if (!window.speechSynthesis.speaking) return;
+    if (!window.speechSynthesis.paused && !window.speechSynthesis.speaking) return;
 
     if (window.speechSynthesis.paused) {
         window.speechSynthesis.resume();
         audioPaused = false;
-    
     } else {
         window.speechSynthesis.pause();
         audioPaused = true;
-     
     }
 
-    renderSection(currentPanel === "hoeren1" ? "h1" :
-                  currentPanel === "hoeren2" ? "h2" :
-                  currentPanel === "hoeren3" ? "h3" : "");
+    renderSection(
+      currentPanel === "hoeren1" ? "h1" :
+      currentPanel === "hoeren2" ? "h2" :
+      currentPanel === "hoeren3" ? "h3" : ""
+    );
 }
 function audioPlayerHtml(key, maxPlays) {
   const st = getAudioState(key);
   const remaining = maxPlays - st.played;
-  const canPlay = !st.playing && remaining > 0;
-  const statusText = st.playing ? "🔊 Playing…" : remaining <= 0 ? "✓ Audio played" : "";
-  const btnLabel = st.playing ? "🔊 Playing…" : remaining <= 0 ? "✓ Done" : "▶ Play Audio";
+  const canPlay = (audioPaused || !st.playing) && remaining > 0;
+  const statusText = audioPaused
+    ? "⏸ Paused"
+    : st.playing
+    ? "🔊 Playing…"
+    : remaining <= 0
+    ? "✓ Audio played"
+    : "";
+  const btnLabel = audioPaused
+    ? "▶ Resume Audio"
+    : st.playing
+    ? "🔊 Playing…"
+    : remaining <= 0
+    ? "✓ Done"
+    : "▶ Play Audio";
   const playsLabel =
     remaining > 0 ? `(${remaining} play${remaining > 1 ? "s" : ""} remaining)` : "";
 
