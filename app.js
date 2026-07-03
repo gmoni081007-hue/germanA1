@@ -378,6 +378,31 @@ function renderSection(key) {
 }
 
 // ════════════════════════════════════════════════
+// VOICE DETECTION & SELECTION
+// ════════════════════════════════════════════════
+function selectGermanVoice(preferredNames) {
+  const voices = window.speechSynthesis.getVoices();
+  const germanVoices = voices.filter(v => v.lang && v.lang.startsWith("de"));
+  
+  // Try to find voice matching any of the preferred names
+  for (const name of preferredNames) {
+    const found = germanVoices.find(v => v.name.includes(name));
+    if (found) return found;
+  }
+  
+  // Fallback to any German voice
+  return germanVoices.length > 0 ? germanVoices[0] : null;
+}
+
+function getMaleVoice() {
+  return selectGermanVoice(["Stefan", "Martin", "Christian", "Hans"]);
+}
+
+function getFemaleVoice() {
+  return selectGermanVoice(["Katja", "Hedda", "Anna", "Sarah", "Claudia"]);
+}
+
+// ════════════════════════════════════════════════
 // AUDIO TTS SYSTEM
 // ════════════════════════════════════════════════
 const audioState = {};
@@ -465,15 +490,8 @@ function playTTSInternal(key) {
   const q = data[qState[key].idx];
   const text = q.dialogue || q.audio_transcript || "";
 
-  const voices = window.speechSynthesis.getVoices();
-  const maleVoice =
-    voices.find((v) => v.lang === "de-DE" && v.name.includes("Stefan")) ||
-    voices.find((v) => v.lang.startsWith("de"));
-
-  const femaleVoice =
-    voices.find(v => v.lang === "de-DE" && v.name.includes("Katja")) ||
-    voices.find(v => v.lang === "de-DE" && v.name.includes("Hedda")) ||
-    voices.find(v => v.lang.startsWith("de"));
+  const maleVoice = getMaleVoice();
+  const femaleVoice = getFemaleVoice();
 
   const lines = text.split(/(?=Kunde:|Verkäuferin:)/);
   let index = 0;
@@ -495,18 +513,25 @@ function playTTSInternal(key) {
       .replace("Kunde:", "")
       .replace("Verkäuferin:", "")
       .trim();
+    
+    if (!cleanText) {
+      index++;
+      speakNext();
+      return;
+    }
+
     const utter = new SpeechSynthesisUtterance(cleanText);
     utter.lang = "de-DE";
 
     if (isKunde) {
       utter.voice = maleVoice;
-      utter.pitch = 0.92;
-      utter.rate = 0.92;
+      utter.pitch = 0.90;  // Lower pitch for male
+      utter.rate = 0.90;   // Slightly slower
       utter.volume = 1;
     } else if (isVerkaeuferin) {
       utter.voice = femaleVoice;
-      utter.pitch = 1.08;
-      utter.rate = 1.0;
+      utter.pitch = 1.10;  // Higher pitch for female
+      utter.rate = 1.0;    // Normal speed
       utter.volume = 1;
     } else {
       utter.voice = maleVoice || femaleVoice;
@@ -550,9 +575,11 @@ function audioPlayerHtml(key, maxPlays) {
   </div>`;
 }
 
-// Preload voices
+// Preload voices and log available German voices
 window.speechSynthesis.onvoiceschanged = () => {
-  window.speechSynthesis.getVoices();
+  const voices = window.speechSynthesis.getVoices();
+  const germanVoices = voices.filter(v => v.lang && v.lang.startsWith("de"));
+  console.log("🎤 Available German voices:", germanVoices.map(v => v.name));
 };
 
 // ════════════════════════════════════════════════
@@ -1328,11 +1355,7 @@ if (window.innerWidth <= 768) {
 }
 showPanel("dashboard", document.querySelector('[data-panel="dashboard"]'));
 window.speechSynthesis.onvoiceschanged = () => {
-    console.clear();
-
     const voices = window.speechSynthesis.getVoices();
-
-    voices.forEach((voice, index) => {
-        console.log(index, voice.name, voice.lang);
-    });
+    const germanVoices = voices.filter(v => v.lang && v.lang.startsWith("de"));
+    console.log("🎤 Available German voices:", germanVoices.map(v => v.name));
 };
