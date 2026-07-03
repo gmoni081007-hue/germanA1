@@ -389,147 +389,164 @@ function getAudioState(key) {
   if (!audioState[key][idx]) audioState[key][idx] = { played: 0, playing: false };
   return audioState[key][idx];
 }
-function playTTS(key, maxPlays) {
+
+/**
+ * Get the current button label and state for the toggle button
+ * Returns { label, ariaLabel, disabled, isPlaying, isPaused }
+ */
+function getAudioButtonState(key, maxPlays) {
   const st = getAudioState(key);
+  const remaining = maxPlays - st.played;
+  
+  let label, ariaLabel, disabled;
+  
+  if (remaining <= 0) {
+    // All plays exhausted
+    label = "✓ Done";
+    ariaLabel = "Audio finished - no more plays remaining";
+    disabled = true;
+  } else if (st.playing) {
+    if (audioPaused) {
+      // Currently paused, show Resume
+      label = "▶ Resume Audio";
+      ariaLabel = "Resume audio playback";
+      disabled = false;
+    } else {
+      // Currently playing
+      label = "⏸ Pause";
+      ariaLabel = "Pause audio playback";
+      disabled = false;
+    }
+  } else {
+    // Not playing
+    label = "▶ Play Audio";
+    ariaLabel = "Play audio";
+    disabled = false;
+  }
+  
+  return { label, ariaLabel, disabled, isPlaying: st.playing, isPaused: audioPaused };
+}
+
+function handleAudioToggle(key, maxPlays) {
+  const st = getAudioState(key);
+  const remaining = maxPlays - st.played;
+  
+  // If all plays exhausted, do nothing
+  if (remaining <= 0) return;
+  
+  // If audio is currently playing
+  if (st.playing) {
+    if (audioPaused) {
+      // Resume: resume without incrementing play count
+      window.speechSynthesis.resume();
+      audioPaused = false;
+    } else {
+      // Pause: pause without changing play count
+      window.speechSynthesis.pause();
+      audioPaused = true;
+    }
+  } else {
+    // Start new playback: increment play count only here
+    st.playing = true;
+    st.played++;
+    audioPaused = false;
+    playTTSInternal(key);
+  }
+  
+  renderSection(
+    currentPanel === "hoeren1" ? "h1" :
+    currentPanel === "hoeren2" ? "h2" :
+    currentPanel === "hoeren3" ? "h3" : ""
+  );
+}
+
+function playTTSInternal(key) {
   const data = getQData(key);
   const q = data[qState[key].idx];
   const text = q.dialogue || q.audio_transcript || "";
 
-  if (st.playing) {
-    if (audioPaused && window.speechSynthesis.paused) {
-      window.speechSynthesis.resume();
-      audioPaused = false;
-      renderSection(key);
-    }
-    return;
-  }
-
-  if (st.played >= maxPlays) return;
-
-  st.playing = true;
-  st.played++;
-  audioPaused = false;
-  renderSection(key);
   const voices = window.speechSynthesis.getVoices();
   const maleVoice =
     voices.find((v) => v.lang === "de-DE" && v.name.includes("Stefan")) ||
     voices.find((v) => v.lang.startsWith("de"));
 
-const femaleVoice =
+  const femaleVoice =
     voices.find(v => v.lang === "de-DE" && v.name.includes("Katja")) ||
     voices.find(v => v.lang === "de-DE" && v.name.includes("Hedda")) ||
     voices.find(v => v.lang.startsWith("de"));
- 
 
-const lines = text.split(/(?=Kunde:|Verkäuferin:)/);
-let index = 0;
+  const lines = text.split(/(?=Kunde:|Verkäuferin:)/);
+  let index = 0;
 
-function speakNext() {
+  function speakNext() {
     if (index >= lines.length) {
-        st.playing = false;
-        audioPaused=false;
-        renderSection(key);
-        return;
+      const st = getAudioState(key);
+      st.playing = false;
+      audioPaused = false;
+      renderSection(key);
+      return;
     }
 
     const line = lines[index].trim();
     const isKunde = line.startsWith("Kunde:");
-    const isVerkaeuferin =
-      line.startsWith("Verkäuferin:");
+    const isVerkaeuferin = line.startsWith("Verkäuferin:");
 
     const cleanText = line
       .replace("Kunde:", "")
       .replace("Verkäuferin:", "")
       .trim();
     const utter = new SpeechSynthesisUtterance(cleanText);
-  utter.lang = "de-DE";
- 
-if (isKunde) {
-    utter.voice = maleVoice;
-utter.pitch = 0.92;
-utter.rate = 0.92;
-utter.volume = 1;
-} else if (isVerkaeuferin) {
-    utter.voice = femaleVoice;
-utter.pitch = 1.08;
-utter.rate = 1.0;
-utter.volume = 1;
-} else {
-    utter.voice = maleVoice || femaleVoice;
-}
+    utter.lang = "de-DE";
+
+    if (isKunde) {
+      utter.voice = maleVoice;
+      utter.pitch = 0.92;
+      utter.rate = 0.92;
+      utter.volume = 1;
+    } else if (isVerkaeuferin) {
+      utter.voice = femaleVoice;
+      utter.pitch = 1.08;
+      utter.rate = 1.0;
+      utter.volume = 1;
+    } else {
+      utter.voice = maleVoice || femaleVoice;
+    }
+
     utter.onend = () => {
-        index++;
-        setTimeout(speakNext, 250);
+      index++;
+      setTimeout(speakNext, 250);
     };
 
     utter.onerror = () => {
-        index++;
-        setTimeout(speakNext, 250);
+      index++;
+      setTimeout(speakNext, 250);
     };
 
     window.speechSynthesis.speak(utter);
+  }
+
+  window.speechSynthesis.cancel();
+  speakNext();
 }
 
-window.speechSynthesis.cancel();
-speakNext();
-}
-function togglePause() {
-    if (!window.speechSynthesis.paused && !window.speechSynthesis.speaking) return;
-
-    if (window.speechSynthesis.paused) {
-        window.speechSynthesis.resume();
-        audioPaused = false;
-    } else {
-        window.speechSynthesis.pause();
-        audioPaused = true;
-    }
-
-    renderSection(
-      currentPanel === "hoeren1" ? "h1" :
-      currentPanel === "hoeren2" ? "h2" :
-      currentPanel === "hoeren3" ? "h3" : ""
-    );
-}
 function audioPlayerHtml(key, maxPlays) {
   const st = getAudioState(key);
   const remaining = maxPlays - st.played;
-  const canPlay = (audioPaused || !st.playing) && remaining > 0;
-  const statusText = audioPaused
-    ? "⏸ Paused"
-    : st.playing
-    ? "🔊 Playing…"
-    : remaining <= 0
-    ? "✓ Audio played"
-    : "";
-  const btnLabel = audioPaused
-    ? "▶ Resume Audio"
-    : st.playing
-    ? "🔊 Playing…"
-    : remaining <= 0
-    ? "✓ Done"
-    : "▶ Play Audio";
+  const buttonState = getAudioButtonState(key, maxPlays);
   const playsLabel =
     remaining > 0 ? `(${remaining} play${remaining > 1 ? "s" : ""} remaining)` : "";
 
   return `<div class="audio-player">
     <div class="audio-controls">
-    <button
+      <button
         class="play-btn"
-        onclick="playTTS('${key}', ${maxPlays})"
-        ${canPlay ? "" : "disabled"}>
-        ${btnLabel}
-    </button>
-
-    <button
-        class="play-btn"
-        onclick="togglePause()"
-        ${!st.playing ? "disabled" : ""}>
-        ${audioPaused ? "▶ Resume" : "⏸ Pause"}
-    </button>
-
-    <span class="play-count">${playsLabel}</span>
-    <span class="audio-status">${statusText}</span>
-</div>
+        onclick="handleAudioToggle('${key}', ${maxPlays})"
+        aria-label="${buttonState.ariaLabel}"
+        ${buttonState.disabled ? "disabled" : ""}>
+        ${buttonState.label}
+      </button>
+      <span class="play-count">${playsLabel}</span>
+    </div>
   </div>`;
 }
 
