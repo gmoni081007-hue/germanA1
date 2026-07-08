@@ -20159,6 +20159,7 @@ const D = {
       tags: ["birthday", "restaurant", "invitation", "ihr form", "bring something"],
     },
   ],
+<<<<<<< HEAD
   sprechen1: [
     { id: 1, category: "Name", question_de: "Wie heißen Sie?", question_en: "What is your name?", answer_de: "Ich heiße Kamalesh.", answer_en: "My name is Kamalesh." },
     { id: 2, category: "Name", question_de: "Wie ist Ihr Vorname?", question_en: "What is your first name?", answer_de: "Mein Vorname ist Kamalesh.", answer_en: "My first name is Kamalesh." },
@@ -20211,6 +20212,8 @@ const D = {
     { id: 49, category: "Alltag", question_de: "Was machen Sie heute Abend?", question_en: "What are you doing tonight?", answer_de: "Heute Abend lerne ich Deutsch und lese ein Buch.", answer_en: "Tonight I am learning German and reading a book." },
     { id: 50, category: "Abschluss", question_de: "Haben Sie eine Frage an mich?", question_en: "Do you have a question for me?", answer_de: "Nein, ich habe keine Frage, danke.", answer_en: "No, I don't have a question, thank you." },
   ],
+=======
+>>>>>>> 60bd0beddc00f32c6b4bdb393550a05f7bfdb24c
   sprechen2: [
     {
       id: 1,

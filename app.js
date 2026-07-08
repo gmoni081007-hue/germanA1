@@ -16,7 +16,11 @@ let fcFilter = "";
 
 // quiz states (index + score per section)
 const qState = {};
+<<<<<<< HEAD
 ["h1", "h2", "h3", "l1", "l2", "l3", "s1", "s2", "sp1", "sp2", "sp3"].forEach((k) => {
+=======
+["h1", "h2", "h3", "l1", "l2", "l3", "s1", "s2", "sp2", "sp3"].forEach((k) => {
+>>>>>>> 60bd0beddc00f32c6b4bdb393550a05f7bfdb24c
   qState[k] = { idx: 0, score: 0, answered: {} };
 });
 
@@ -50,7 +54,10 @@ const panelMeta = {
   lesen3: { title: "🪧 Lesen Teil 3", sub: "Signs & Notices – 100 questions" },
   schreiben1: { title: "📝 Schreiben Teil 1", sub: "Form Filling – 30 exercises" },
   schreiben2: { title: "✉️ Schreiben Teil 2", sub: "Email Writing – 44 prompts" },
+<<<<<<< HEAD
   sprechen1: { title: "🙂 Sprechen Teil 1", sub: "Sich vorstellen – 50 questions" },
+=======
+>>>>>>> 60bd0beddc00f32c6b4bdb393550a05f7bfdb24c
   sprechen2: { title: "🗣 Sprechen Teil 2", sub: "Answer Questions – 298 prompts" },
   sprechen3: { title: "🙋 Sprechen Teil 3", sub: "Asking Questions – 163 cards" },
 };
@@ -88,7 +95,10 @@ function showPanel(name, navEl) {
   else if (name === "lesen3") renderL3();
   else if (name === "schreiben1") renderS1();
   else if (name === "schreiben2") renderS2();
+<<<<<<< HEAD
   else if (name === "sprechen1") renderSp1();
+=======
+>>>>>>> 60bd0beddc00f32c6b4bdb393550a05f7bfdb24c
   else if (name === "sprechen2") renderSp2();
   else if (name === "sprechen3") renderSp3();
 }
@@ -1075,6 +1085,7 @@ function toggleS2Sample() {
 }
 
 // ════════════════════════════════════════════════
+<<<<<<< HEAD
 // ════════════════════════════════════════════════
 // SPRECHEN 1 – Sich vorstellen (self-introduction)
 // ════════════════════════════════════════════════
@@ -1231,6 +1242,8 @@ function sp1SpeakExample() {
   window.speechSynthesis.speak(u);
 }
 
+=======
+>>>>>>> 60bd0beddc00f32c6b4bdb393550a05f7bfdb24c
 // SPRECHEN 2 – Answer questions
 // ════════════════════════════════════════════════
 const sp2ThemaColors = {
