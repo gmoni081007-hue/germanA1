@@ -1338,6 +1338,75 @@ body {
 #sp3-layout {
   max-width: 1100px;
 }
+/* ── SPRECHEN 1 – exam card & example ── */
+.sp1-examcard {
+  max-width: 480px;
+  margin: 0 auto 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--card-bg);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+.sp1-examcard-head {
+  background: #6b6b6b;
+  color: #fff;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 14px;
+}
+.sp1-examcard-sub {
+  background: #b7b2a8;
+  color: #2c2417;
+  text-align: center;
+  font-size: 13px;
+  padding: 6px;
+}
+.sp1-examcard-body {
+  padding: 18px 26px 22px;
+}
+.sp1-examcard-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.sp1-examcard-row {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 26px;
+  text-align: center;
+  padding: 10px 0 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+.sp1-examcard-row:last-child {
+  border-bottom: none;
+}
+.sp1-example {
+  max-width: 720px;
+  margin: 0 auto 22px;
+  background: var(--sidebar-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 22px;
+}
+.sp1-example-de {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.6;
+  margin: 8px 0 6px;
+}
+.sp1-example-en {
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
 .sp3-search {
   width: 100%;
   max-width: 960px;

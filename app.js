@@ -16,7 +16,7 @@ let fcFilter = "";
 
 // quiz states (index + score per section)
 const qState = {};
-["h1", "h2", "h3", "l1", "l2", "l3", "s1", "s2", "sp2", "sp3"].forEach((k) => {
+["h1", "h2", "h3", "l1", "l2", "l3", "s1", "s2", "sp1", "sp2", "sp3"].forEach((k) => {
   qState[k] = { idx: 0, score: 0, answered: {} };
 });
 
@@ -50,6 +50,7 @@ const panelMeta = {
   lesen3: { title: "🪧 Lesen Teil 3", sub: "Signs & Notices – 100 questions" },
   schreiben1: { title: "📝 Schreiben Teil 1", sub: "Form Filling – 30 exercises" },
   schreiben2: { title: "✉️ Schreiben Teil 2", sub: "Email Writing – 44 prompts" },
+  sprechen1: { title: "🙂 Sprechen Teil 1", sub: "Sich vorstellen – 50 questions" },
   sprechen2: { title: "🗣 Sprechen Teil 2", sub: "Answer Questions – 298 prompts" },
   sprechen3: { title: "🙋 Sprechen Teil 3", sub: "Asking Questions – 163 cards" },
 };
@@ -87,6 +88,7 @@ function showPanel(name, navEl) {
   else if (name === "lesen3") renderL3();
   else if (name === "schreiben1") renderS1();
   else if (name === "schreiben2") renderS2();
+  else if (name === "sprechen1") renderSp1();
   else if (name === "sprechen2") renderSp2();
   else if (name === "sprechen3") renderSp3();
 }
@@ -1073,6 +1075,162 @@ function toggleS2Sample() {
 }
 
 // ════════════════════════════════════════════════
+// ════════════════════════════════════════════════
+// SPRECHEN 1 – Sich vorstellen (self-introduction)
+// ════════════════════════════════════════════════
+const sp1ThemaColors = {
+  Name: "#8d6e63",
+  Alter: "#0288d1",
+  Land: "#388e3c",
+  Wohnort: "#f57f17",
+  Sprachen: "#6a1b9a",
+  Beruf: "#00695c",
+  Familie: "#d81b60",
+  Kontakt: "#455a64",
+  Hobby: "#e65100",
+  "Essen & Trinken": "#c62828",
+  Freizeit: "#5d4037",
+  Alltag: "#37474f",
+  "Deutsch lernen": "#1565c0",
+  Abschluss: "#4e342e",
+};
+const sp1State = { category: "Alle", search: "", cards: {} };
+const sp1ExamCardFields = ["Name?", "Alter?", "Land?", "Wohnort?", "Sprachen?", "Beruf?", "Hobby?"];
+const sp1Example = {
+  de: "Guten Tag! Ich heiße Anna Schmidt. Ich komme aus Deutschland und wohne in Berlin. Ich bin 22 Jahre alt. Ich spreche Deutsch, Englisch und ein bisschen Französisch. Ich bin Studentin und mein Hobby ist Fotografieren.",
+  en: "Hello! My name is Anna Schmidt. I come from Germany and live in Berlin. I am 22 years old. I speak German, English and a little French. I am a student and my hobby is photography.",
+};
+
+function sp1Color(cat) {
+  return sp1ThemaColors[cat] || "var(--accent)";
+}
+function sp1Categories() {
+  return ["Alle", ...new Set(D.sprechen1.map((c) => c.category))];
+}
+function sp1Filtered() {
+  const q = sp1State.search.trim().toLowerCase();
+  return D.sprechen1.filter((c) => {
+    const catMatch = sp1State.category === "Alle" || c.category === sp1State.category;
+    const search =
+      q === "" ||
+      (c.question_de || "").toLowerCase().includes(q) ||
+      (c.question_en || "").toLowerCase().includes(q) ||
+      (c.category || "").toLowerCase().includes(q);
+    return catMatch && search;
+  });
+}
+function renderSp1() {
+  const total = D.sprechen1.length;
+  document.getElementById("sp1-layout").innerHTML = `
+    <div class="sp1-examcard">
+      <div class="sp1-examcard-head">Start Deutsch 1</div>
+      <div class="sp1-examcard-sub">Übungssatz · Sprechen Teil 1</div>
+      <div class="sp1-examcard-body">
+        <div class="sp1-examcard-label">Teil 1 &nbsp;·&nbsp; Sich vorstellen</div>
+        ${sp1ExamCardFields.map((f) => `<div class="sp1-examcard-row">${f}</div>`).join("")}
+      </div>
+    </div>
+    <div class="sp1-example">
+      <div class="sp2-label">💬 Beispiel · Sich vorstellen</div>
+      <p class="sp1-example-de">${escHtml(sp1Example.de)}</p>
+      <p class="sp1-example-en">${escHtml(sp1Example.en)}</p>
+      <button class="sp2-speak-btn" onclick="sp1SpeakExample()">🔊 Beispiel hören</button>
+    </div>
+    <div class="sp2-search">
+      <input type="text" id="sp1-search-input" placeholder="🔍 Frage, Übersetzung oder Kategorie suchen…"
+        autocomplete="off" oninput="sp1State.search=this.value;sp1RenderCards()" />
+    </div>
+    <div class="sp2-topics" id="sp1-topics"></div>
+    <div class="sp2-count"><span id="sp1-count">0</span> Fragen angezeigt</div>
+    <div class="sp2-grid" id="sp1-grid"></div>
+    <div class="sp2-no-results" id="sp1-no-results" style="display:none">
+      Keine Fragen gefunden. Probiere ein anderes Stichwort oder eine andere Kategorie.
+    </div>`;
+  document.getElementById("sp1-search-input").value = sp1State.search;
+  sp1RenderTopics();
+  sp1RenderCards();
+}
+function sp1RenderTopics() {
+  const wrap = document.getElementById("sp1-topics");
+  wrap.innerHTML = sp1Categories()
+    .map((t) => {
+      const active = t === sp1State.category;
+      const color = sp1Color(t);
+      const style = active
+        ? `background:${t === "Alle" ? "var(--dark)" : color};border-color:${
+            t === "Alle" ? "var(--dark)" : color
+          }`
+        : "";
+      return `<button class="sp2-topic-btn${active ? " active" : ""}" style="${style}"
+        onclick="sp1SetCategory('${t.replace(/'/g, "\\'")}')">${escHtml(t === "Alle" ? "📚 Alle" : t)}</button>`;
+    })
+    .join("");
+}
+function sp1RenderCards() {
+  const total = D.sprechen1.length;
+  const filtered = sp1Filtered();
+  document.getElementById("sp1-count").textContent = filtered.length;
+  document.getElementById("sp1-no-results").style.display = filtered.length ? "none" : "block";
+  document.getElementById("sp1-grid").innerHTML = filtered
+    .map((c) => {
+      const flipped = !!sp1State.cards[c.id];
+      const color = sp1Color(c.category);
+      const themeStyle = flipped ? `background:${color}` : "";
+      return `
+      <article class="sp2-card${flipped ? " flipped" : ""}" onclick="sp1Flip(${c.id})">
+        <div class="sp2-card-top"><span>Sprechen Teil 1</span><span>Sich vorstellen</span></div>
+        <div class="sp2-card-theme" style="${themeStyle}"><span>Kategorie: ${escHtml(c.category || "")}</span></div>
+        <div class="sp2-card-keyword">${escHtml(c.question_de || "")}</div>
+        <div class="sp2-card-footer"><span>#${c.id} / ${total}</span><span>${flipped ? "" : "Tippen →"}</span></div>
+        <div class="sp2-answer${flipped ? " visible" : ""}">
+          <div class="sp2-section">
+            <span class="sp2-label">🇬🇧 Übersetzung</span>
+            <p class="sp2-question-text">${escHtml(c.question_en || "")}</p>
+          </div>
+          <div class="sp2-section">
+            <span class="sp2-label">✅ Antwort</span>
+            <p class="sp2-answer-text">${escHtml(c.answer_de || "")}</p>
+            <button class="sp2-speak-btn" onclick="event.stopPropagation();sp1Speak(${c.id})">🔊 Antwort hören</button>
+          </div>
+          <div class="sp2-section">
+            <span class="sp2-label">🇬🇧 Antwort auf Englisch</span>
+            <p class="sp2-answer-text">${escHtml(c.answer_en || "")}</p>
+          </div>
+        </div>
+      </article>`;
+    })
+    .join("");
+}
+function sp1Flip(id) {
+  sp1State.cards[id] = !sp1State.cards[id];
+  sp1RenderCards();
+}
+function sp1SetCategory(t) {
+  sp1State.category = t;
+  sp1RenderTopics();
+  sp1RenderCards();
+}
+function sp1Speak(id) {
+  const card = D.sprechen1.find((c) => c.id === id);
+  if (!card) return;
+  const u = new SpeechSynthesisUtterance(card.answer_de || "");
+  u.lang = "de-DE";
+  u.rate = 0.85;
+  const deVoice = window.speechSynthesis.getVoices().find((v) => v.lang && v.lang.startsWith("de"));
+  if (deVoice) u.voice = deVoice;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+function sp1SpeakExample() {
+  const u = new SpeechSynthesisUtterance(sp1Example.de);
+  u.lang = "de-DE";
+  u.rate = 0.85;
+  const deVoice = window.speechSynthesis.getVoices().find((v) => v.lang && v.lang.startsWith("de"));
+  if (deVoice) u.voice = deVoice;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+
 // SPRECHEN 2 – Answer questions
 // ════════════════════════════════════════════════
 const sp2ThemaColors = {
