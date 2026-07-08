@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goethe A1 – Complete Exam Prep</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="sidebar-backdrop" id="sidebar-backdrop" onclick="toggleSidebar()"></div>
+    <div class="app">
+      <!-- ── SIDEBAR ── -->
+      <div class="sidebar" id="sidebar">
+        <div class="sidebar-inner">
+          <div class="sidebar-header">
+            <div class="sidebar-title">🇩🇪 Goethe A1</div>
+            <div class="sidebar-subtitle">Complete Exam Prep</div>
+          </div>
+          <div class="nav-sections">
+            <div class="nav-section-label">Start</div>
+            <div
+              class="nav-item active"
+              data-panel="dashboard"
+              onclick="showPanel('dashboard',this)"
+            >
+              🏠 <span>Dashboard</span>
+            </div>
+            <div class="nav-section-label">Wortschatz</div>
+            <div class="nav-item" data-panel="flashcards" onclick="showPanel('flashcards',this)">
+              📚 <span>Flashcards</span><span class="badge">4500+</span>
+            </div>
+            <div class="nav-section-label">Hören</div>
+            <div class="nav-item" data-panel="hoeren1" onclick="showPanel('hoeren1',this)">
+              🎧 <span>Teil 1 – Multiple Choice</span><span class="badge">300</span>
+            </div>
+            <div class="nav-item" data-panel="hoeren2" onclick="showPanel('hoeren2',this)">
+              🎧 <span>Teil 2 – Richtig/Falsch</span><span class="badge">300</span>
+            </div>
+            <div class="nav-item" data-panel="hoeren3" onclick="showPanel('hoeren3',this)">
+              🎧 <span>Teil 3 – Voicemail</span><span class="badge">300</span>
+            </div>
+            <div class="nav-section-label">Lesen</div>
+            <div class="nav-item" data-panel="lesen1" onclick="showPanel('lesen1',this)">
+              📖 <span>Teil 1 – Richtig/Falsch</span><span class="badge">150</span>
+            </div>
+            <div class="nav-item" data-panel="lesen2" onclick="showPanel('lesen2',this)">
+              📖 <span>Teil 2 – Match Ad</span><span class="badge">210</span>
+            </div>
+            <div class="nav-item" data-panel="lesen3" onclick="showPanel('lesen3',this)">
+              📖 <span>Teil 3 – Signs</span><span class="badge">100</span>
+            </div>
+            <div class="nav-section-label">Schreiben</div>
+            <div class="nav-item" data-panel="schreiben1" onclick="showPanel('schreiben1',this)">
+              ✍️ <span>Teil 1 – Form Filling</span><span class="badge">30</span>
+            </div>
+            <div class="nav-item" data-panel="schreiben2" onclick="showPanel('schreiben2',this)">
+              ✍️ <span>Teil 2 – Email Writing</span><span class="badge">44</span>
+            </div>
+            <div class="nav-section-label">Sprechen</div>
+            <div class="nav-item" data-panel="sprechen1" onclick="showPanel('sprechen1',this)">
+              🙂 <span>Teil 1 – Sich vorstellen</span><span class="badge">50</span>
+            </div>
+            <div class="nav-item" data-panel="sprechen2" onclick="showPanel('sprechen2',this)">
+              🗣 <span>Teil 2 – Answer Q</span><span class="badge">298</span>
+            </div>
+            <div class="nav-item" data-panel="sprechen3" onclick="showPanel('sprechen3',this)">
+              🗣 <span>Teil 3 – Asking Q</span><span class="badge">163</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ── MAIN ── -->
+      <div class="main">
+        <div class="topbar">
+          <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+          <span class="topbar-title" id="topbar-title">Dashboard</span>
+          <span class="topbar-sub" id="topbar-sub"></span>
+          <div class="topbar-right" id="topbar-right"></div>
+        </div>
+        <div class="content-area" id="content-area">
+          <!-- ── DASHBOARD ── -->
+          <div class="panel active" id="panel-dashboard">
+            <div class="dash">
+              <div class="dash-hero">
+                <h1>🇩🇪 Goethe A1 Exam Prep</h1>
+                <p>
+                  All four skills in one place. Practice listening, reading, writing, and speaking
+                  for the Goethe-Zertifikat A1.
+                </p>
+              </div>
+              <div class="dash-grid">
+                <div class="dash-card" onclick="showPanel('flashcards',null)">
+                  <div class="dash-card-icon">📚</div>
+                  <div class="dash-card-title">Vocabulary Flashcards</div>
+                  <div class="dash-card-sub">
+                    4,500+ German words across 80+ topic categories with articles and example
+                    sentences.
+                  </div>
+                  <div class="dash-card-count">80+ categories</div>
+                </div>
+                <div class="dash-card" onclick="showPanel('hoeren1',null)">
+                  <div class="dash-card-icon">🎧</div>
+                  <div class="dash-card-title">Hören Teil 1</div>
+                  <div class="dash-card-sub">
+                    Multiple-choice listening comprehension. Read the transcript and choose the
+                    correct answer.
+                  </div>
+                  <div class="dash-card-count">300 questions</div>
+                </div>
+                <div class="dash-card" onclick="showPanel('hoeren2',null)">
+                  <div class="dash-card-icon">🎙</div>
+                  <div class="dash-card-title">Hören Teil 2</div>
+                  <div class="dash-card-sub">
+                    Public announcements — decide if each statement is Richtig or Falsch.
+                  </div>
+                  <div class="dash-card-count">300 questions</div>
+                </div>
+                <div class="dash-card" onclick="showPanel('hoeren3',null)">
+                  <div class="dash-card-icon">📞</div>
+                  <div class="dash-card-title">Hören Teil 3</div>
+                  <div class="dash-card-sub">
+                    Phone message / voicemail comprehension — multiple choice questions.
+                  </div>
+                  <div class="dash-card-count">300 questions</div>
+                </div>
+                <div class="dash-card" onclick="showPanel('lesen1',null)">
+                  <div class="dash-card-icon">📖</div>
+                  <div class="dash-card-title">Lesen Teil 1</div>
+                  <div class="dash-card-sub">
+                    Read emails, notes and ads, then judge three statements as Richtig or Falsch.
+                  </div>
+                  <div class="dash-card-count">50 sets · 150 questions</div>
+                </div>
+                <div class="dash-card" onclick="showPanel('lesen2',null)">
+                  <div class="dash-card-icon">🔍</div>
+                  <div class="dash-card-title">Lesen Teil 2</div>
+                  <div class="dash-card-sub">
+                    Match a situation to the best classified ad or website from three options.
+                  </div>
+                  <div class="dash-card-count">210 questions</div>
+                </div>
+                <div class="dash-card" onclick="showPanel('lesen3',null)">
+                  <div class="dash-card-icon">🪧</div>
+                  <div class="dash-card-title">Lesen Teil 3</div>
+                  <div class="dash-card-sub">
+                    Short signs, notices and labels — true or false comprehension.
+                  </div>
+                  <div class="dash-card-count">100 questions</div>
+                </div>
+                <div class="dash-card" onclick="showPanel('schreiben1',null)">
+                  <div class="dash-card-icon">📝</div>
+                  <div class="dash-card-title">Schreiben Teil 1</div>
+                  <div class="dash-card-sub">
+                    Read a scenario and fill in the gaps on a German registration form.
+                  </div>
+                  <div class="dash-card-count">30 exercises</div>
+                </div>
+                <div class="dash-card" onclick="showPanel('schreiben2',null)">
+                  <div class="dash-card-icon">✉️</div>
+                  <div class="dash-card-title">Schreiben Teil 2</div>
+                  <div class="dash-card-sub">
+                    Write a short informal email or message covering three required points.
+                  </div>
+                  <div class="dash-card-count">44 prompts</div>
+                </div>
+                <div class="dash-card" onclick="showPanel('sprechen1',null)">
+                  <div class="dash-card-icon">🙂</div>
+                  <div class="dash-card-title">Sprechen Teil 1</div>
+                  <div class="dash-card-sub">
+                    Introduce yourself using the exam's Kandidatenkarte — Name, Alter, Land, Wohnort,
+                    Sprachen, Beruf, Hobby.
+                  </div>
+                  <div class="dash-card-count">50 questions</div>
+                </div>
+                <div class="dash-card" onclick="showPanel('sprechen2',null)">
+                  <div class="dash-card-icon">🗣</div>
+                  <div class="dash-card-title">Sprechen Teil 2</div>
+                  <div class="dash-card-sub">
+                    Practice answering everyday conversation questions on A1 topics.
+                  </div>
+                  <div class="dash-card-count">298 questions</div>
+                </div>
+                <div class="dash-card" onclick="showPanel('sprechen3',null)">
+                  <div class="dash-card-icon">🙋</div>
+                  <div class="dash-card-title">Sprechen Teil 3</div>
+                  <div class="dash-card-sub">
+                    Vocabulary cards with example requests — practice asking for objects.
+                  </div>
+                  <div class="dash-card-count">163 cards</div>
+                </div>
+              </div>
+              <div class="dash-tips">
+                <h3>💡 Exam Tips</h3>
+                <div class="tip">
+                  <span class="tip-icon">🎯</span
+                  ><span
+                    >The Goethe A1 exam tests listening, reading, writing, and speaking. You need
+                    60% overall to pass, but each section can be below that.</span
+                  >
+                </div>
+                <div class="tip">
+                  <span class="tip-icon">🎧</span
+                  ><span
+                    >In the real Hören exam, each audio is played twice. Use the transcript practice
+                    here to train for content recognition.</span
+                  >
+                </div>
+                <div class="tip">
+                  <span class="tip-icon">📖</span
+                  ><span
+                    >Lesen Teil 1 texts are short (emails, notes). Read carefully — one word can
+                    change the meaning from Richtig to Falsch.</span
+                  >
+                </div>
+                <div class="tip">
+                  <span class="tip-icon">✍️</span
+                  ><span
+                    >Schreiben Teil 2 is graded on covering all three points, not perfect grammar.
+                    Write simply and clearly.</span
+                  >
+                </div>
+                <div class="tip">
+                  <span class="tip-icon">🗣</span
+                  ><span
+                    >Sprechen Teil 1 uses the cards from Teil 3 practice. Name the item and form a
+                    question: "Können Sie mir bitte … geben?"</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── FLASHCARDS ── -->
+          <div class="panel" id="panel-flashcards">
+            <div class="fc-layout">
+              <div class="fc-sidebar">
+                <input
+                  class="cat-search"
+                  id="fc-cat-search"
+                  placeholder="Search topics…"
+                  oninput="fcFilterCats(this.value)"
+                />
+                <div class="cat-list" id="fc-cat-list"></div>
+              </div>
+              <div class="fc-main" id="fc-main">
+                <div class="progress-wrap"><div class="progress-bar" id="fc-progress"></div></div>
+                <div class="card-wrapper" id="fc-card-wrapper" onclick="fcFlip()">
+                  <div class="card-inner" id="fc-card-inner">
+                    <div class="card-face card-front">
+                      <div class="card-label">German</div>
+                      <div class="card-word" id="fc-front"></div>
+                      <div class="card-article" id="fc-article"></div>
+                      <div class="card-hint">Click to flip</div>
+                    </div>
+                    <div class="card-face card-back">
+                      <div class="card-label">Translation</div>
+                      <div class="card-word" id="fc-back"></div>
+                      <div class="card-example" id="fc-example"></div>
+                      <div class="card-hint">Click to flip back</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="fc-nav">
+                  <button class="nav-btn" onclick="fcPrev()">← Prev</button>
+                  <span class="card-num" id="fc-num"></span>
+                  <button class="nav-btn" onclick="fcNext()">Next →</button>
+                  <button class="fc-speak-btn" onclick="fcSpeak()" title="Speak German">🔊</button>
+                </div>
+                <div style="display: flex; gap: 8px; margin-top: 10px">
+                  <span class="shuffle-badge" onclick="fcShuffle()">🔀 Shuffle</span>
+                  <span class="key-hints"
+                    ><span class="kbd">Space</span>flip <span class="kbd">←→</span>navigate</span
+                  >
+                </div>
+                <div
+                  class="word-list"
+                  id="fc-word-list"
+                  style="max-height: 340px; overflow-y: auto"
+                >
+                  <div class="word-list-header">All cards in this set</div>
+                  <div id="fc-word-items"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── HÖREN 1 ── -->
+          <div class="panel" id="panel-hoeren1">
+            <div class="quiz-layout" id="h1-layout"></div>
+          </div>
+
+          <!-- ── HÖREN 2 ── -->
+          <div class="panel" id="panel-hoeren2">
+            <div class="quiz-layout" id="h2-layout"></div>
+          </div>
+
+          <!-- ── HÖREN 3 ── -->
+          <div class="panel" id="panel-hoeren3">
+            <div class="quiz-layout" id="h3-layout"></div>
+          </div>
+
+          <!-- ── LESEN 1 ── -->
+          <div class="panel" id="panel-lesen1">
+            <div class="quiz-layout" id="l1-layout"></div>
+          </div>
+
+          <!-- ── LESEN 2 ── -->
+          <div class="panel" id="panel-lesen2">
+            <div class="quiz-layout" id="l2-layout"></div>
+          </div>
+
+          <!-- ── LESEN 3 ── -->
+          <div class="panel" id="panel-lesen3">
+            <div class="quiz-layout" id="l3-layout"></div>
+          </div>
+
+          <!-- ── SCHREIBEN 1 ── -->
+          <div class="panel" id="panel-schreiben1">
+            <div class="schreiben-layout" id="s1-layout"></div>
+          </div>
+
+          <!-- ── SCHREIBEN 2 ── -->
+          <div class="panel" id="panel-schreiben2">
+            <div class="schreiben-layout" id="s2-layout"></div>
+          </div>
+
+          <!-- ── SPRECHEN 1 ── -->
+          <div class="panel" id="panel-sprechen1">
+            <div class="sprechen-layout" id="sp1-layout"></div>
+          </div>
+
+          <!-- ── SPRECHEN 2 ── -->
+          <div class="panel" id="panel-sprechen2">
+            <div class="sprechen-layout" id="sp2-layout"></div>
+          </div>
+
+          <!-- ── SPRECHEN 3 ── -->
+          <div class="panel" id="panel-sprechen3">
+            <div class="sprechen-layout" id="sp3-layout"></div>
+          </div>
+        </div>
+        <!-- /content-area -->
+      </div>
+      <!-- /main -->
+    </div>
+    <!-- /app -->
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
