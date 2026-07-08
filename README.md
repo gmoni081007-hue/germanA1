@@ -4,7 +4,7 @@ An interactive web application designed to help beginners prepare for the German
 
 ## 🌐 Live Demo
 
-🔗 https://gmoni081007-hue.github.io/germenA1/
+🔗 (https://gmoni081007-hue.github.io/germenA1/)
 
 ---
 
