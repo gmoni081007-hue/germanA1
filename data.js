@@ -18593,470 +18593,579 @@ const D = {
       explanation: "Straßenschuhe sind verboten, man muss Sportschuhe tragen.",
     },
   ],
-  schreiben1:[
-  {
-    "id": 1,
-    "context": "Ihre Freundin Sabine Krüger macht mit ihrem Mann und ihren drei Kindern (6, 9 und 14 Jahre alt) seit einer Woche Urlaub in Königswinter am Rhein. Die Familie wohnt im Hotel Rheinblick, Uferstraße 12, PLZ 53639 Königswinter, direkt am Fluss. Weil das Wetter am Wochenende so schön ist, bucht Frau Krüger im Reisebüro für den kommenden Samstag eine zweistündige Schifffahrt auf dem Rhein mit Blick auf die Loreley. Die Kinder freuen sich sehr darauf, weil sie noch nie auf einem Schiff waren. Frau Krüger bezahlt lieber mit Kreditkarte, weil sie im Urlaub nicht so viel Bargeld dabei hat.",
-    "form_title": "Rhein-Schifffahrt Königswinter – Anmeldung",
-    "fields": [
-      { "label": "Familienname, Vorname", "value": "Krüger, Sabine", "number": 0, "blank": false },
-      { "label": "Urlaubsadresse", "value": "Hotel Rheinblick", "number": null, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "Uferstraße 12", "number": null, "blank": false },
-      { "label": "Anzahl der Personen", "value": "", "number": 1, "blank": true },
-      { "label": "Davon Kinder", "value": "", "number": 2, "blank": true },
-      { "label": "PLZ, Urlaubsort", "value": "", "number": 3, "blank": true },
-      { "label": "Zahlungsweise", "options": ["Bar", "Kreditkarte"], "number": 4, "blank": true },
-      { "label": "Reisetermin", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "5", "2": "3", "3": "53639 Königswinter", "4": "Kreditkarte", "5": "Samstag" }
-  },
-  {
-    "id": 2,
-    "context": "Ihr Freund Klaus Weber aus Belgien wurde am 23.11.1996 in Antwerpen geboren und arbeitet seit einem Jahr in Deutschland als Ingenieur. Weil er beruflich viel mit deutschen Kollegen zu tun hat, möchte er vom 5. bis 30. September einen intensiven Deutschkurs besuchen. Seine Muttersprache ist Niederländisch, aber er spricht auch fließend Englisch und Französisch, da er in Brüssel zur Schule gegangen ist. Deutsch lernt er schon seit einem Jahr, meistens abends nach der Arbeit über eine App. Weil sein Büro flexible Arbeitszeiten hat, kann er den Kurs am Nachmittag besuchen.",
-    "form_title": "Sprachenschule Liga – Anmeldung",
-    "fields": [
-      { "label": "Familienname, Vorname", "value": "Weber, Klaus", "number": 0, "blank": false },
-      { "label": "Geburtsdatum", "value": "23.11.1996", "number": null, "blank": false },
-      { "label": "Geburtsort", "value": "", "number": 1, "blank": true },
-      { "label": "Muttersprache", "value": "", "number": 2, "blank": true },
-      { "label": "Andere Sprachen", "value": "", "number": 3, "blank": true },
-      { "label": "Wie lange Deutsch gelernt?", "value": "", "number": 4, "blank": true },
-      { "label": "Kurszeit", "options": ["von 09-12 Uhr", "von 13-16 Uhr", "von 17-20 Uhr"], "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Antwerpen", "2": "Niederländisch", "3": "Englisch und Französisch", "4": "1 Jahr", "5": "von 17-20 Uhr" }
-  },
-  {
-    "id": 3,
-    "context": "Ihre Freundin Petra Lang, 27 Jahre alt, kommt aus Polen und lebt erst seit drei Monaten in Leipzig, wo sie eine neue Stelle als Kellnerin in einem Café in der Innenstadt gefunden hat. Sie ist bei der Krankenkasse TK versichert. Sie wohnt in der Karl-Liebknecht-Straße 45, PLZ 04275 Leipzig, ganz in der Nähe ihrer Arbeit. Seit drei Tagen hat sie sehr starkes Fieber und Halsschmerzen und konnte deshalb nicht arbeiten gehen. Weil es nicht besser wird, geht sie heute zum ersten Mal zu einem Arzt in Deutschland und ist etwas nervös, weil sie noch nicht so gut Deutsch spricht.",
-    "form_title": "Dr. Arnold Friedrich – Patienteninformation",
-    "fields": [
-      { "label": "Name, Vorname", "value": "Lang, Petra", "number": 0, "blank": false },
-      { "label": "Krankenkasse", "value": "TK", "number": null, "blank": false },
-      { "label": "Adresse, Straße, Hausnummer", "value": "", "number": 1, "blank": true },
-      { "label": "Postleitzahl, Wohnort", "value": "", "number": 2, "blank": true },
-      { "label": "Alter", "value": "", "number": 3, "blank": true },
-      { "label": "Beruf", "value": "", "number": 4, "blank": true },
-      { "label": "Seit wann sind Sie krank?", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Karl-Liebknecht-Straße 45", "2": "04275 Leipzig", "3": "27", "4": "Kellnerin", "5": "seit drei Tagen" }
-  },
-  {
-    "id": 4,
-    "context": "Ihr Freund Marco Silva wurde am 14.02.1988 geboren und lebt seit einiger Zeit in Köln, in der Blumenstraße 9, PLZ 50667. Er möchte gerne einen Deutschkurs an der Volkshochschule machen, um sich im Alltag besser zu verständigen. Er ist aber kein absoluter Anfänger mehr, denn er hat vor einem Jahr schon die A1-Prüfung erfolgreich bestanden. Von Beruf ist er Kellner in einem Restaurant und arbeitet dort jeden Tag von 8 bis 15 Uhr, also vormittags und früh am Nachmittag. Weil er deshalb nur nach Feierabend Zeit hat, möchte er einen Kurs am Abend besuchen.",
-    "form_title": "Anmeldung – Sprachzentrum",
-    "fields": [
-      { "label": "Familienname", "value": "Silva", "number": 0, "blank": false },
-      { "label": "Vorname", "value": "Marco", "number": null, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "", "number": 1, "blank": true },
-      { "label": "Postleitzahl, Wohnort", "value": "", "number": 2, "blank": true },
-      { "label": "Beruf", "value": "", "number": 3, "blank": true },
-      { "label": "Kurs/Kursnummer", "options": ["Deutsch Anfänger – A1", "Deutsch Fortgeschrittene – A2"], "number": 4, "blank": true },
-      { "label": "Termin", "options": ["montags-freitags, 9-12 Uhr", "montags-freitags, 18-21 Uhr"], "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Blumenstraße 9", "2": "50667 Köln", "3": "Kellner", "4": "Deutsch Fortgeschrittene – A2", "5": "montags-freitags, 18-21 Uhr" }
-  },
-  {
-    "id": 5,
-    "context": "Ihre Freundin Christiane Neumann möchte ihren Sohn Finn beim Sportverein TGB anmelden, weil er unbedingt in einer richtigen Mannschaft Fußball spielen möchte. Finn ist 9 Jahre alt und hat schon oft mit seinen Freunden auf dem Bolzplatz gespielt. Familie Neumann wohnt in 60385 Frankfurt, in der Leibnizstraße 35, ganz in der Nähe des Vereinsgeländes. Der Verein hat zwei Beitragsstufen: Kinder bis 12 Jahre zahlen 5€ im Monat, Kinder von 13 bis 18 Jahren zahlen 8€. Weil Frau Neumann nicht jeden Monat an die Überweisung denken möchte, entscheidet sie sich, den Beitrag nicht monatlich, sondern nur alle sechs Monate zu überweisen.",
-    "form_title": "Sportverein TGB – Anmeldung",
-    "fields": [
-      { "label": "Name des Kindes", "value": "Neumann", "number": 0, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "Leibnizstraße 35", "number": null, "blank": false },
-      { "label": "PLZ/Ort", "value": "60385 Frankfurt", "number": null, "blank": false },
-      { "label": "Vorname des Kindes", "value": "", "number": 1, "blank": true },
-      { "label": "Alter", "value": "", "number": 2, "blank": true },
-      { "label": "Interessen", "value": "", "number": 3, "blank": true },
-      { "label": "Monatsbeitrag", "options": ["Kinder bis 12 Jahre – 5€", "Kinder von 13-18 Jahre – 8€"], "number": 4, "blank": true },
-      { "label": "Zahlungsweise", "options": ["monatlich", "vierteljährlich", "halbjährlich"], "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Finn", "2": "9", "3": "Fußball", "4": "Kinder bis 12 Jahre – 5€", "5": "halbjährlich" }
-  },
-  {
-    "id": 6,
-    "context": "Ihr Freund Julian Kirkpatrick möchte gemeinsam mit seiner Frau eine kleine Reise an die Nordsee machen und im Hotel Seeblick in Cuxhaven ein Zimmer vom 3. bis 8. Juni reservieren. Beide arbeiten viel und möchten in dieser Woche wirklich entspannen, deshalb frühstücken sie lieber in einem gemütlichen Café in der Stadt und nicht im Hotel. Julian wohnt in Berlin, Urbanstraße 12, PLZ 10961, und hat die Reservierung schon einmal telefonisch angefragt, bevor er sich für dieses Formular entschieden hat.",
-    "form_title": "Hotel Seeblick Cuxhaven – Reservierung",
-    "fields": [
-      { "label": "Name", "value": "Kirkpatrick", "number": 0, "blank": false },
-      { "label": "Vorname", "value": "Julian", "number": null, "blank": false },
-      { "label": "Straße", "value": "Urbanstraße 12", "number": null, "blank": false },
-      { "label": "PLZ / Ort", "value": "", "number": 1, "blank": true },
-      { "label": "Anreise", "value": "", "number": 2, "blank": true },
-      { "label": "Abreise", "value": "", "number": 3, "blank": true },
-      { "label": "Zimmerart", "options": ["Einzelzimmer", "Doppelzimmer"], "number": 4, "blank": true },
-      { "label": "Frühstück", "options": ["mit Frühstück", "kein Frühstück"], "number": 5, "blank": true }
-    ],
-    "answers": { "1": "10961 Berlin", "2": "3. Juni", "3": "8. Juni", "4": "Doppelzimmer", "5": "kein Frühstück" }
-  },
-  {
-    "id": 7,
-    "context": "Ihre Freundin Ana Popovic aus Serbien ist 24 Jahre alt und studiert Wirtschaftswissenschaften. Seit sie in Deutschland lebt, hat sie leider viel zu wenig Sport gemacht und möchte das jetzt ändern. Sie möchte sich beim Fitnessstudio Aktiv anmelden. Weil ein Jahresvertrag pro Monat deutlich günstiger ist als ein einfacher Monatsvertrag, entscheidet sie sich trotz ihres kleinen Studentenbudgets für ein ganzes Jahr Mitgliedschaft. Wegen ihrer Vorlesungen kann sie nur dienstags und donnerstags trainieren. Ihre E-Mail-Adresse für die Anmeldung ist ana.popovic@gmx.de.",
-    "form_title": "Fitnessstudio Aktiv – Anmeldung",
-    "fields": [
-      { "label": "Name, Vorname", "value": "Popovic, Ana", "number": 0, "blank": false },
-      { "label": "E-Mail", "value": "ana.popovic@gmx.de", "number": null, "blank": false },
-      { "label": "Herkunftsland", "value": "", "number": 1, "blank": true },
-      { "label": "Alter", "value": "", "number": 2, "blank": true },
-      { "label": "Beruf/Status", "value": "", "number": 3, "blank": true },
-      { "label": "Mitgliedschaft", "options": ["Monatsabo", "Halbjahresabo", "Jahresabo"], "number": 4, "blank": true },
-      { "label": "Trainingstage", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Serbien", "2": "24", "3": "Studentin", "4": "Jahresabo", "5": "Dienstag und Donnerstag" }
-  },
-  {
-    "id": 8,
-    "context": "Ihre Freundin Barbara Nowak möchte ihre Tochter Zofia bei der Musikschule Nürnberg anmelden, weil Zofia seit einem Konzertbesuch unbedingt Klavier lernen möchte. Zofia ist bereits 14 Jahre alt, deshalb gilt für sie nicht mehr der günstigere Kindertarif. An der Musikschule zahlen Kinder bis 12 Jahre 20€ im Monat, Kinder ab 13 Jahren zahlen 28€ im Monat. Familie Nowak wohnt in der Mozartstraße 3, PLZ 90461 Nürnberg, nur zehn Minuten zu Fuß von der Musikschule entfernt. Frau Nowak möchte den Beitrag bequem per Überweisung bezahlen, weil sie das schon von anderen Vereinsbeiträgen so gewohnt ist.",
-    "form_title": "Musikschule Nürnberg – Anmeldung Kind",
-    "fields": [
-      { "label": "Name des Kindes", "value": "Nowak", "number": 0, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "Mozartstraße 3", "number": null, "blank": false },
-      { "label": "PLZ, Wohnort", "value": "90461 Nürnberg", "number": null, "blank": false },
-      { "label": "Vorname des Kindes", "value": "", "number": 1, "blank": true },
-      { "label": "Alter", "value": "", "number": 2, "blank": true },
-      { "label": "Instrument", "value": "", "number": 3, "blank": true },
-      { "label": "Monatsbeitrag", "options": ["20€ (bis 12 Jahre)", "28€ (ab 13 Jahre)"], "number": 4, "blank": true },
-      { "label": "Zahlung", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Zofia", "2": "14", "3": "Klavier", "4": "28€ (ab 13 Jahre)", "5": "Überweisung" }
-  },
-  {
-    "id": 9,
-    "context": "Ihr Freund Henrik Larsen aus Dänemark ist 52 Jahre alt und plant vom 10. bis 24. Juli eine zweiwöchige Reise durch Italien, hauptsächlich durch die Toskana. Weil er auf früheren Reisen schon einmal Probleme mit seinem Gepäck hatte, möchte er dieses Mal unbedingt gut abgesichert sein. Deshalb entscheidet er sich für den umfassenderen Versicherungsschutz, der auch Krankheitskosten im Ausland und verlorenes oder gestohlenes Gepäck abdeckt, und nicht für den einfachen Basisschutz. Er bezahlt die Versicherung wie gewohnt mit seiner Kreditkarte.",
-    "form_title": "Reiseversicherung Nord – Antrag",
-    "fields": [
-      { "label": "Name, Vorname", "value": "Larsen, Henrik", "number": 0, "blank": false },
-      { "label": "Reiseziel", "value": "Italien", "number": null, "blank": false },
-      { "label": "Alter", "value": "", "number": 1, "blank": true },
-      { "label": "Reisebeginn", "value": "", "number": 2, "blank": true },
-      { "label": "Reiseende", "value": "", "number": 3, "blank": true },
-      { "label": "Versicherungsart", "options": ["Basisschutz", "Premiumschutz"], "number": 4, "blank": true },
-      { "label": "Zahlung", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "52", "2": "10. Juli", "3": "24. Juli", "4": "Premiumschutz", "5": "Kreditkarte" }
-  },
-  {
-    "id": 10,
-    "context": "Ihre Freundin Camila Torres aus Chile ist 19 Jahre alt und möchte endlich ihren Führerschein machen, um selbstständiger zu sein. Sie hat sich für die Fahrschule Speed in Dortmund entschieden und möchte den normalen Autoführerschein (Klasse B) machen, nicht den Motorradführerschein, den ihr Bruder ihr eigentlich empfohlen hatte. Weil sie unter der Woche ein Praktikum macht, kann sie zu den Fahrstunden nur samstags kommen. Sie wohnt in der Hansaring 4, PLZ 44135 Dortmund, und ist telefonisch unter 0231/556677 erreichbar.",
-    "form_title": "Fahrschule Speed Dortmund – Anmeldung",
-    "fields": [
-      { "label": "Name, Vorname", "value": "Torres, Camila", "number": 0, "blank": false },
-      { "label": "Telefon", "value": "0231/556677", "number": null, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "", "number": 1, "blank": true },
-      { "label": "PLZ, Wohnort", "value": "", "number": 2, "blank": true },
-      { "label": "Alter", "value": "", "number": 3, "blank": true },
-      { "label": "Führerscheinklasse", "options": ["Klasse A (Motorrad)", "Klasse B (Auto)"], "number": 4, "blank": true },
-      { "label": "Fahrstundentag", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Hansaring 4", "2": "44135 Dortmund", "3": "19", "4": "Klasse B (Auto)", "5": "Samstag" }
-  },
-  {
-    "id": 11,
-    "context": "Ihr Freund Tomas Nagy aus der Slowakei macht mit seiner Frau und ihren drei Kindern (4, 7 und 10 Jahre alt) für zwei Wochen Urlaub in Berchtesgaden in den Alpen. Weil die ganze Familie gerne wandert, bucht Tomas im örtlichen Reisebüro für den übernächsten Mittwoch eine geführte Wanderung mit einem erfahrenen Bergführer. Die Familie wohnt im Hotel Alpenhof, Bergstraße 8, PLZ 83471, direkt am Fuß der Berge. Weil Tomas keine Kreditkarte besitzt und lieber mit Bargeld bezahlt, hinterlässt er den Betrag bar an der Rezeption des Reisebüros.",
-    "form_title": "Alpenwanderung Berchtesgaden – Anmeldung",
-    "fields": [
-      { "label": "Familienname, Vorname", "value": "Nagy, Tomas", "number": 0, "blank": false },
-      { "label": "Urlaubsadresse", "value": "Hotel Alpenhof, Bergstraße 8", "number": null, "blank": false },
-      { "label": "Anzahl der Personen", "value": "", "number": 1, "blank": true },
-      { "label": "Davon Kinder", "value": "", "number": 2, "blank": true },
-      { "label": "PLZ, Urlaubsort", "value": "", "number": 3, "blank": true },
-      { "label": "Zahlungsweise", "options": ["Bar", "Kreditkarte"], "number": 4, "blank": true },
-      { "label": "Wandertermin", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "5", "2": "3", "3": "83471 Berchtesgaden", "4": "Bar", "5": "Mittwoch" }
-  },
-  {
-    "id": 12,
-    "context": "Ihre Freundin Ingrid Solberg aus Norwegen wurde am 2.5.1979 in Oslo geboren und lebt erst seit zwei Monaten in Bremen, wo sie eine neue Stelle als Übersetzerin bei einer internationalen Firma angetreten hat. Sie ist bei der Krankenkasse Barmer versichert. Sie wohnt in der Feldstraße 3, PLZ 28195 Bremen, ganz in der Nähe ihres Büros. Seit etwa einer Woche hat sie immer wieder starke Rückenschmerzen, wahrscheinlich weil ihr neuer Bürostuhl nicht gut zu ihrem Rücken passt. Weil die Schmerzen nicht besser werden, hat sie heute endlich einen Termin bei einem Arzt vereinbart.",
-    "form_title": "Dr. Sabine Kern – Patienteninformation",
-    "fields": [
-      { "label": "Name, Vorname", "value": "Solberg, Ingrid", "number": 0, "blank": false },
-      { "label": "Geburtsdatum", "value": "2.5.1979", "number": null, "blank": false },
-      { "label": "Krankenkasse", "value": "Barmer", "number": null, "blank": false },
-      { "label": "Adresse, Straße, Hausnummer", "value": "", "number": 1, "blank": true },
-      { "label": "Postleitzahl, Wohnort", "value": "", "number": 2, "blank": true },
-      { "label": "Beruf", "value": "", "number": 3, "blank": true },
-      { "label": "Seit wann sind Sie krank?", "value": "", "number": 4, "blank": true },
-      { "label": "Was fehlt Ihnen?", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Feldstraße 3", "2": "28195 Bremen", "3": "Übersetzerin", "4": "seit einer Woche", "5": "Rückenschmerzen" }
-  },
-  {
-    "id": 13,
-    "context": "Ihr Freund Bilal Karimi wurde am 1.1.1994 geboren und lebt in Essen, in der Kettwiger Straße 20, PLZ 45127. Weil er beruflich viel mit englischsprachigen Kunden zu tun hat, möchte er seine Kenntnisse verbessern und einen Englischkurs an der Volkshochschule Essen machen. Er ist allerdings kein Anfänger mehr, denn er hat vor einiger Zeit schon erfolgreich die B1-Prüfung abgelegt. Von Beruf ist er Bäcker und beginnt seine Arbeit jeden Tag schon um 5 Uhr morgens, weshalb er mittags völlig erschöpft ist. Deshalb kann er nur direkt am Vormittag, bevor die Arbeit richtig losgeht, einen Kurs besuchen.",
-    "form_title": "Anmeldung – Volkshochschule Essen",
-    "fields": [
-      { "label": "Familienname", "value": "Karimi", "number": 0, "blank": false },
-      { "label": "Vorname", "value": "Bilal", "number": null, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "", "number": 1, "blank": true },
-      { "label": "Postleitzahl, Wohnort", "value": "", "number": 2, "blank": true },
-      { "label": "Beruf", "value": "", "number": 3, "blank": true },
-      { "label": "Kursniveau", "options": ["Englisch Anfänger – A1", "Englisch Fortgeschrittene – B1/B2"], "number": 4, "blank": true },
-      { "label": "Termin", "options": ["montags-freitags, 9-12 Uhr", "montags-freitags, 18-21 Uhr"], "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Kettwiger Straße 20", "2": "45127 Essen", "3": "Bäcker", "4": "Englisch Fortgeschrittene – B1/B2", "5": "montags-freitags, 9-12 Uhr" }
-  },
-  {
-    "id": 14,
-    "context": "Ihre Freundin Louisa Fontaine möchte ihren Sohn Théo beim Schwimmverein Mainz anmelden, weil er im letzten Sommerurlaub am Meer entdeckt hat, wie viel Spaß Schwimmen macht. Théo ist 11 Jahre alt und ein Junge. Der Verein unterscheidet zwei Beitragsstufen: Kinder bis 12 Jahre zahlen 6€ im Monat, Kinder von 13 bis 18 Jahren zahlen 9€ im Monat. Familie Fontaine wohnt in der Gartenweg 5, PLZ 55116 Mainz. Weil Frau Fontaine ungern jeden Monat eine Überweisung machen möchte, entscheidet sie sich, den Beitrag nur einmal pro Quartal, also alle drei Monate, zu überweisen.",
-    "form_title": "Schwimmverein Mainz – Anmeldung Kind",
-    "fields": [
-      { "label": "Name des Kindes", "value": "Fontaine", "number": 0, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "Gartenweg 5", "number": null, "blank": false },
-      { "label": "PLZ, Wohnort", "value": "55116 Mainz", "number": null, "blank": false },
-      { "label": "Vorname des Kindes", "value": "", "number": 1, "blank": true },
-      { "label": "Alter", "value": "", "number": 2, "blank": true },
-      { "label": "Geschlecht", "options": ["männlich", "weiblich"], "number": 3, "blank": true },
-      { "label": "Monatsbeitrag", "options": ["6€ (bis 12 Jahre)", "9€ (13-18 Jahre)"], "number": 4, "blank": true },
-      { "label": "Zahlungsweise", "options": ["monatlich", "vierteljährlich", "halbjährlich"], "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Théo", "2": "11", "3": "männlich", "4": "6€ (bis 12 Jahre)", "5": "vierteljährlich" }
-  },
-  {
-    "id": 15,
-    "context": "Ihr Freund Andrei Ionescu reist beruflich häufig nach Garmisch und möchte im Hotel Waldeck ein Einzelzimmer vom 12. bis 19. Januar reservieren, weil er dort an einer wichtigen Konferenz teilnimmt. Weil das Frühstück im Hotel besonders gut bewertet wird, möchte er dieses Mal im Hotel frühstücken. Da er abends auch in seinem Zimmer arbeiten muss, bittet er außerdem ausdrücklich um ein ruhiges Zimmer, weit weg von der lauten Straße. Andrei wohnt in Stuttgart, Hauptstraße 44, PLZ 70173.",
-    "form_title": "Hotel Waldeck Garmisch – Reservierung",
-    "fields": [
-      { "label": "Name", "value": "Ionescu", "number": 0, "blank": false },
-      { "label": "Vorname", "value": "Andrei", "number": null, "blank": false },
-      { "label": "PLZ / Ort", "value": "70173 Stuttgart", "number": null, "blank": false },
-      { "label": "Straße", "value": "", "number": 1, "blank": true },
-      { "label": "Anreise", "value": "", "number": 2, "blank": true },
-      { "label": "Abreise", "value": "", "number": 3, "blank": true },
-      { "label": "Zimmerart", "options": ["Einzelzimmer", "Doppelzimmer"], "number": 4, "blank": true },
-      { "label": "Besondere Wünsche", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Hauptstraße 44", "2": "12. Januar", "3": "19. Januar", "4": "Einzelzimmer", "5": "ruhiges Zimmer" }
-  },
-  {
-    "id": 16,
-    "context": "Ihr Freund Miguel Ferreira aus Portugal ist 34 Jahre alt und möchte gemeinsam mit einem Kollegen dem Tennisclub Hamburg Nord beitreten, weil er in seiner Heimat schon als Jugendlicher regelmäßig Tennis gespielt hat. Weil er lieber mit einem Partner trainiert als allein gegen eine Wand zu schlagen, entscheidet er sich für das Doppeltraining und nicht für das Einzeltraining. Er kann nur an Wochenenden trainieren, weil er unter der Woche als Ingenieur oft bis spät abends arbeitet. Er wohnt in der Feldstraße 3, PLZ 20099 Hamburg, und bezahlt den Mitgliedsbeitrag mit Kreditkarte.",
-    "form_title": "Tennisclub Hamburg Nord – Mitgliedsantrag",
-    "fields": [
-      { "label": "Name, Vorname", "value": "Ferreira, Miguel", "number": 0, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "Feldstraße 3", "number": null, "blank": false },
-      { "label": "PLZ, Wohnort", "value": "20099 Hamburg", "number": null, "blank": false },
-      { "label": "Alter", "value": "", "number": 1, "blank": true },
-      { "label": "Beruf", "value": "", "number": 2, "blank": true },
-      { "label": "Trainingsart", "options": ["Einzeltraining", "Doppeltraining"], "number": 3, "blank": true },
-      { "label": "Spieltage", "value": "", "number": 4, "blank": true },
-      { "label": "Zahlung", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "34", "2": "Ingenieur", "3": "Doppeltraining", "4": "Wochenende", "5": "Kreditkarte" }
-  },
-  {
-    "id": 17,
-    "context": "Ihre Freundin Hana Suzuki aus Japan lebt seit einem Jahr in Freiburg und möchte an einem Kochkurs für regionale deutsche Küche teilnehmen, weil sie das deutsche Essen ihrer Nachbarn so lecker findet. Weil sie aber seit ihrer Kindheit kein Fleisch isst, muss sie sich für die vegetarische Variante des Kurses anmelden und nicht für den normalen Kurs mit Fleischgerichten. Sie kann wegen ihres Teilzeitjobs nur samstags teilnehmen. Sie wohnt in der Sonnenhalde 11, PLZ 79100 Freiburg, und bezahlt den Kurs bar bei der Anmeldung vor Ort.",
-    "form_title": "Kochschule Freiburg – Anmeldung",
-    "fields": [
-      { "label": "Familienname", "value": "Suzuki", "number": 0, "blank": false },
-      { "label": "Vorname", "value": "Hana", "number": null, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "", "number": 1, "blank": true },
-      { "label": "PLZ, Wohnort", "value": "", "number": 2, "blank": true },
-      { "label": "Kursart", "options": ["mit Fleisch", "vegetarisch"], "number": 3, "blank": true },
-      { "label": "Kurstag", "value": "", "number": 4, "blank": true },
-      { "label": "Zahlung", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Sonnenhalde 11", "2": "79100 Freiburg", "3": "vegetarisch", "4": "Samstag", "5": "bar" }
-  },
-  {
-    "id": 18,
-    "context": "Ihr Freund Daniel Kowalski, 22 Jahre alt, hat gerade an der Universität Münster sein Studium begonnen und möchte sich in der Stadtbibliothek anmelden, weil er für seine Seminare viele Bücher ausleihen muss. Weil er noch Student ist und einen gültigen Studentenausweis hat, bekommt er die günstigere Studentenmitgliedschaft und nicht die reguläre Mitgliedschaft für Erwachsene. Er wohnt in der Hansaring 4, PLZ 48155 Münster, und möchte den kleinen Jahresbeitrag am liebsten gleich bar an der Anmeldung bezahlen.",
-    "form_title": "Stadtbibliothek Münster – Anmeldung",
-    "fields": [
-      { "label": "Name, Vorname", "value": "Kowalski, Daniel", "number": 0, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "", "number": 1, "blank": true },
-      { "label": "PLZ, Wohnort", "value": "", "number": 2, "blank": true },
-      { "label": "Alter", "value": "", "number": 3, "blank": true },
-      { "label": "Mitgliedschaft", "options": ["Studentenmitgliedschaft", "Mitgliedschaft für Erwachsene"], "number": 4, "blank": true },
-      { "label": "Zahlung", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Hansaring 4", "2": "48155 Münster", "3": "22", "4": "Studentenmitgliedschaft", "5": "bar" }
-  },
-  {
-    "id": 19,
-    "context": "Ihre Freundin Elif Yildiz möchte einen Yogakurs im Yogastudio Frankfurt besuchen, weil ihr Arzt ihr wegen ihres stressigen Bürojobs mehr Entspannung empfohlen hat. Sie hat noch nie zuvor Yoga gemacht und meldet sich deshalb für den Anfängerkurs an und nicht für den Kurs für Fortgeschrittene. Weil sie erst nach ihrer Arbeit als Informatikerin Zeit hat, kann sie den Kurs nur abends besuchen. Sie ist 29 Jahre alt und wohnt in Frankfurt. Ihr Geburtsort ist Ankara.",
-    "form_title": "Yoga Studio Frankfurt – Kursanmeldung",
-    "fields": [
-      { "label": "Familienname", "value": "Yildiz", "number": 0, "blank": false },
-      { "label": "Vorname", "value": "Elif", "number": null, "blank": false },
-      { "label": "Geburtsort", "value": "", "number": 1, "blank": true },
-      { "label": "Alter", "value": "", "number": 2, "blank": true },
-      { "label": "Beruf", "value": "", "number": 3, "blank": true },
-      { "label": "Kursniveau", "options": ["Anfängerkurs", "Fortgeschrittenenkurs"], "number": 4, "blank": true },
-      { "label": "Kurszeit", "options": ["Morgen", "Mittag", "Abend"], "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Ankara", "2": "29", "3": "Informatikerin", "4": "Anfängerkurs", "5": "Abend" }
-  },
-  {
-    "id": 20,
-    "context": "Ihr Freund Mateo Diaz, 45 Jahre alt, kommt aus Argentinien und lebt seit vier Jahren in München, in der Danklstraße 15, PLZ 81371. Er ist bei der AOK versichert und arbeitet als Taxifahrer, meistens am Abend und in der Nacht. Seit gestern hat er starke Zahnschmerzen auf der rechten Seite und konnte deshalb letzte Nacht kaum schlafen. Weil die Schmerzen immer schlimmer werden, hat er heute Morgen sofort einen Termin bei einer Zahnärztin vereinbart.",
-    "form_title": "Zahnarztpraxis Dr. Weiss – Patienteninformation",
-    "fields": [
-      { "label": "Name, Vorname", "value": "Diaz, Mateo", "number": 0, "blank": false },
-      { "label": "Krankenkasse", "value": "AOK", "number": null, "blank": false },
-      { "label": "Adresse, Straße, Hausnummer", "value": "", "number": 1, "blank": true },
-      { "label": "Postleitzahl, Wohnort", "value": "", "number": 2, "blank": true },
-      { "label": "Alter", "value": "", "number": 3, "blank": true },
-      { "label": "Beruf", "value": "", "number": 4, "blank": true },
-      { "label": "Was fehlt Ihnen?", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Danklstraße 15", "2": "81371 München", "3": "45", "4": "Taxifahrer", "5": "Zahnschmerzen" }
-  },
-  {
-    "id": 21,
-    "context": "Ihre Freundin Marta Kowalczyk möchte ihre Tochter Lena im Kindergarten Sonnenschein in Dresden anmelden. Lena ist erst 3 Jahre alt und kommt damit in die jüngste Gruppe des Kindergartens, die für Kinder von 3 bis 4 Jahren gedacht ist, und nicht in die Gruppe für ältere Kinder von 5 bis 6 Jahren. Weil Lena eine leichte Nussallergie hat, muss Frau Kowalczyk das im Formular unbedingt angeben, damit die Erzieherinnen beim Mittagessen aufpassen können. Familie Kowalczyk wohnt in der Bahnhofstraße 22, PLZ 01067 Dresden.",
-    "form_title": "Kindergarten Sonnenschein Dresden – Anmeldung",
-    "fields": [
-      { "label": "Name des Kindes", "value": "Kowalczyk", "number": 0, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "Bahnhofstraße 22", "number": null, "blank": false },
-      { "label": "PLZ, Wohnort", "value": "01067 Dresden", "number": null, "blank": false },
-      { "label": "Vorname des Kindes", "value": "", "number": 1, "blank": true },
-      { "label": "Alter", "value": "", "number": 2, "blank": true },
-      { "label": "Gruppe", "options": ["Gruppe 3-4 Jahre", "Gruppe 5-6 Jahre"], "number": 3, "blank": true },
-      { "label": "Allergien", "value": "", "number": 4, "blank": true },
-      { "label": "Name der Mutter", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Lena", "2": "3", "3": "Gruppe 3-4 Jahre", "4": "Nussallergie", "5": "Marta Kowalczyk" }
-  },
-  {
-    "id": 22,
-    "context": "Ihr Freund Simon Fischer möchte mit seiner Frau eine Woche zum Skifahren nach Österreich fahren, vom 2. bis 9. Februar. Weil beide seit Jahren nicht mehr auf Skiern standen, buchen sie außerdem einen Skikurs für Fortgeschrittene, weil sie als Kinder schon Skifahren gelernt haben und nicht bei null anfangen müssen. Da sie ihre eigene Ausrüstung zu Hause in Nürnberg gelassen haben, möchten sie vor Ort Ski und Skischuhe ausleihen. Simon wohnt in der Adlerstraße 6, PLZ 90411 Nürnberg.",
-    "form_title": "Skischule Alpin – Buchungsformular",
-    "fields": [
-      { "label": "Name, Vorname", "value": "Fischer, Simon", "number": 0, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "Adlerstraße 6", "number": null, "blank": false },
-      { "label": "PLZ, Wohnort", "value": "90411 Nürnberg", "number": null, "blank": false },
-      { "label": "Anreise", "value": "", "number": 1, "blank": true },
-      { "label": "Abreise", "value": "", "number": 2, "blank": true },
-      { "label": "Kursniveau", "options": ["Anfänger", "Fortgeschrittene"], "number": 3, "blank": true },
-      { "label": "Ausrüstung", "options": ["eigene Ausrüstung", "Leihausrüstung"], "number": 4, "blank": true },
-      { "label": "Anzahl der Personen", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "2. Februar", "2": "9. Februar", "3": "Fortgeschrittene", "4": "Leihausrüstung", "5": "2" }
-  },
-  {
-    "id": 23,
-    "context": "Ihre Freundin Chiara Bianchi möchte für sich, ihren Mann und ihre beiden Kinder Karten für ein Konzert in der Elbphilharmonie Hamburg bestellen, also insgesamt für vier Personen. Weil sie die Musiker gerne aus der Nähe sehen möchte, entscheidet sie sich für die teurere Kategorie 1 in den vorderen Reihen und nicht für die günstigere Kategorie 2 weiter hinten. Sie bezahlt die Karten mit Überweisung, weil das Konzerthaus keine Kreditkartenzahlung online anbietet. Sie wohnt in Hamburg, Alsterweg 6, PLZ 20099.",
-    "form_title": "Elbphilharmonie Hamburg – Kartenbestellung",
-    "fields": [
-      { "label": "Name, Vorname", "value": "Bianchi, Chiara", "number": 0, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "Alsterweg 6", "number": null, "blank": false },
-      { "label": "PLZ, Wohnort", "value": "20099 Hamburg", "number": null, "blank": false },
-      { "label": "Anzahl der Personen", "value": "", "number": 1, "blank": true },
-      { "label": "Kategorie", "options": ["Kategorie 1", "Kategorie 2"], "number": 2, "blank": true },
-      { "label": "Zahlung", "value": "", "number": 3, "blank": true },
-      { "label": "Davon Kinder", "value": "", "number": 4, "blank": true },
-      { "label": "Bestellname", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "4", "2": "Kategorie 1", "3": "Überweisung", "4": "2", "5": "Chiara Bianchi" }
-  },
-  {
-    "id": 24,
-    "context": "Ihr Freund Pieter van Dijk aus den Niederlanden möchte für eine Geschäftsreise vom 15. bis 20. März in Hannover ein Auto mieten. Weil er allein unterwegs ist und nicht viel Gepäck dabei hat, reicht ihm ein kleiner, sparsamer Wagen aus der Kompaktklasse völlig, den größeren Kombi braucht er nicht. Weil er in einer fremden Stadt fährt, entscheidet er sich sicherheitshalber für die Vollkaskoversicherung und nicht für den Basisschutz. Er wohnt in Amsterdam und bezahlt mit Kreditkarte.",
-    "form_title": "Autovermietung Hannover – Buchungsformular",
-    "fields": [
-      { "label": "Name, Vorname", "value": "van Dijk, Pieter", "number": 0, "blank": false },
-      { "label": "Wohnort", "value": "Amsterdam", "number": null, "blank": false },
-      { "label": "Abholdatum", "value": "", "number": 1, "blank": true },
-      { "label": "Rückgabedatum", "value": "", "number": 2, "blank": true },
-      { "label": "Fahrzeugklasse", "options": ["Kompaktklasse", "Kombi"], "number": 3, "blank": true },
-      { "label": "Versicherung", "options": ["Basisschutz", "Vollkasko"], "number": 4, "blank": true },
-      { "label": "Zahlung", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "15. März", "2": "20. März", "3": "Kompaktklasse", "4": "Vollkasko", "5": "Kreditkarte" }
-  },
-  {
-    "id": 25,
-    "context": "Ihre Freundin Rosa Alvarez zieht bald von ihrer kleinen Ein-Zimmer-Wohnung in eine größere Drei-Zimmer-Wohnung um und braucht dafür eine Umzugsfirma. Weil sie viele Möbel und Kisten hat, bucht sie den großen Umzugswagen und nicht den kleinen Transporter, der für sie zu klein wäre. Der Umzug soll am 4. Mai stattfinden, einem Samstag, weil sie da keine Arbeit hat. Sie wohnt aktuell in der Rheinstraße 19, PLZ 53111 Bonn.",
-    "form_title": "Umzugsfirma Rheinland – Buchungsformular",
-    "fields": [
-      { "label": "Name, Vorname", "value": "Alvarez, Rosa", "number": 0, "blank": false },
-      { "label": "Aktuelle Adresse", "value": "Rheinstraße 19", "number": null, "blank": false },
-      { "label": "PLZ, Ort", "value": "53111 Bonn", "number": null, "blank": false },
-      { "label": "Umzugsdatum", "value": "", "number": 1, "blank": true },
-      { "label": "Wohnungsgröße", "value": "", "number": 2, "blank": true },
-      { "label": "Fahrzeuggröße", "options": ["kleiner Transporter", "großer Umzugswagen"], "number": 3, "blank": true },
-      { "label": "Neue Wohnungsgröße", "value": "", "number": 4, "blank": true },
-      { "label": "Kontakttelefon", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "4. Mai", "2": "Ein-Zimmer-Wohnung", "3": "großer Umzugswagen", "4": "Drei-Zimmer-Wohnung", "5": "wird beim Erstgespräch angegeben" }
-  },
-  {
-    "id": 26,
-    "context": "Ihr Freund Tobias Braun bringt seinen Hund Rex zur Tierärztin, weil Rex seit zwei Tagen humpelt und nicht mehr richtig auf sein rechtes Hinterbein treten möchte. Rex ist ein 5 Jahre alter Labrador. Tobias wohnt in der Sonnenallee 8, PLZ 12045 Berlin, und seine Telefonnummer ist 030/4455667, falls die Praxis kurzfristig zurückrufen muss.",
-    "form_title": "Tierarztpraxis Dr. Vogel – Patienteninformation",
-    "fields": [
-      { "label": "Name des Besitzers", "value": "Braun, Tobias", "number": 0, "blank": false },
-      { "label": "Telefon", "value": "030/4455667", "number": null, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "", "number": 1, "blank": true },
-      { "label": "PLZ, Wohnort", "value": "", "number": 2, "blank": true },
-      { "label": "Name des Tieres", "value": "", "number": 3, "blank": true },
-      { "label": "Tierart", "options": ["Hund", "Katze"], "number": 4, "blank": true },
-      { "label": "Was fehlt dem Tier?", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Sonnenallee 8", "2": "12045 Berlin", "3": "Rex", "4": "Hund", "5": "humpelt / Probleme mit dem Hinterbein" }
-  },
-  {
-    "id": 27,
-    "context": "Ihre Freundin Nadia Belhadj möchte während ihres Kurzurlaubs in Münster für drei Tage, vom 6. bis 9. Juni, ein Fahrrad mieten, um die Stadt und die Umgebung zu erkunden. Weil sie auch längere Strecken außerhalb der Stadt fahren möchte, entscheidet sie sich für ein Elektrofahrrad und nicht für ein normales Fahrrad, damit sie nicht zu erschöpft ankommt. Sie bezahlt die Leihgebühr bar direkt beim Verleih. Ihre Adresse zu Hause in Lyon gibt sie zur Sicherheit ebenfalls an.",
-    "form_title": "Fahrradverleih Münster – Buchungsformular",
-    "fields": [
-      { "label": "Name, Vorname", "value": "Belhadj, Nadia", "number": 0, "blank": false },
-      { "label": "Heimatadresse", "value": "Lyon", "number": null, "blank": false },
-      { "label": "Mietbeginn", "value": "", "number": 1, "blank": true },
-      { "label": "Mietende", "value": "", "number": 2, "blank": true },
-      { "label": "Fahrradtyp", "options": ["normales Fahrrad", "Elektrofahrrad"], "number": 3, "blank": true },
-      { "label": "Anzahl Tage", "value": "", "number": 4, "blank": true },
-      { "label": "Zahlung", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "6. Juni", "2": "9. Juni", "3": "Elektrofahrrad", "4": "3", "5": "bar" }
-  },
-  {
-    "id": 28,
-    "context": "Ihre Freundin Katarzyna Wisniewski möchte ihren Sohn Piotr zu einem Malkurs an der Kunstschule Hannover anmelden. Piotr ist 8 Jahre alt und liebt es, mit Wasserfarben zu malen. Kinder bis 10 Jahre zahlen 15€ im Monat für den Kurs, Kinder von 11 bis 16 Jahren zahlen 20€. Weil Piotr abends immer sehr müde ist, kann er den Kurs nur samstags am Vormittag besuchen. Familie Wisniewski wohnt in der Podbielskistraße 14, PLZ 30163 Hannover.",
-    "form_title": "Kunstschule Hannover – Anmeldung Kind",
-    "fields": [
-      { "label": "Name des Kindes", "value": "Wisniewski", "number": 0, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "Podbielskistraße 14", "number": null, "blank": false },
-      { "label": "PLZ, Wohnort", "value": "30163 Hannover", "number": null, "blank": false },
-      { "label": "Vorname des Kindes", "value": "", "number": 1, "blank": true },
-      { "label": "Alter", "value": "", "number": 2, "blank": true },
-      { "label": "Monatsbeitrag", "options": ["15€ (bis 10 Jahre)", "20€ (11-16 Jahre)"], "number": 3, "blank": true },
-      { "label": "Kurstag", "value": "", "number": 4, "blank": true },
-      { "label": "Interessen", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Piotr", "2": "8", "3": "15€ (bis 10 Jahre)", "4": "Samstag", "5": "Malen mit Wasserfarben" }
-  },
-  {
-    "id": 29,
-    "context": "Ihr Freund Karim Benali kommt mit seiner Frau und seinen drei Kindern am Flughafen Frankfurt an und braucht einen Transfer zu seinem Hotel in der Innenstadt. Weil die Familie insgesamt fünf Koffer und zwei Kinderwagen dabei hat, benötigt er ein großes Transferfahrzeug und keinen normalen kleinen PKW, der dafür zu klein wäre. Der Flug landet um 14:30 Uhr, und er bezahlt den Transfer direkt beim Fahrer bar.",
-    "form_title": "Flughafentransfer Frankfurt – Buchungsformular",
-    "fields": [
-      { "label": "Name, Vorname", "value": "Benali, Karim", "number": 0, "blank": false },
-      { "label": "Ankunftszeit", "value": "14:30 Uhr", "number": null, "blank": false },
-      { "label": "Anzahl der Personen", "value": "", "number": 1, "blank": true },
-      { "label": "Davon Kinder", "value": "", "number": 2, "blank": true },
-      { "label": "Fahrzeugart", "options": ["kleiner PKW", "großes Transferfahrzeug"], "number": 3, "blank": true },
-      { "label": "Anzahl der Koffer", "value": "", "number": 4, "blank": true },
-      { "label": "Zahlung", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "5", "2": "3", "3": "großes Transferfahrzeug", "4": "5", "5": "bar" }
-  },
-  {
-    "id": 30,
-    "context": "Ihre Freundin Amina Yusuf, geboren am 9.9.1997, möchte einen Computerkurs an der Volkshochschule Bielefeld besuchen, weil sie sich beruflich neu orientieren und in die IT-Branche wechseln möchte. Weil sie noch nie zuvor programmiert hat, meldet sie sich für den Anfängerkurs an und nicht für den Kurs für Fortgeschrittene. Sie arbeitet aktuell noch als Verkäuferin und kann deshalb nur dienstags und donnerstags am Abend teilnehmen, weil ihr Geschäft bis 18 Uhr geöffnet hat. Sie wohnt in der Detmolder Straße 30, PLZ 33604 Bielefeld.",
-    "form_title": "Volkshochschule Bielefeld – Computerkurs Anmeldung",
-    "fields": [
-      { "label": "Familienname, Vorname", "value": "Yusuf, Amina", "number": 0, "blank": false },
-      { "label": "Geburtsdatum", "value": "9.9.1997", "number": null, "blank": false },
-      { "label": "Straße, Hausnummer", "value": "", "number": 1, "blank": true },
-      { "label": "PLZ, Wohnort", "value": "", "number": 2, "blank": true },
-      { "label": "Beruf", "value": "", "number": 3, "blank": true },
-      { "label": "Kursniveau", "options": ["Anfängerkurs", "Fortgeschrittenenkurs"], "number": 4, "blank": true },
-      { "label": "Kurstage", "value": "", "number": 5, "blank": true }
-    ],
-    "answers": { "1": "Detmolder Straße 30", "2": "33604 Bielefeld", "3": "Verkäuferin", "4": "Anfängerkurs", "5": "Dienstag und Donnerstag" }
-  }
-],
+  schreiben1: [
+    {
+      id: 1,
+      context:
+        "Ihr Freund Ali Hassan kommt aus dem Irak und wohnt jetzt in Berlin. Er ist 28 Jahre alt und arbeitet als Ingenieur. Er möchte sich bei einem Fitnessstudio anmelden. Er kann montags und mittwochs kommen. Er bezahlt lieber mit Überweisung. Seine E-Mail-Adresse ist ali.hassan@gmail.com.",
+      form_title: "Fitnessstudio Aktiv – Anmeldung",
+      fields: [
+        { label: "Name, Vorname", value: "Hassan, Ali", number: 0, blank: false },
+        { label: "Herkunftsland", value: "", number: 1, blank: true },
+        { label: "Alter", value: "", number: 2, blank: true },
+        { label: "Beruf", value: "", number: 3, blank: true },
+        { label: "Trainingstage", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+        { label: "E-Mail", value: "ali.hassan@gmail.com", number: null, blank: false },
+      ],
+      answers: {
+        1: "Irak",
+        2: "28",
+        3: "Ingenieur",
+        4: "Montag und Mittwoch",
+        5: "Überweisung",
+      },
+    },
+    {
+      id: 2,
+      context:
+        "Ihre Freundin Fatima Benali kommt aus Marokko und wohnt in München. Sie ist 32 Jahre alt und von Beruf Ärztin. Sie möchte einen Deutschkurs besuchen. Sie hat am Nachmittag Zeit. Sie hat schon etwas Deutsch gelernt – seit einem Jahr. Ihre Muttersprache ist Arabisch.",
+      form_title: "Sprachschule München – Anmeldung",
+      fields: [
+        { label: "Familienname", value: "Benali", number: 0, blank: false },
+        { label: "Vorname", value: "", number: 1, blank: true },
+        { label: "Geburtsland", value: "", number: 2, blank: true },
+        { label: "Muttersprache", value: "", number: 3, blank: true },
+        { label: "Wie lange Deutsch gelernt?", value: "", number: 4, blank: true },
+        {
+          label: "Kurszeit",
+          options: ["Vormittag", "Nachmittag", "Abend"],
+          number: 5,
+          blank: true,
+        },
+      ],
+      answers: { 1: "Fatima", 2: "Marokko", 3: "Arabisch", 4: "1 Jahr", 5: "Nachmittag" },
+    },
+    {
+      id: 3,
+      context:
+        "Ihr Freund Carlos Mendez kommt aus Mexiko und lebt seit zwei Jahren in Hamburg. Er ist Lehrer und 41 Jahre alt. Er möchte in einem Tennisclub Mitglied werden. Er spielt gerne am Wochenende. Er zahlt bar. Seine Telefonnummer ist 040/7654321.",
+      form_title: "Tennisclub Hamburg Nord – Mitgliedsantrag",
+      fields: [
+        { label: "Name, Vorname", value: "Mendez, Carlos", number: 0, blank: false },
+        { label: "Herkunftsland", value: "", number: 1, blank: true },
+        { label: "Alter", value: "", number: 2, blank: true },
+        { label: "Beruf", value: "", number: 3, blank: true },
+        { label: "Spieltage", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: { 1: "Mexiko", 2: "41", 3: "Lehrer", 4: "Wochenende", 5: "bar" },
+    },
+    {
+      id: 4,
+      context:
+        "Ihre Freundin Priya Sharma kommt aus Indien und wohnt jetzt in Frankfurt. Sie ist 26 Jahre alt und Informatikerin. Sie möchte einen Yogakurs machen. Der Kurs soll abends stattfinden. Sie bezahlt mit Kreditkarte. Ihr Geburtsort ist Mumbai.",
+      form_title: "Yoga Studio Frankfurt – Kursanmeldung",
+      fields: [
+        { label: "Familienname", value: "Sharma", number: 0, blank: false },
+        { label: "Vorname", value: "", number: 1, blank: true },
+        { label: "Geburtsort", value: "", number: 2, blank: true },
+        { label: "Alter", value: "", number: 3, blank: true },
+        { label: "Beruf", value: "", number: 4, blank: true },
+        { label: "Kurszeit", options: ["Morgen", "Mittag", "Abend"], number: 5, blank: true },
+      ],
+      answers: { 1: "Priya", 2: "Mumbai", 3: "26", 4: "Informatikerin", 5: "Abend" },
+    },
+    {
+      id: 5,
+      context:
+        "Ihr Freund Omar Khalil kommt aus Syrien und wohnt in Köln, Beethovenstraße 7. Die Postleitzahl ist 50674. Er ist 35 Jahre alt und arbeitet als Koch. Er möchte einen Schwimmkurs buchen. Er kann nur vormittags kommen. Er bezahlt mit Überweisung.",
+      form_title: "Schwimmschule Köln – Anmeldung",
+      fields: [
+        { label: "Name, Vorname", value: "Khalil, Omar", number: 0, blank: false },
+        { label: "Straße, Hausnummer", value: "", number: 1, blank: true },
+        { label: "PLZ, Wohnort", value: "", number: 2, blank: true },
+        { label: "Beruf", value: "", number: 3, blank: true },
+        { label: "Kurszeit", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: {
+        1: "Beethovenstraße 7",
+        2: "50674 Köln",
+        3: "Koch",
+        4: "Vormittag",
+        5: "Überweisung",
+      },
+    },
+    {
+      id: 6,
+      context:
+        "Ihre Freundin Mei Lin kommt aus China und lebt in Stuttgart. Sie ist am 5. März 1990 in Shanghai geboren. Sie ist Grafikdesignerin. Sie möchte einen Deutschkurs für Fortgeschrittene besuchen. Sie lernt schon seit zwei Jahren Deutsch. Sie hat am Abend Zeit.",
+      form_title: "Deutschinstitut Stuttgart – Kursanmeldung",
+      fields: [
+        { label: "Familienname", value: "Lin", number: 0, blank: false },
+        { label: "Vorname", value: "", number: 1, blank: true },
+        { label: "Geburtsdatum", value: "", number: 2, blank: true },
+        { label: "Geburtsort", value: "", number: 3, blank: true },
+        { label: "Beruf", value: "", number: 4, blank: true },
+        { label: "Wie lange Deutsch gelernt?", value: "", number: 5, blank: true },
+      ],
+      answers: {
+        1: "Mei",
+        2: "5.3.1990",
+        3: "Shanghai",
+        4: "Grafikdesignerin",
+        5: "2 Jahre",
+      },
+    },
+    {
+      id: 7,
+      context:
+        "Ihr Freund Ivan Petrov kommt aus Russland und wohnt in Leipzig, Schillerstraße 12, PLZ 04109. Er ist 45 Jahre alt und arbeitet als Elektriker. Er möchte an einem Tanzkurs teilnehmen. Der Kurs findet freitags statt. Er bezahlt bar.",
+      form_title: "Tanzschule Leipzig – Anmeldung",
+      fields: [
+        { label: "Name, Vorname", value: "Petrov, Ivan", number: 0, blank: false },
+        { label: "Straße, Hausnummer", value: "", number: 1, blank: true },
+        { label: "PLZ, Wohnort", value: "", number: 2, blank: true },
+        { label: "Alter", value: "", number: 3, blank: true },
+        { label: "Beruf", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: {
+        1: "Schillerstraße 12",
+        2: "04109 Leipzig",
+        3: "45",
+        4: "Elektriker",
+        5: "bar",
+      },
+    },
+    {
+      id: 8,
+      context:
+        "Ihre Freundin Amara Diallo kommt aus Guinea und wohnt in Düsseldorf. Sie ist 29 Jahre alt und von Beruf Krankenpflegerin. Sie möchte sich für einen Kochkurs anmelden. Der Kurs soll samstags sein. Ihre Muttersprache ist Französisch. Sie spricht auch etwas Englisch.",
+      form_title: "Kochschule Düsseldorf – Anmeldung",
+      fields: [
+        { label: "Familienname", value: "Diallo", number: 0, blank: false },
+        { label: "Herkunftsland", value: "", number: 1, blank: true },
+        { label: "Beruf", value: "", number: 2, blank: true },
+        { label: "Muttersprache", value: "", number: 3, blank: true },
+        { label: "Andere Sprachen", value: "", number: 4, blank: true },
+        { label: "Kurstag", value: "", number: 5, blank: true },
+      ],
+      answers: {
+        1: "Guinea",
+        2: "Krankenpflegerin",
+        3: "Französisch",
+        4: "Englisch",
+        5: "Samstag",
+      },
+    },
+    {
+      id: 9,
+      context:
+        "Ihr Freund Ahmed Al-Farsi kommt aus dem Oman und wohnt in Bremen, Feldstraße 3. Die Postleitzahl ist 28195. Er ist Buchhalter und 38 Jahre alt. Er möchte Mitglied in einem Fußballverein werden. Er spielt dienstags und donnerstags. Er bezahlt mit Kreditkarte.",
+      form_title: "SV Bremen West – Mitgliedsanmeldung",
+      fields: [
+        { label: "Name, Vorname", value: "Al-Farsi, Ahmed", number: 0, blank: false },
+        { label: "Straße, Hausnummer", value: "", number: 1, blank: true },
+        { label: "PLZ, Wohnort", value: "", number: 2, blank: true },
+        { label: "Beruf", value: "", number: 3, blank: true },
+        { label: "Trainingstage", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: {
+        1: "Feldstraße 3",
+        2: "28195 Bremen",
+        3: "Buchhalter",
+        4: "Dienstag und Donnerstag",
+        5: "Kreditkarte",
+      },
+    },
+    {
+      id: 10,
+      context:
+        "Ihre Freundin Sofia Rossi kommt aus Italien und wohnt in Hannover. Sie ist am 22. Juli 1988 in Rom geboren. Sie arbeitet als Architektin. Sie möchte einen Malkurs besuchen. Der Kurs soll am Wochenende sein. Sie bezahlt bar.",
+      form_title: "Kunstschule Hannover – Kursanmeldung",
+      fields: [
+        { label: "Familienname", value: "Rossi", number: 0, blank: false },
+        { label: "Vorname", value: "", number: 1, blank: true },
+        { label: "Geburtsdatum", value: "", number: 2, blank: true },
+        { label: "Geburtsort", value: "", number: 3, blank: true },
+        { label: "Beruf", value: "", number: 4, blank: true },
+        { label: "Kurstag", value: "", number: 5, blank: true },
+      ],
+      answers: { 1: "Sofia", 2: "22.7.1988", 3: "Rom", 4: "Architektin", 5: "Wochenende" },
+    },
+    {
+      id: 11,
+      context:
+        "Ihr Freund Kenji Tanaka kommt aus Japan und wohnt in Nürnberg, Mozartstraße 8, PLZ 90461. Er ist 33 Jahre alt und arbeitet als Übersetzer. Er möchte einen Gitarrenkurs machen. Er hat mittwochs und freitags Zeit. Er bezahlt mit Überweisung.",
+      form_title: "Musikschule Nürnberg – Anmeldung",
+      fields: [
+        { label: "Name, Vorname", value: "Tanaka, Kenji", number: 0, blank: false },
+        { label: "Straße, Hausnummer", value: "", number: 1, blank: true },
+        { label: "PLZ, Wohnort", value: "", number: 2, blank: true },
+        { label: "Alter", value: "", number: 3, blank: true },
+        { label: "Beruf", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: {
+        1: "Mozartstraße 8",
+        2: "90461 Nürnberg",
+        3: "33",
+        4: "Übersetzer",
+        5: "Überweisung",
+      },
+    },
+    {
+      id: 12,
+      context:
+        "Ihre Freundin Nadia Kovač kommt aus Kroatien und wohnt in Dresden. Sie ist 27 Jahre alt und Studentin. Sie möchte an einer Busreise nach Wien teilnehmen. Die Reise findet am 15. August statt. Sie fährt mit einer Begleitperson. Sie bezahlt mit Kreditkarte.",
+      form_title: "Reisebüro Dresden – Busreise Anmeldung",
+      fields: [
+        { label: "Familienname", value: "Kovač", number: 0, blank: false },
+        { label: "Herkunftsland", value: "", number: 1, blank: true },
+        { label: "Alter", value: "", number: 2, blank: true },
+        { label: "Beruf/Status", value: "", number: 3, blank: true },
+        { label: "Anzahl der Personen", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: { 1: "Kroatien", 2: "27", 3: "Studentin", 4: "2", 5: "Kreditkarte" },
+    },
+    {
+      id: 13,
+      context:
+        "Ihr Freund Lukas Bauer kommt aus Österreich und wohnt in Mainz, Gartenweg 5, PLZ 55116. Er ist 50 Jahre alt und von Beruf Fahrer. Er möchte einem Schwimmverein beitreten. Er trainiert montags und donnerstags. Er bezahlt bar.",
+      form_title: "Schwimmverein Mainz – Mitgliedsantrag",
+      fields: [
+        { label: "Name, Vorname", value: "Bauer, Lukas", number: 0, blank: false },
+        { label: "Straße, Hausnummer", value: "", number: 1, blank: true },
+        { label: "PLZ, Wohnort", value: "", number: 2, blank: true },
+        { label: "Alter", value: "", number: 3, blank: true },
+        { label: "Beruf", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: { 1: "Gartenweg 5", 2: "55116 Mainz", 3: "50", 4: "Fahrer", 5: "bar" },
+    },
+    {
+      id: 14,
+      context:
+        "Ihre Freundin Zara Ahmed kommt aus Pakistan und wohnt in Augsburg. Sie ist am 10. Januar 1995 in Karachi geboren. Sie ist Apothekerin. Sie möchte einen Englischkurs besuchen. Ihr Englisch ist schon gut – sie lernt Englisch seit fünf Jahren. Sie hat vormittags Zeit.",
+      form_title: "Sprachzentrum Augsburg – Kursanmeldung",
+      fields: [
+        { label: "Familienname", value: "Ahmed", number: 0, blank: false },
+        { label: "Vorname", value: "", number: 1, blank: true },
+        { label: "Geburtsdatum", value: "", number: 2, blank: true },
+        { label: "Geburtsort", value: "", number: 3, blank: true },
+        { label: "Beruf", value: "", number: 4, blank: true },
+        {
+          label: "Kurszeit",
+          options: ["Vormittag", "Nachmittag", "Abend"],
+          number: 5,
+          blank: true,
+        },
+      ],
+      answers: { 1: "Zara", 2: "10.1.1995", 3: "Karachi", 4: "Apothekerin", 5: "Vormittag" },
+    },
+    {
+      id: 15,
+      context:
+        "Ihr Freund David Osei kommt aus Ghana und lebt in Bonn, Rheinstraße 19, PLZ 53111. Er ist 31 Jahre alt und arbeitet als Sozialarbeiter. Er möchte sich für einen Basketballverein anmelden. Er spielt dienstags und samstags. Er bezahlt mit Überweisung.",
+      form_title: "Basketball Bonn – Mitgliedsanmeldung",
+      fields: [
+        { label: "Name, Vorname", value: "Osei, David", number: 0, blank: false },
+        { label: "Straße, Hausnummer", value: "", number: 1, blank: true },
+        { label: "PLZ, Wohnort", value: "", number: 2, blank: true },
+        { label: "Beruf", value: "", number: 3, blank: true },
+        { label: "Trainingstage", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: {
+        1: "Rheinstraße 19",
+        2: "53111 Bonn",
+        3: "Sozialarbeiter",
+        4: "Dienstag und Samstag",
+        5: "Überweisung",
+      },
+    },
+    {
+      id: 16,
+      context:
+        "Ihre Freundin Lena Müller kommt aus der Schweiz und wohnt in Mannheim. Sie ist am 3. September 1987 in Zürich geboren. Sie ist Lehrerin. Sie möchte einen Schwimmkurs für Erwachsene buchen. Der Kurs findet mittwochs statt. Sie bezahlt bar.",
+      form_title: "Schwimmbad Mannheim – Kursanmeldung",
+      fields: [
+        { label: "Familienname", value: "Müller", number: 0, blank: false },
+        { label: "Vorname", value: "", number: 1, blank: true },
+        { label: "Geburtsdatum", value: "", number: 2, blank: true },
+        { label: "Geburtsort", value: "", number: 3, blank: true },
+        { label: "Beruf", value: "", number: 4, blank: true },
+        { label: "Kurstag", value: "", number: 5, blank: true },
+      ],
+      answers: { 1: "Lena", 2: "3.9.1987", 3: "Zürich", 4: "Lehrerin", 5: "Mittwoch" },
+    },
+    {
+      id: 17,
+      context:
+        "Ihr Freund Rafael Santos kommt aus Brasilien und wohnt in Wiesbaden, Parkstraße 22, PLZ 65183. Er ist 36 Jahre alt und Journalist. Er möchte einen Fotokurs machen. Er hat samstags Zeit. Er bezahlt mit Kreditkarte. Seine Telefonnummer ist 0611/998877.",
+      form_title: "Fotoakademie Wiesbaden – Anmeldung",
+      fields: [
+        { label: "Name, Vorname", value: "Santos, Rafael", number: 0, blank: false },
+        { label: "Straße, Hausnummer", value: "", number: 1, blank: true },
+        { label: "PLZ, Wohnort", value: "", number: 2, blank: true },
+        { label: "Beruf", value: "", number: 3, blank: true },
+        { label: "Kurstag", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: {
+        1: "Parkstraße 22",
+        2: "65183 Wiesbaden",
+        3: "Journalist",
+        4: "Samstag",
+        5: "Kreditkarte",
+      },
+    },
+    {
+      id: 18,
+      context:
+        "Ihre Freundin Yasmin El-Sayed kommt aus Ägypten und wohnt in Karlsruhe. Sie ist 24 Jahre alt und Studentin der Medizin. Sie möchte einen Deutschkurs besuchen. Sie ist Anfängerin – sie hat noch kein Deutsch gelernt. Ihre Muttersprache ist Arabisch, und sie spricht auch Französisch. Sie hat nachmittags Zeit.",
+      form_title: "Sprachschule Karlsruhe – Anmeldung",
+      fields: [
+        { label: "Familienname", value: "El-Sayed", number: 0, blank: false },
+        { label: "Herkunftsland", value: "", number: 1, blank: true },
+        { label: "Alter", value: "", number: 2, blank: true },
+        { label: "Muttersprache", value: "", number: 3, blank: true },
+        { label: "Andere Sprachen", value: "", number: 4, blank: true },
+        {
+          label: "Kurszeit",
+          options: ["Vormittag", "Nachmittag", "Abend"],
+          number: 5,
+          blank: true,
+        },
+      ],
+      answers: { 1: "Ägypten", 2: "24", 3: "Arabisch", 4: "Französisch", 5: "Nachmittag" },
+    },
+    {
+      id: 19,
+      context:
+        "Ihr Freund Mikael Lindqvist kommt aus Schweden und wohnt in Hamburg, Alsterweg 6, PLZ 20099. Er ist 42 Jahre alt und Ingenieur. Er macht mit seiner Frau und zwei Kindern Urlaub in Bayern. Er bucht eine Bootsfahrt auf dem Chiemsee. Die Fahrt ist am Sonntag. Er bezahlt mit Kreditkarte.",
+      form_title: "Chiemsee Schifffahrt – Buchungsformular",
+      fields: [
+        { label: "Name, Vorname", value: "Lindqvist, Mikael", number: 0, blank: false },
+        { label: "Straße, Hausnummer", value: "", number: 1, blank: true },
+        { label: "PLZ, Wohnort", value: "", number: 2, blank: true },
+        { label: "Beruf", value: "", number: 3, blank: true },
+        { label: "Anzahl der Personen", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: {
+        1: "Alsterweg 6",
+        2: "20099 Hamburg",
+        3: "Ingenieur",
+        4: "4",
+        5: "Kreditkarte",
+      },
+    },
+    {
+      id: 20,
+      context:
+        "Ihre Freundin Amina Traoré kommt aus Mali und wohnt in Dortmund. Sie ist am 8. Februar 1991 in Bamako geboren. Sie ist Schneiderin. Sie möchte einem Tanzverein beitreten. Sie tanzt gerne abends. Ihre Muttersprache ist Bambara. Sie spricht auch Französisch.",
+      form_title: "Tanzverein Dortmund – Anmeldung",
+      fields: [
+        { label: "Familienname", value: "Traoré", number: 0, blank: false },
+        { label: "Vorname", value: "", number: 1, blank: true },
+        { label: "Geburtsdatum", value: "", number: 2, blank: true },
+        { label: "Geburtsort", value: "", number: 3, blank: true },
+        { label: "Beruf", value: "", number: 4, blank: true },
+        {
+          label: "Trainingszeit",
+          options: ["Vormittag", "Nachmittag", "Abend"],
+          number: 5,
+          blank: true,
+        },
+      ],
+      answers: { 1: "Amina", 2: "8.2.1991", 3: "Bamako", 4: "Schneiderin", 5: "Abend" },
+    },
+    {
+      id: 21,
+      context:
+        "Ihr Freund Arjun Nair kommt aus Indien und wohnt in Freiburg, Sonnenhalde 11, PLZ 79100. Er ist 29 Jahre alt und Softwareentwickler. Er möchte einen Sprachkurs auf Spanisch besuchen. Er hat schon Spanisch gelernt – seit sechs Monaten. Er kann nur abends kommen.",
+      form_title: "Volkshochschule Freiburg – Kursanmeldung",
+      fields: [
+        { label: "Name, Vorname", value: "Nair, Arjun", number: 0, blank: false },
+        { label: "Straße, Hausnummer", value: "", number: 1, blank: true },
+        { label: "PLZ, Wohnort", value: "", number: 2, blank: true },
+        { label: "Beruf", value: "", number: 3, blank: true },
+        { label: "Wie lange Spanisch gelernt?", value: "", number: 4, blank: true },
+        {
+          label: "Kurszeit",
+          options: ["Vormittag", "Nachmittag", "Abend"],
+          number: 5,
+          blank: true,
+        },
+      ],
+      answers: {
+        1: "Sonnenhalde 11",
+        2: "79100 Freiburg",
+        3: "Softwareentwickler",
+        4: "6 Monate",
+        5: "Abend",
+      },
+    },
+    {
+      id: 22,
+      context:
+        "Ihre Freundin Elena Popescu kommt aus Rumänien und wohnt in Bielefeld. Sie ist 37 Jahre alt und Friseurin. Sie möchte eine Stadtführung in Bielefeld buchen. Sie macht die Tour mit ihrer Tochter – also zwei Personen. Die Tour ist am Samstag. Sie bezahlt bar.",
+      form_title: "Touristikbüro Bielefeld – Buchungsformular",
+      fields: [
+        { label: "Familienname", value: "Popescu", number: 0, blank: false },
+        { label: "Herkunftsland", value: "", number: 1, blank: true },
+        { label: "Alter", value: "", number: 2, blank: true },
+        { label: "Beruf", value: "", number: 3, blank: true },
+        { label: "Anzahl der Personen", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: { 1: "Rumänien", 2: "37", 3: "Friseurin", 4: "2", 5: "bar" },
+    },
+    {
+      id: 23,
+      context:
+        "Ihr Freund Tariq Mahmoud kommt aus dem Sudan und wohnt in Münster, Hansaring 4, PLZ 48155. Er ist 44 Jahre alt und arbeitet als Mechaniker. Er möchte einen Fahrradkurs für Erwachsene machen. Der Kurs ist sonntagmorgens. Er bezahlt mit Überweisung.",
+      form_title: "Fahrradschule Münster – Anmeldung",
+      fields: [
+        { label: "Name, Vorname", value: "Mahmoud, Tariq", number: 0, blank: false },
+        { label: "Straße, Hausnummer", value: "", number: 1, blank: true },
+        { label: "PLZ, Wohnort", value: "", number: 2, blank: true },
+        { label: "Alter", value: "", number: 3, blank: true },
+        { label: "Beruf", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: {
+        1: "Hansaring 4",
+        2: "48155 Münster",
+        3: "44",
+        4: "Mechaniker",
+        5: "Überweisung",
+      },
+    },
+    {
+      id: 24,
+      context:
+        "Ihre Freundin Hana Novák kommt aus Tschechien und wohnt in Erfurt. Sie ist am 14. Juni 1993 in Prag geboren. Sie ist Buchhalterin. Sie möchte einen Pilates-Kurs machen. Sie kann montags und freitags kommen. Sie bezahlt mit Kreditkarte.",
+      form_title: "Sportzentrum Erfurt – Kursanmeldung",
+      fields: [
+        { label: "Familienname", value: "Novák", number: 0, blank: false },
+        { label: "Vorname", value: "", number: 1, blank: true },
+        { label: "Geburtsdatum", value: "", number: 2, blank: true },
+        { label: "Geburtsort", value: "", number: 3, blank: true },
+        { label: "Beruf", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: { 1: "Hana", 2: "14.6.1993", 3: "Prag", 4: "Buchhalterin", 5: "Kreditkarte" },
+    },
+    {
+      id: 25,
+      context:
+        "Ihr Freund Samuel Abebe kommt aus Äthiopien und wohnt in Rostock, Strandweg 2, PLZ 18055. Er ist 39 Jahre alt und Kellner. Er möchte an einem Deutschkurs teilnehmen. Er ist kein Anfänger – er lernt Deutsch schon seit einem halben Jahr. Er hat nachmittags Zeit.",
+      form_title: "Sprachschule Rostock – Anmeldung",
+      fields: [
+        { label: "Name, Vorname", value: "Abebe, Samuel", number: 0, blank: false },
+        { label: "Straße, Hausnummer", value: "", number: 1, blank: true },
+        { label: "PLZ, Wohnort", value: "", number: 2, blank: true },
+        { label: "Beruf", value: "", number: 3, blank: true },
+        { label: "Wie lange Deutsch gelernt?", value: "", number: 4, blank: true },
+        {
+          label: "Kurszeit",
+          options: ["Vormittag", "Nachmittag", "Abend"],
+          number: 5,
+          blank: true,
+        },
+      ],
+      answers: {
+        1: "Strandweg 2",
+        2: "18055 Rostock",
+        3: "Kellner",
+        4: "6 Monate",
+        5: "Nachmittag",
+      },
+    },
+    {
+      id: 26,
+      context:
+        "Ihre Freundin Layla Mansour kommt aus dem Libanon und wohnt in Heidelberg. Sie ist am 19. Oktober 1990 in Beirut geboren. Sie ist Apothekerin. Sie möchte mit ihrem Mann und ihren drei Kindern eine Schifffahrt auf dem Rhein machen. Sie bezahlt bar.",
+      form_title: "Rhein-Schifffahrt Heidelberg – Buchungsformular",
+      fields: [
+        { label: "Familienname", value: "Mansour", number: 0, blank: false },
+        { label: "Vorname", value: "", number: 1, blank: true },
+        { label: "Geburtsdatum", value: "", number: 2, blank: true },
+        { label: "Geburtsort", value: "", number: 3, blank: true },
+        { label: "Anzahl der Personen", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: { 1: "Layla", 2: "19.10.1990", 3: "Beirut", 4: "5", 5: "bar" },
+    },
+    {
+      id: 27,
+      context:
+        "Ihr Freund Jorge Fernandez kommt aus Spanien und wohnt in Kiel, Fördestraße 7, PLZ 24103. Er ist 48 Jahre alt und von Beruf Pilot. Er möchte einem Volleyballverein beitreten. Er trainiert montags und mittwochs. Er bezahlt mit Kreditkarte.",
+      form_title: "Volleyballverein Kiel – Mitgliedsanmeldung",
+      fields: [
+        { label: "Name, Vorname", value: "Fernandez, Jorge", number: 0, blank: false },
+        { label: "Straße, Hausnummer", value: "", number: 1, blank: true },
+        { label: "PLZ, Wohnort", value: "", number: 2, blank: true },
+        { label: "Alter", value: "", number: 3, blank: true },
+        { label: "Beruf", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: { 1: "Fördestraße 7", 2: "24103 Kiel", 3: "48", 4: "Pilot", 5: "Kreditkarte" },
+    },
+    {
+      id: 28,
+      context:
+        "Ihre Freundin Nour Al-Rashid kommt aus Jordanien und wohnt in Saarbrücken. Sie ist 30 Jahre alt und Zahnärztin. Sie möchte einen Malkurs an der Volkshochschule besuchen. Sie hat donnerstags Zeit. Sie bezahlt mit Überweisung. Ihre E-Mail ist nour.rashid@web.de.",
+      form_title: "VHS Saarbrücken – Kursanmeldung",
+      fields: [
+        { label: "Familienname", value: "Al-Rashid", number: 0, blank: false },
+        { label: "Herkunftsland", value: "", number: 1, blank: true },
+        { label: "Alter", value: "", number: 2, blank: true },
+        { label: "Beruf", value: "", number: 3, blank: true },
+        { label: "Kurstag", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: {
+        1: "Jordanien",
+        2: "30",
+        3: "Zahnärztin",
+        4: "Donnerstag",
+        5: "Überweisung",
+      },
+    },
+    {
+      id: 29,
+      context:
+        "Ihr Freund Dawit Girma kommt aus Eritrea und wohnt in Potsdam, Lindenallee 9, PLZ 14467. Er ist 34 Jahre alt und Pfleger. Er möchte einen Computerkurs machen. Er ist Anfänger. Er kann dienstags und donnerstags kommen. Er bezahlt bar.",
+      form_title: "Computerakademie Potsdam – Anmeldung",
+      fields: [
+        { label: "Name, Vorname", value: "Girma, Dawit", number: 0, blank: false },
+        { label: "Straße, Hausnummer", value: "", number: 1, blank: true },
+        { label: "PLZ, Wohnort", value: "", number: 2, blank: true },
+        { label: "Beruf", value: "", number: 3, blank: true },
+        { label: "Kurstage", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: {
+        1: "Lindenallee 9",
+        2: "14467 Potsdam",
+        3: "Pfleger",
+        4: "Dienstag und Donnerstag",
+        5: "bar",
+      },
+    },
+    {
+      id: 30,
+      context:
+        "Ihre Freundin Maria Gonzalez kommt aus Kolumbien und wohnt in Regensburg. \n      Sie ist am 2. April 1985 in Bogotá geboren. Sie ist Krankenschwester.\n       Sie möchte an einem Ausflug in die Alpen teilnehmen. \n       Sie fährt mit ihrem Mann und ihren zwei Kindern – also vier Personen. \n       Sie bezahlt mit Kreditkarte.",
+      form_title: "Reiseverein Regensburg – Ausflug Anmeldung",
+      fields: [
+        { label: "Familienname", value: "Gonzalez", number: 0, blank: false },
+        { label: "Vorname", value: "", number: 1, blank: true },
+        { label: "Geburtsdatum", value: "", number: 2, blank: true },
+        { label: "Geburtsort", value: "", number: 3, blank: true },
+        { label: "Anzahl der Personen", value: "", number: 4, blank: true },
+        { label: "Zahlung", value: "", number: 5, blank: true },
+      ],
+      answers: { 1: "Maria", 2: "2.4.1985", 3: "Bogotá", 4: "4", 5: "Kreditkarte" },
+    },
+  ],
   schreiben2: [
     {
       id: 1,
@@ -20049,268 +20158,18 @@ const D = {
       exam_years: [],
       tags: ["birthday", "restaurant", "invitation", "ihr form", "bring something"],
     },
-    {
-  id: 45,
-  module: "Schreiben Teil 2",
-  type: "Email",
-  topic: "Buying Friend's Refrigerator",
-  source: "New Questions",
-  scenario: "Ihr Freund möchte seinen Kühlschrank verkaufen. Sie haben keinen Kühlschrank und möchten ihn vielleicht kaufen. Schreiben Sie drei Fragen.",
-  required_points: [
-    "Ob Sie den Kühlschrank kaufen können?",
-    "Wie viel der Kühlschrank kostet?",
-    "Wie alt der Kühlschrank ist?"
-  ],
-  salutation: "Lieber [Name],",
-  model_answer: "ich habe gehört, dass du deinen Kühlschrank verkaufen möchtest. Ich brauche einen Kühlschrank – kann ich ihn kaufen? Wie viel kostet er und wie alt ist er?",
-  closing: "Viele Grüße,\n[Name]",
-  form: "informal_du",
-  difficulty: "A1",
-  frequency: "★★★",
-  exam_years: [],
-  tags: ["refrigerator", "buying", "friend", "questions", "informal"]
-},
-    {
-  id: 46,
-  module: "Schreiben Teil 2",
-  type: "Email",
-  topic: "Meeting Friend on Sunday Evening After Work",
-  source: "New Questions",
-  scenario: "Sie möchten Ihren Freund / Ihre Freundin treffen. Sie haben die ganze Woche Arbeit. Schreiben Sie eine E-Mail für Sonntag Abend.",
-  required_points: [
-    "Warum schreiben Sie?",
-    "Wann und wo treffen Sie sich?",
-    "Was machen Sie zusammen?"
-  ],
-  salutation: "Liebe/r [Name],",
-  model_answer: "ich habe diese Woche viel Arbeit und kann dich leider nicht früher treffen. Können wir uns am Sonntag Abend um 18 Uhr treffen? Wir können zusammen essen gehen. Ich freue mich auf dich!",
-  closing: "Viele Grüße,\n[Name]",
-  form: "informal_du",
-  difficulty: "A1",
-  frequency: "★★★",
-  exam_years: [],
-  tags: ["meet", "friend", "Sunday", "evening", "work", "informal"]
-},
-    {
-  id: 47,
-  module: "Schreiben Teil 2",
-  type: "Letter",
-  topic: "Request for German Class in Germany",
-  source: "New Questions",
-  scenario: "Sie möchten einen Deutschkurs in Deutschland besuchen. Schreiben Sie an die Kursleiterin.",
-  required_points: [
-    "Warum schreiben Sie?",
-    "Wann möchten Sie den Kurs beginnen?",
-    "Bitten Sie um Informationen über Kurszeiten und Preise."
-  ],
-  salutation: "Sehr geehrte Frau [Name],",
-  model_answer: "ich möchte gerne einen Deutschkurs bei Ihnen in Deutschland besuchen. Ich möchte im September beginnen. Könnten Sie mir bitte Informationen über die Kurszeiten und die Kosten schicken? Ich warte auf Ihre Antwort.",
-  closing: "Mit freundlichen Grüßen,\n[Name]",
-  form: "formal_Sie",
-  difficulty: "A1",
-  frequency: "★★★★",
-  exam_years: [],
-  tags: ["German course", "Germany", "female teacher", "formal", "enquiry"]
-},
-    {
-  id: 48,
-  module: "Schreiben Teil 2",
-  type: "Email",
-  topic: "Offering Refrigerator to Friend",
-  source: "New Questions",
-  scenario: "Sie haben einen Kühlschrank und möchten ihn nicht mehr. Ihr Freund / Ihre Freundin braucht einen Kühlschrank. Schreiben Sie eine E-Mail.",
-  required_points: [
-    "Warum schreiben Sie?",
-    "Wann kann er/sie den Kühlschrank abholen?",
-    "Wie groß ist der Kühlschrank?"
-  ],
-  salutation: "Liebe/r [Name],",
-  model_answer: "ich habe noch einen Kühlschrank zu Hause und brauche ihn nicht mehr. Möchtest du ihn haben? Er ist groß und funktioniert sehr gut. Du kannst ihn am Wochenende abholen.",
-  closing: "Viele Grüße,\n[Name]",
-  form: "informal_du",
-  difficulty: "A1",
-  frequency: "★★★",
-  exam_years: [],
-  tags: ["refrigerator", "offer", "friend", "informal", "gift"]
-},
-    {
-  id: 49,
-  module: "Schreiben Teil 2",
-  type: "Email",
-  topic: "Friend on a Trip – Asking If They Returned",
-  source: "New Questions",
-  scenario: "Sie möchten Ihren Freund / Ihre Freundin treffen, aber er/sie ist auf Reise. Schreiben Sie eine E-Mail.",
-  required_points: [
-    "Warum schreiben Sie?",
-    "Fragen Sie: Ist er/sie schon zurück?",
-    "Wann können Sie sich treffen?"
-  ],
-  salutation: "Liebe/r [Name],",
-  model_answer: "ich wollte dich letzte Woche treffen, aber du warst auf Reise. Bist du schon wieder zu Hause? Ich würde dich gern bald sehen. Wann hast du Zeit für ein Treffen?",
-  closing: "Viele Grüße,\n[Name]",
-  form: "informal_du",
-  difficulty: "A1",
-  frequency: "★★★",
-  exam_years: [],
-  tags: ["meet", "trip", "friend", "returned", "informal"]
-},
-    {
-  id: 50,
-  module: "Schreiben Teil 2",
-  type: "Email",
-  topic: "Moving to a New City – Inform Friend",
-  source: "New Questions",
-  scenario: "Sie ziehen in eine neue Stadt um. Schreiben Sie Ihrer Freundin eine E-Mail.",
-  required_points: [
-    "Warum schreiben Sie?",
-    "Sagen Sie: Sie schicken die neue Adresse später.",
-    "Fragen Sie: Wann kommt die Freundin Sie besuchen?"
-  ],
-  salutation: "Liebe [Name],",
-  model_answer: "ich ziehe nächste Woche in eine neue Stadt um – ich bin sehr aufgeregt! Ich schicke dir meine neue Adresse bald per E-Mail. Wann kannst du mich besuchen kommen? Ich freue mich schon!",
-  closing: "Herzliche Grüße,\n[Name]",
-  form: "informal_du",
-  difficulty: "A1",
-  frequency: "★★★",
-  exam_years: [],
-  tags: ["moving", "new city", "address", "visit", "friend", "informal"]
-},
-    {
-  id: 51,
-  module: "Schreiben Teil 2",
-  type: "Email",
-  topic: "Cannot Attend Friend's Birthday – Have a Gift",
-  source: "New Questions",
-  scenario: "Ihre Freundin hat Sie zu ihrer Geburtstagsparty eingeladen, aber Sie können nicht kommen. Sie haben ein Geschenk für sie. Schreiben Sie eine E-Mail.",
-  required_points: [
-    "Warum schreiben Sie?",
-    "Warum können Sie nicht kommen?",
-    "Sagen Sie: Sie haben ein Geschenk für sie."
-  ],
-  salutation: "Liebe [Name],",
-  model_answer: "vielen Dank für deine Einladung zur Geburtstagsparty! Leider kann ich nicht kommen, weil ich krank bin. Ich habe aber ein Geschenk für dich. Wann kann ich es dir geben?",
-  closing: "Liebe Grüße,\n[Name]",
-  form: "informal_du",
-  difficulty: "A1",
-  frequency: "★★★★",
-  exam_years: [],
-  tags: ["birthday", "decline", "gift", "friend", "informal", "can't attend"]
-},
-    {
-  id: 52,
-  module: "Schreiben Teil 2",
-  type: "Email",
-  topic: "Inviting Friend for Dinner – Cooking Tonight",
-  source: "New Questions",
-  scenario: "Sie möchten Ihren Freund / Ihre Freundin zum Essen einladen. Sie kochen heute Abend für ihn/sie. Schreiben Sie eine E-Mail.",
-  required_points: [
-    "Warum schreiben Sie?",
-    "Sagen Sie, was Sie kochen.",
-    "Fragen Sie, wann Ihr Freund / Ihre Freundin kommen kann."
-  ],
-  salutation: "Liebe/r [Name],",
-  model_answer: "ich möchte dich heute Abend zum Essen einladen! Ich koche Pasta mit Tomatensoße – das schmeckt sehr lecker. Wann kannst du kommen? Ich warte auf deine Antwort!",
-  closing: "Viele Grüße,\n[Name]",
-  form: "informal_du",
-  difficulty: "A1",
-  frequency: "★★★★",
-  exam_years: [],
-  tags: ["dinner", "cooking", "invitation", "friend", "informal"]
-},
-    {
-  id: 53,
-  module: "Schreiben Teil 2",
-  type: "Email",
-  topic: "Cannot Attend Party – Gift Ready – Ask When to Meet",
-  source: "New Questions",
-  scenario: "Ihr Freund / Ihre Freundin macht eine Party, aber Sie können nicht kommen. Sie haben ein Geschenk. Schreiben Sie eine E-Mail.",
-  required_points: [
-    "Warum können Sie nicht kommen?",
-    "Sagen Sie: Sie haben ein Geschenk.",
-    "Fragen Sie: Wann können Sie sich treffen?"
-  ],
-  salutation: "Liebe/r [Name],",
-  model_answer: "leider kann ich nicht zu deiner Party kommen, weil ich arbeiten muss. Es tut mir sehr leid! Ich habe ein Geschenk für dich. Wann können wir uns treffen, damit ich es dir geben kann?",
-  closing: "Viele Grüße,\n[Name]",
-  form: "informal_du",
-  difficulty: "A1",
-  frequency: "★★★",
-  exam_years: [],
-  tags: ["party", "decline", "gift", "meet", "friend", "informal"]
-},
-    {
-  id: 54,
-  module: "Schreiben Teil 2",
-  type: "Email",
-  topic: "New Job Celebration Party – Invite Friends",
-  source: "New Questions",
-  scenario: "Sie haben eine neue Stelle bekommen und möchten eine Party machen. Schreiben Sie an Ihre Freunde Susanne und Paul.",
-  required_points: [
-    "Warum schreiben Sie?",
-    "Wann und wo ist die Party?",
-    "Was sollen sie mitbringen?"
-  ],
-  salutation: "Liebe Susanne und lieber Paul,",
-  model_answer: "ich habe eine neue Stelle bekommen und möchte das feiern! Ich mache am Samstag um 19 Uhr eine Party bei mir zu Hause. Könnt ihr bitte etwas zu trinken mitbringen? Ich freue mich auf euch!",
-  closing: "Liebe Grüße,\n[Name]",
-  form: "informal_ihr",
-  difficulty: "A1",
-  frequency: "★★★★",
-  exam_years: [],
-  tags: ["new job", "celebration", "party", "invitation", "friends", "ihr form"]
-},
   ],
   sprechen1: [
-    { id: 1, category: "Name", question_de: "Wie heißen Sie?", question_en: "What is your name?", answer_de: "Ich heiße Kamalesh.", answer_en: "My name is Kamalesh." },
-    { id: 2, category: "Name", question_de: "Wie ist Ihr Vorname?", question_en: "What is your first name?", answer_de: "Mein Vorname ist Kamalesh.", answer_en: "My first name is Kamalesh." },
-    { id: 3, category: "Name", question_de: "Wie ist Ihr Nachname?", question_en: "What is your last name?", answer_de: "Mein Nachname ist Kumar.", answer_en: "My last name is Kumar." },
-    { id: 4, category: "Land", question_de: "Woher kommen Sie?", question_en: "Where are you from?", answer_de: "Ich komme aus Indien.", answer_en: "I come from India." },
-    { id: 5, category: "Wohnort", question_de: "Wo wohnen Sie?", question_en: "Where do you live?", answer_de: "Ich wohne in Chennai.", answer_en: "I live in Chennai." },
-    { id: 6, category: "Wohnort", question_de: "Wie ist Ihre Adresse?", question_en: "What is your address?", answer_de: "Meine Adresse ist Hauptstraße 12, Chennai.", answer_en: "My address is Hauptstraße 12, Chennai." },
-    { id: 7, category: "Alter", question_de: "Wie alt sind Sie?", question_en: "How old are you?", answer_de: "Ich bin neunzehn Jahre alt.", answer_en: "I am nineteen years old." },
-    { id: 8, category: "Alter", question_de: "Wann haben Sie Geburtstag?", question_en: "When is your birthday?", answer_de: "Mein Geburtstag ist am 15. März.", answer_en: "My birthday is on the 15th of March." },
-    { id: 9, category: "Land", question_de: "Wo sind Sie geboren?", question_en: "Where were you born?", answer_de: "Ich bin in Chennai geboren.", answer_en: "I was born in Chennai." },
-    { id: 10, category: "Sprachen", question_de: "Welche Sprachen sprechen Sie?", question_en: "Which languages do you speak?", answer_de: "Ich spreche Tamil, Englisch und ein bisschen Deutsch.", answer_en: "I speak Tamil, English and a little German." },
-    { id: 11, category: "Hobby", question_de: "Was sind Ihre Hobbys?", question_en: "What are your hobbies?", answer_de: "Meine Hobbys sind Lesen und Programmieren.", answer_en: "My hobbies are reading and programming." },
-    { id: 12, category: "Hobby", question_de: "Was machen Sie gern in Ihrer Freizeit?", question_en: "What do you like to do in your free time?", answer_de: "In meiner Freizeit lerne ich gern Deutsch und spiele Fußball.", answer_en: "In my free time I like learning German and playing football." },
-    { id: 13, category: "Beruf", question_de: "Was studieren Sie?", question_en: "What do you study?", answer_de: "Ich studiere Informatik.", answer_en: "I study computer science." },
-    { id: 14, category: "Beruf", question_de: "Wo studieren Sie?", question_en: "Where do you study?", answer_de: "Ich studiere am CIT in Chennai.", answer_en: "I study at CIT in Chennai." },
-    { id: 15, category: "Beruf", question_de: "In welchem Semester sind Sie?", question_en: "Which semester are you in?", answer_de: "Ich bin im zweiten Semester.", answer_en: "I am in the second semester." },
-    { id: 16, category: "Beruf", question_de: "Was möchten Sie später werden?", question_en: "What do you want to become later?", answer_de: "Ich möchte später Softwareentwickler werden.", answer_en: "I want to become a software developer later." },
-    { id: 17, category: "Beruf", question_de: "Arbeiten Sie?", question_en: "Do you work?", answer_de: "Ja, ich arbeite als Praktikant.", answer_en: "Yes, I work as an intern." },
-    { id: 18, category: "Beruf", question_de: "Wo arbeiten Sie?", question_en: "Where do you work?", answer_de: "Ich arbeite bei einer IT-Firma.", answer_en: "I work at an IT company." },
-    { id: 19, category: "Familie", question_de: "Sind Sie verheiratet oder ledig?", question_en: "Are you married or single?", answer_de: "Ich bin ledig.", answer_en: "I am single." },
-    { id: 20, category: "Familie", question_de: "Haben Sie Geschwister?", question_en: "Do you have siblings?", answer_de: "Ja, ich habe eine Schwester.", answer_en: "Yes, I have a sister." },
-    { id: 21, category: "Familie", question_de: "Wie viele Geschwister haben Sie?", question_en: "How many siblings do you have?", answer_de: "Ich habe zwei Geschwister.", answer_en: "I have two siblings." },
-    { id: 22, category: "Familie", question_de: "Haben Sie Kinder?", question_en: "Do you have children?", answer_de: "Nein, ich habe keine Kinder.", answer_en: "No, I don't have children." },
-    { id: 23, category: "Familie", question_de: "Wie heißt Ihre Mutter?", question_en: "What is your mother's name?", answer_de: "Meine Mutter heißt Priya.", answer_en: "My mother's name is Priya." },
-    { id: 24, category: "Familie", question_de: "Was macht Ihr Vater beruflich?", question_en: "What does your father do for a living?", answer_de: "Mein Vater ist Lehrer.", answer_en: "My father is a teacher." },
-    { id: 25, category: "Kontakt", question_de: "Wie ist Ihre Telefonnummer?", question_en: "What is your phone number?", answer_de: "Meine Telefonnummer ist null-eins-zwei-drei-vier-fünf.", answer_en: "My phone number is zero-one-two-three-four-five." },
-    { id: 26, category: "Kontakt", question_de: "Wie ist Ihre E-Mail-Adresse?", question_en: "What is your email address?", answer_de: "Meine E-Mail-Adresse ist kamalesh@beispiel.de.", answer_en: "My email address is kamalesh@beispiel.de." },
-    { id: 27, category: "Land", question_de: "Welche Nationalität haben Sie?", question_en: "What is your nationality?", answer_de: "Ich bin Inder.", answer_en: "I am Indian." },
-    { id: 28, category: "Essen & Trinken", question_de: "Was essen Sie gern?", question_en: "What do you like to eat?", answer_de: "Ich esse gern Reis und Gemüse.", answer_en: "I like to eat rice and vegetables." },
-    { id: 29, category: "Essen & Trinken", question_de: "Was trinken Sie gern?", question_en: "What do you like to drink?", answer_de: "Ich trinke gern Tee.", answer_en: "I like to drink tea." },
-    { id: 30, category: "Essen & Trinken", question_de: "Kochen Sie gern?", question_en: "Do you like to cook?", answer_de: "Ja, ich koche gern am Wochenende.", answer_en: "Yes, I like to cook on the weekend." },
-    { id: 31, category: "Freizeit", question_de: "Haben Sie ein Haustier?", question_en: "Do you have a pet?", answer_de: "Nein, ich habe kein Haustier.", answer_en: "No, I don't have a pet." },
-    { id: 32, category: "Freizeit", question_de: "Welches Haustier haben Sie?", question_en: "Which pet do you have?", answer_de: "Ich habe einen Hund.", answer_en: "I have a dog." },
-    { id: 33, category: "Hobby", question_de: "Lesen Sie gern?", question_en: "Do you like to read?", answer_de: "Ja, ich lese sehr gern Bücher.", answer_en: "Yes, I really like reading books." },
-    { id: 34, category: "Hobby", question_de: "Welche Musik hören Sie gern?", question_en: "What music do you like to listen to?", answer_de: "Ich höre gern Popmusik.", answer_en: "I like to listen to pop music." },
-    { id: 35, category: "Hobby", question_de: "Sehen Sie gern Filme?", question_en: "Do you like watching movies?", answer_de: "Ja, ich sehe gern Filme am Abend.", answer_en: "Yes, I like watching movies in the evening." },
-    { id: 36, category: "Hobby", question_de: "Welchen Film mögen Sie?", question_en: "Which movie do you like?", answer_de: "Ich mag Science-Fiction-Filme.", answer_en: "I like science fiction movies." },
-    { id: 37, category: "Hobby", question_de: "Spielen Sie Sport?", question_en: "Do you play sports?", answer_de: "Ja, ich spiele Fußball.", answer_en: "Yes, I play football." },
-    { id: 38, category: "Hobby", question_de: "Welchen Sport machen Sie?", question_en: "Which sport do you do?", answer_de: "Ich spiele Kricket und Fußball.", answer_en: "I play cricket and football." },
-    { id: 39, category: "Hobby", question_de: "Reisen Sie gern?", question_en: "Do you like to travel?", answer_de: "Ja, ich reise sehr gern.", answer_en: "Yes, I really like to travel." },
-    { id: 40, category: "Hobby", question_de: "Welches Land möchten Sie besuchen?", question_en: "Which country would you like to visit?", answer_de: "Ich möchte gern Deutschland besuchen.", answer_en: "I would like to visit Germany." },
-    { id: 41, category: "Alltag", question_de: "Wie fahren Sie zur Universität?", question_en: "How do you get to university?", answer_de: "Ich fahre mit dem Bus zur Universität.", answer_en: "I go to university by bus." },
-    { id: 42, category: "Alltag", question_de: "Haben Sie ein Auto?", question_en: "Do you have a car?", answer_de: "Nein, ich habe kein Auto.", answer_en: "No, I don't have a car." },
-    { id: 43, category: "Alltag", question_de: "Wie ist das Wetter heute?", question_en: "How is the weather today?", answer_de: "Heute ist es warm und sonnig.", answer_en: "Today it is warm and sunny." },
-    { id: 44, category: "Alltag", question_de: "Welche Jahreszeit mögen Sie?", question_en: "Which season do you like?", answer_de: "Ich mag den Winter am liebsten.", answer_en: "I like winter the most." },
-    { id: 45, category: "Alltag", question_de: "Was machen Sie am Wochenende?", question_en: "What do you do on the weekend?", answer_de: "Am Wochenende treffe ich Freunde und lerne Deutsch.", answer_en: "On the weekend I meet friends and learn German." },
-    { id: 46, category: "Deutsch lernen", question_de: "Warum lernen Sie Deutsch?", question_en: "Why are you learning German?", answer_de: "Ich lerne Deutsch, weil ich in Deutschland studieren möchte.", answer_en: "I am learning German because I want to study in Germany." },
-    { id: 47, category: "Deutsch lernen", question_de: "Seit wann lernen Sie Deutsch?", question_en: "Since when have you been learning German?", answer_de: "Ich lerne seit sechs Monaten Deutsch.", answer_en: "I have been learning German for six months." },
-    { id: 48, category: "Deutsch lernen", question_de: "Waren Sie schon einmal in Deutschland?", question_en: "Have you ever been to Germany?", answer_de: "Nein, ich war noch nie in Deutschland, aber ich möchte gern hinfahren.", answer_en: "No, I have never been to Germany, but I would like to go." },
-    { id: 49, category: "Alltag", question_de: "Was machen Sie heute Abend?", question_en: "What are you doing tonight?", answer_de: "Heute Abend lerne ich Deutsch und lese ein Buch.", answer_en: "Tonight I am learning German and reading a book." },
-    { id: 50, category: "Abschluss", question_de: "Haben Sie eine Frage an mich?", question_en: "Do you have a question for me?", answer_de: "Nein, ich habe keine Frage, danke.", answer_en: "No, I don't have a question, thank you." },
+    { id: 1, category: "Geburtsdatum", question_de: "Wann haben Sie Geburtstag?", question_en: "What is your date of birth?", answer_de: "Ich habe am 7. Oktober Geburtstag.", answer_en: "My birthday is on 7 October." },
+    { id: 2, category: "Buchstabieren", question_de: "Buchstabieren Sie bitte Ihren Vornamen.", question_en: "Please spell your first name.", answer_de: "K – A – M – A – L – E – S – H.", answer_en: "K–A–M–A–L–E–S–H." },
+    { id: 3, category: "Buchstabieren", question_de: "Buchstabieren Sie bitte Ihren Nachnamen.", question_en: "Please spell your last name.", answer_de: "K – U – M – A – R.", answer_en: "K–U–M–A–R." },
+    { id: 4, category: "Adresse", question_de: "Wie ist Ihre Postleitzahl?", question_en: "What is your postal code?", answer_de: "Meine Postleitzahl ist 600070.", answer_en: "My postal code is 600070." },
+    { id: 5, category: "Land", question_de: "Woher kommen Sie?", question_en: "Where do you come from?", answer_de: "Ich komme aus Indien.", answer_en: "I come from India." },
+    { id: 6, category: "Wohnort", question_de: "Wo wohnen Sie?", question_en: "Where do you live?", answer_de: "Ich wohne in Chennai.", answer_en: "I live in Chennai." },
+    { id: 7, category: "Adresse", question_de: "Wie ist Ihre Adresse?", question_en: "What is your address?", answer_de: "Meine Adresse ist Anakaputhur, Chennai.", answer_en: "My address is Anakaputhur, Chennai." },
+    { id: 8, category: "Kontakt", question_de: "Wie ist Ihre Telefonnummer?", question_en: "What is your telephone number?", answer_de: "Meine Telefonnummer ist null-eins-zwei-drei-vier-fünf-sechs.", answer_en: "My telephone number is zero-one-two-three-four-five-six." },
+    { id: 9, category: "Kontakt", question_de: "Wie ist Ihre E-Mail-Adresse?", question_en: "What is your email address?", answer_de: "Meine E-Mail-Adresse ist kamalesh@beispiel.de.", answer_en: "My email address is kamalesh@beispiel.de." },
+    { id: 10, category: "Sprachen", question_de: "Welche Sprachen sprechen Sie?", question_en: "Which languages do you speak?", answer_de: "Ich spreche Tamil, Englisch und ein bisschen Deutsch.", answer_en: "I speak Tamil, English, and a little German." },
   ],
   sprechen2: [
     {
