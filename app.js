@@ -982,40 +982,63 @@ function renderS1() {
 function checkS1Answers() {
   const key = "s1";
   const s = qState[key];
-  const data = D.schreiben1;
-  const q = data[s.idx];
+  const q = D.schreiben1[s.idx];
+
   if (!s.answered[s.idx]) s.answered[s.idx] = {};
 
   let correctCount = 0;
   let total = 0;
 
   q.fields.forEach((f, fi) => {
+
     if (!f.blank) return;
+
     total++;
-    const correctAnswer = q.answers?.[fi] || "";
+
+    // use field.number instead of fi
+    const correctAnswer = q.answers?.[f.number] || "";
+
     const userVal = (s.answered[s.idx][fi]?.user || "").trim();
+
     const isCorrect = checkAnswerMatch(userVal, correctAnswer);
-    s.answered[s.idx][fi] = { user: userVal, status: isCorrect ? "correct" : "incorrect" };
+
+    s.answered[s.idx][fi] = {
+      user: userVal,
+      status: isCorrect ? "correct" : "incorrect"
+    };
+
     if (isCorrect) correctCount++;
   });
 
-  s.answered[s.idx].result = `${correctCount} out of ${total} correct`;
+  s.answered[s.idx].result =
+      `${correctCount} out of ${total} correct`;
+
   renderS1();
 }
 
 function showS1Solution() {
-  const key = "s1";
-  const s = qState[key];
-  const data = D.schreiben1;
-  const q = data[s.idx];
-  if (!s.answered[s.idx]) s.answered[s.idx] = {};
 
-  Object.entries(q.answers || {}).forEach(([fi, answer]) => {
-    s.answered[s.idx][fi] = { user: answer, status: "correct" };
-  });
+    const key = "s1";
+    const s = qState[key];
+    const q = D.schreiben1[s.idx];
 
-  s.answered[s.idx].result = "Solution shown";
-  renderS1();
+    if (!s.answered[s.idx])
+        s.answered[s.idx] = {};
+
+    q.fields.forEach((field, fi) => {
+
+        if (!field.blank) return;
+
+        s.answered[s.idx][fi] = {
+            user: q.answers[field.number],
+            status: "correct"
+        };
+
+    });
+
+    s.answered[s.idx].result = "Solution shown";
+
+    renderS1();
 }
 
 function resetS1Fields() {
