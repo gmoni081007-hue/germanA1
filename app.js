@@ -50,7 +50,7 @@ const panelMeta = {
   lesen3: { title: "🪧 Lesen Teil 3", sub: "Signs & Notices – 100 questions" },
   schreiben1: { title: "📝 Schreiben Teil 1", sub: "Form Filling – 30 exercises" },
   schreiben2: { title: "✉️ Schreiben Teil 2", sub: "Email Writing – 44 prompts" },
-  sprechen1: { title: "🙂 Sprechen Teil 1", sub: "Sich vorstellen – 50 questions" },
+  sprechen1: { title: "🙂 Sprechen Teil 1", sub: "Sich vorstellen – 10 questions" },
   sprechen2: { title: "🗣 Sprechen Teil 2", sub: "Answer Questions – 298 prompts" },
   sprechen3: { title: "🙋 Sprechen Teil 3", sub: "Asking Questions – 163 cards" },
 };
@@ -1100,20 +1100,13 @@ function toggleS2Sample() {
 // SPRECHEN 1 – Sich vorstellen (self-introduction)
 // ════════════════════════════════════════════════
 const sp1ThemaColors = {
-  Name: "#8d6e63",
-  Alter: "#0288d1",
+  Geburtsdatum: "#0288d1",
+  Buchstabieren: "#8d6e63",
+  Adresse: "#f57f17",
   Land: "#388e3c",
-  Wohnort: "#f57f17",
-  Sprachen: "#6a1b9a",
-  Beruf: "#00695c",
-  Familie: "#d81b60",
+  Wohnort: "#00695c",
   Kontakt: "#455a64",
-  Hobby: "#e65100",
-  "Essen & Trinken": "#c62828",
-  Freizeit: "#5d4037",
-  Alltag: "#37474f",
-  "Deutsch lernen": "#1565c0",
-  Abschluss: "#4e342e",
+  Sprachen: "#6a1b9a",
 };
 const sp1State = { category: "Alle", search: "", cards: {} };
 const sp1ExamCardFields = ["Name?", "Alter?", "Land?", "Wohnort?", "Sprachen?", "Beruf?", "Hobby?"];
