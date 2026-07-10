@@ -10952,21 +10952,23 @@ const D = {
       questions: [
         {
           number: 1,
-          statement: "Davids neue Wohnung hat drei Zimmer.",
-          answer: "Falsch",
-          explanation: "The apartment has two rooms (zwei Zimmer), not three.",
-        },
-        {
-          number: 2,
           statement: "David zieht am ersten März in die neue Wohnung.",
           answer: "Richtig",
           explanation: "'Ich ziehe am ersten März ein.'",
+         
+        },
+        {
+          number: 2,
+           statement: "David bittet Simon, ihm beim Umzug zu helfen.",
+          answer: "Richtig",
+          explanation: "'Kannst du mir beim Umzug helfen?'",
+          
         },
         {
           number: 3,
-          statement: "David bittet Simon, ihm beim Umzug zu helfen.",
-          answer: "Richtig",
-          explanation: "'Kannst du mir beim Umzug helfen?'",
+          statement: "Davids neue Wohnung hat drei Zimmer.",
+          answer: "Falsch",
+          explanation: "The apartment has two rooms (zwei Zimmer), not three.",
         },
       ],
     },
@@ -11021,8 +11023,8 @@ const D = {
       questions: [
         {
           number: 1,
-          statement: "Die Sporthalle ist für zehn Tage geschlossen.",
-          answer: "Richtig",
+          statement: "Die Sporthalle ist für elf Tage geschlossen.",
+          answer: "Falsch",
           explanation: "From 10th to 20th August is 10 days.",
         },
         {
@@ -11040,8 +11042,8 @@ const D = {
       questions: [
         {
           number: 1,
-          statement: "Das Vorstellungsgespräch ist am Dienstag um 14 Uhr.",
-          answer: "Richtig",
+          statement: "Das Vorstellungsgespräch ist am Dienstag um 13 Uhr.",
+          answer: "Falsch",
           explanation: "'Es findet am Dienstag, dem 8. Mai, um 14 Uhr statt.'",
         },
         {
@@ -11065,15 +11067,16 @@ const D = {
       questions: [
         {
           number: 1,
-          statement: "Der Deutschkurs findet heute nicht statt.",
-          answer: "Richtig",
-          explanation: "'wir haben heute kein Deutschkurs.'",
+           statement: "Morgen beginnt der Kurs um 9 Uhr.",
+          answer: "Falsch",
+          explanation: "Tomorrow the course is at 11:00, not 9:00.",
+         
         },
         {
           number: 2,
-          statement: "Morgen beginnt der Kurs um 9 Uhr.",
-          answer: "Falsch",
-          explanation: "Tomorrow the course is at 11:00, not 9:00.",
+          statement: "Der Deutschkurs findet heute nicht statt.",
+          answer: "Richtig",
+          explanation: "'wir haben heute kein Deutschkurs.'",
         },
       ],
     },
@@ -11084,8 +11087,8 @@ const D = {
       questions: [
         {
           number: 1,
-          statement: "Ursula bringt den Hund um 17 Uhr zurück.",
-          answer: "Richtig",
+          statement: "Ursula bringt den Hund um 18 Uhr zurück.",
+          answer: "Falsch",
           explanation: "'Um 17 Uhr bringe ich ihn zurück.'",
         },
         {
@@ -11115,9 +11118,9 @@ const D = {
         },
         {
           number: 2,
-          statement: "Jonas soll bis Freitag antworten.",
-          answer: "Falsch",
-          explanation: "Tobias asks for a reply 'bis Donnerstag' — by Thursday, not Friday.",
+          statement: "Jonas soll bis Donnerstag antworten.",
+          answer: "Richtig",
+          explanation: "Tobias asks for a reply 'bis Donnerstag' — by Thursday.",
         },
       ],
     },
@@ -17891,39 +17894,39 @@ const D = {
   ],
   lesson3: [
   {
-    "id": 1,
-    "text": "Internetcafé: 1 Euro pro 30 Minuten. Drucken: 20 Cent pro Seite.",
-    "statement": "Eine Stunde Internet kostet 2 Euro.",
-    "answer": "Richtig",
-    "explanation": "30 Minuten = 1 Euro, also 60 Minuten = 2 Euro."
+    id: 1,
+    text: "Internetcafé: 1 Euro pro 30 Minuten. Drucken: 20 Cent pro Seite.",
+    statement: "Eine Stunde Internet kostet 2 Euro.",
+    answer: "Richtig",
+    explanation: "30 Minuten = 1 Euro, also 60 Minuten = 2 Euro."
   },
   {
-    "id": 2,
-    "text": "Schwimmbad: Kinder unter 12 Jahren nur mit Erwachsenen erlaubt.",
-    "statement": "Kinder dürfen alleine ins Schwimmbad.",
-    "answer": "Falsch",
-    "explanation": "Kinder unter 12 Jahren brauchen einen Erwachsenen."
+    id: 2,
+    text: "Schwimmbad: Kinder unter 12 Jahren nur mit Erwachsenen erlaubt.",
+    statement: "Kinder dürfen alleine ins Schwimmbad.",
+    answer: "Falsch",
+    explanation: "Kinder unter 12 Jahren brauchen einen Erwachsenen."
   },
   {
-    "id": 3,
-    "text": "Fahrrad zu verkaufen: Damenrad, 28 Zoll, guter Zustand. Preis: 80 Euro VB.",
-    "statement": "Das Fahrrad kostet genau 80 Euro.",
-    "answer": "Falsch",
-    "explanation": "VB bedeutet Verhandlungsbasis – der Preis ist verhandelbar."
+    id: 3,
+    text: "Fahrrad zu verkaufen: Damenrad, 28 Zoll, guter Zustand. Preis: 80 Euro VB.",
+    statement: "Das Fahrrad kostet genau 80 Euro.",
+    answer: "Falsch",
+    explanation: "VB bedeutet Verhandlungsbasis – der Preis ist verhandelbar."
   },
   {
-    "id": 4,
-    "text": "Sprachschule: Wir bieten Kurse in Englisch, Spanisch, Französisch und Deutsch an.",
-    "statement": "Die Sprachschule hat auch Deutschkurse.",
-    "answer": "Richtig",
-    "explanation": "Deutsch wird als Kurssprache angeboten."
+    id: 4,
+    text: "Sprachschule: Wir bieten Kurse in Englisch, Spanisch, Französisch und Deutsch an.",
+    statement: "Die Sprachschule hat auch Deutschkurse.",
+   answer: "Richtig",
+    explanation: "Deutsch wird als Kurssprache angeboten."
   },
   {
-    "id": 5,
-    "text": "Kleiderspende: Wir nehmen gut erhaltene Winterkleidung an. Mo–Fr, 9:00–16:00 Uhr.",
-    "statement": "Man kann dort alte Kleidung abgeben.",
-    "answer": "Richtig",
-    "explanation": "Gut erhaltene Winterkleidung wird montags bis freitags angenommen."
+    id: 5,
+    text: "Kleiderspende: Wir nehmen gut erhaltene Winterkleidung an. Mo–Fr, 9:00–16:00 Uhr.",
+    statement: "Man kann dort alte Kleidung abgeben.",
+    answer: "Richtig",
+    explanation: "Gut erhaltene Winterkleidung wird montags bis freitags angenommen."
   },
   {
     "id": 6,
