@@ -17889,710 +17889,708 @@ const D = {
         "Option a bietet deutsche Radiosender zum Online-Hören, ideal zum Üben des Deutschen. Option b verkauft Radio-Geräte – das Gerät hilft nicht beim Deutsch üben, wenn man noch kein Radio hat.",
     },
   ],
-  lesen3: [
-    {
-      id: 1,
-      text: "Bäckerei Müller: Montag bis Freitag 7:00–18:00 Uhr geöffnet. Samstag 7:00–13:00 Uhr. Sonntag geschlossen.",
-      statement: "Die Bäckerei ist am Sonntag geöffnet.",
-      answer: "Falsch",
-      explanation: "Die Bäckerei ist am Sonntag geschlossen.",
-    },
-    {
-      id: 2,
-      text: "Achtung! Hund im Auto. Bitte Fenster nicht öffnen.",
-      statement: "Im Auto ist ein Hund.",
-      answer: "Richtig",
-      explanation: "Das Schild sagt, dass ein Hund im Auto ist.",
-    },
-    {
-      id: 3,
-      text: "Schwimmbad: Kinder unter 12 Jahren nur mit Erwachsenen erlaubt.",
-      statement: "Kinder dürfen alleine ins Schwimmbad.",
-      answer: "Falsch",
-      explanation: "Kinder unter 12 Jahren brauchen einen Erwachsenen.",
-    },
-    {
-      id: 4,
-      text: "Supermarkt heute bis 22:00 Uhr geöffnet. Morgen ab 8:00 Uhr.",
-      statement: "Der Supermarkt schließt heute um 22:00 Uhr.",
-      answer: "Richtig",
-      explanation: "Der Supermarkt ist heute bis 22:00 Uhr offen.",
-    },
-    {
-      id: 5,
-      text: "Parkplatz nur für Kunden. Maximale Parkdauer: 2 Stunden.",
-      statement: "Man kann hier unbegrenzt parken.",
-      answer: "Falsch",
-      explanation: "Die maximale Parkdauer beträgt 2 Stunden.",
-    },
-    {
-      id: 6,
-      text: "Bibliothek: Bücher können für 3 Wochen ausgeliehen werden.",
-      statement: "Man kann Bücher für 3 Wochen leihen.",
-      answer: "Richtig",
-      explanation: "Die Leihfrist beträgt 3 Wochen.",
-    },
-    {
-      id: 7,
-      text: "Kein Eingang! Bitte benutzen Sie den Hintereingang.",
-      statement: "Man soll den Vordereingang benutzen.",
-      answer: "Falsch",
-      explanation: "Man soll den Hintereingang benutzen.",
-    },
-    {
-      id: 8,
-      text: "Heute: Frische Erdbeeren – 2 kg für nur 3 Euro!",
-      statement: "Erdbeeren kosten heute 3 Euro für 2 kg.",
-      answer: "Richtig",
-      explanation: "2 kg Erdbeeren kosten 3 Euro.",
-    },
-    {
-      id: 9,
-      text: "Rauchen verboten! Dies gilt auch für E-Zigaretten.",
-      statement: "E-Zigaretten sind hier erlaubt.",
-      answer: "Falsch",
-      explanation: "E-Zigaretten sind auch verboten.",
-    },
-    {
-      id: 10,
-      text: "Arztpraxis Dr. Schmidt: Termine nur nach telefonischer Anmeldung.",
-      statement: "Man braucht einen Termin zum Arztbesuch.",
-      answer: "Richtig",
-      explanation: "Termine müssen telefonisch vereinbart werden.",
-    },
-    {
-      id: 11,
-      text: "Aufzug außer Betrieb. Bitte benutzen Sie die Treppe.",
-      statement: "Der Aufzug funktioniert nicht.",
-      answer: "Richtig",
-      explanation: "Der Aufzug ist außer Betrieb.",
-    },
-    {
-      id: 12,
-      text: "Café Luna: Frühstück täglich von 8:00 bis 11:00 Uhr.",
-      statement: "Im Café Luna gibt es Frühstück bis 12:00 Uhr.",
-      answer: "Falsch",
-      explanation: "Das Frühstück endet um 11:00 Uhr.",
-    },
-    {
-      id: 13,
-      text: "Bitte Hände waschen! Seife und Handtücher sind vorhanden.",
-      statement: "Es gibt keine Seife im Raum.",
-      answer: "Falsch",
-      explanation: "Seife und Handtücher sind vorhanden.",
-    },
-    {
-      id: 14,
-      text: "Wohnung zu vermieten: 3 Zimmer, 80 m², Kaltmiete 900 Euro.",
-      statement: "Die Wohnung hat 3 Zimmer.",
-      answer: "Richtig",
-      explanation: "Die Wohnung hat 3 Zimmer.",
-    },
-    {
-      id: 15,
-      text: "Stadtbibliothek: Montag geschlossen. Di–Fr 10:00–18:00. Sa 10:00–14:00.",
-      statement: "Die Bibliothek ist am Montag geöffnet.",
-      answer: "Falsch",
-      explanation: "Die Bibliothek ist am Montag geschlossen.",
-    },
-    {
-      id: 16,
-      text: "Vorsicht! Frisch gestrichen. Bitte nicht berühren.",
-      statement: "Man soll die Wand nicht anfassen.",
-      answer: "Richtig",
-      explanation: "Die Wand ist frisch gestrichen und soll nicht berührt werden.",
-    },
-    {
-      id: 17,
-      text: "Kursanmeldung: Deutschkurs A1 beginnt am 5. September. Anmeldung bis 30. August.",
-      statement: "Der Deutschkurs beginnt im Oktober.",
-      answer: "Falsch",
-      explanation: "Der Kurs beginnt am 5. September.",
-    },
-    {
-      id: 18,
-      text: "Flohmarkt jeden Samstag von 8:00 bis 14:00 Uhr auf dem Marktplatz.",
-      statement: "Der Flohmarkt findet samstags statt.",
-      answer: "Richtig",
-      explanation: "Der Flohmarkt ist jeden Samstag.",
-    },
-    {
-      id: 19,
-      text: "Kein Handy im Unterricht! Handys bitte ausschalten.",
-      statement: "Man darf im Unterricht das Handy benutzen.",
-      answer: "Falsch",
-      explanation: "Handys sind im Unterricht verboten.",
-    },
-    {
-      id: 20,
-      text: "Kinderspielplatz: Nur für Kinder bis 12 Jahre.",
-      statement: "Der Spielplatz ist für Kinder bis 12 Jahre.",
-      answer: "Richtig",
-      explanation: "Der Spielplatz ist für Kinder bis 12 Jahre.",
-    },
-    {
-      id: 21,
-      text: "Achtung: Baustelle! Fußgänger bitte auf der anderen Straßenseite gehen.",
-      statement: "Fußgänger sollen auf dieser Seite bleiben.",
-      answer: "Falsch",
-      explanation: "Fußgänger sollen die andere Straßenseite benutzen.",
-    },
-    {
-      id: 22,
-      text: "Lebensmittel nach dem Öffnen im Kühlschrank aufbewahren. Verbrauch: innerhalb von 3 Tagen.",
-      statement: "Das Produkt muss nach dem Öffnen gekühlt werden.",
-      answer: "Richtig",
-      explanation: "Es muss im Kühlschrank aufbewahrt werden.",
-    },
-    {
-      id: 23,
-      text: "Yoga-Kurs: Mittwoch und Freitag, 18:00–19:30 Uhr. Anfänger willkommen!",
-      statement: "Der Yogakurs ist nur für Fortgeschrittene.",
-      answer: "Falsch",
-      explanation: "Anfänger sind willkommen.",
-    },
-    {
-      id: 24,
-      text: "Museum: Eintritt frei für Kinder unter 6 Jahren.",
-      statement: "Kinder unter 6 Jahren zahlen keinen Eintritt.",
-      answer: "Richtig",
-      explanation: "Der Eintritt ist frei für Kinder unter 6 Jahren.",
-    },
-    {
-      id: 25,
-      text: "Achtung! Dieser Bereich ist nur für Mitarbeiter. Zutritt verboten.",
-      statement: "Alle Personen dürfen diesen Bereich betreten.",
-      answer: "Falsch",
-      explanation: "Nur Mitarbeiter haben Zutritt.",
-    },
-    {
-      id: 26,
-      text: "Zimmer frei! Ruhige Lage, Frühstück inklusive. Tel: 0123-456789.",
-      statement: "Das Frühstück ist im Zimmerpreis enthalten.",
-      answer: "Richtig",
-      explanation: "Frühstück ist inklusive.",
-    },
-    {
-      id: 27,
-      text: "Busfahrplan: Bus Nr. 7 fährt werktags alle 15 Minuten.",
-      statement: "Bus Nr. 7 fährt am Wochenende alle 15 Minuten.",
-      answer: "Falsch",
-      explanation: "Der 15-Minuten-Takt gilt nur werktags.",
-    },
-    {
-      id: 28,
-      text: "Verkauf! Alle Winterjacken jetzt 50% günstiger.",
-      statement: "Winterjacken sind auf 50% reduziert.",
-      answer: "Richtig",
-      explanation: "Es gibt 50% Rabatt auf Winterjacken.",
-    },
-    {
-      id: 29,
-      text: "Tierarzt Dr. Hoffmann: Notdienst auch nachts und am Wochenende.",
-      statement: "Der Tierarzt ist nur montags bis freitags erreichbar.",
-      answer: "Falsch",
-      explanation: "Es gibt auch Notdienst nachts und am Wochenende.",
-    },
-    {
-      id: 30,
-      text: "Bitte leise! Prüfung im Gange.",
-      statement: "Im Raum nebenan findet gerade eine Prüfung statt.",
-      answer: "Richtig",
-      explanation: "Das Schild bittet um Ruhe wegen einer Prüfung.",
-    },
-    {
-      id: 31,
-      text: "Fahrrad zu verkaufen: Damenrad, 28 Zoll, guter Zustand. Preis: 80 Euro VB.",
-      statement: "Das Fahrrad kostet genau 80 Euro.",
-      answer: "Falsch",
-      explanation: "VB bedeutet Verhandlungsbasis – der Preis ist verhandelbar.",
-    },
-    {
-      id: 32,
-      text: "Kantine: Mittagessen von 12:00 bis 14:00 Uhr. Heute: Gemüsesuppe und Schnitzel.",
-      statement: "In der Kantine gibt es heute Schnitzel.",
-      answer: "Richtig",
-      explanation: "Das Tagesmenü enthält Schnitzel.",
-    },
-    {
-      id: 33,
-      text: "Hallenbad: Montag Damenschwimmen. Herren haben keinen Zutritt.",
-      statement: "Männer dürfen montags ins Hallenbad.",
-      answer: "Falsch",
-      explanation: "Montags ist Damenschwimmen, Herren haben keinen Zutritt.",
-    },
-    {
-      id: 34,
-      text: "Sprachschule: Wir bieten Kurse in Englisch, Spanisch, Französisch und Deutsch an.",
-      statement: "Die Sprachschule hat auch Deutschkurse.",
-      answer: "Richtig",
-      explanation: "Deutsch wird als Kurssprache angeboten.",
-    },
-    {
-      id: 35,
-      text: "Bitte Abstand halten! Mindestabstand 1,5 Meter.",
-      statement: "Man soll mindestens 2 Meter Abstand halten.",
-      answer: "Falsch",
-      explanation: "Der Mindestabstand beträgt 1,5 Meter.",
-    },
-    {
-      id: 36,
-      text: "Fitnessstudio: Neu! Ab 1. Oktober täglich von 6:00 bis 23:00 Uhr geöffnet.",
-      statement: "Das Fitnessstudio öffnet jeden Tag um 6:00 Uhr.",
-      answer: "Richtig",
-      explanation: "Das Studio öffnet täglich um 6:00 Uhr.",
-    },
-    {
-      id: 37,
-      text: "Geldautomat außer Betrieb. Nächster Automat: 200 Meter links.",
-      statement: "Dieser Geldautomat funktioniert.",
-      answer: "Falsch",
-      explanation: "Der Geldautomat ist außer Betrieb.",
-    },
-    {
-      id: 38,
-      text: "Kostenloses WLAN für Hotelgäste. Passwort an der Rezeption.",
-      statement: "Hotelgäste können gratis WLAN nutzen.",
-      answer: "Richtig",
-      explanation: "Das WLAN ist kostenlos für Hotelgäste.",
-    },
-    {
-      id: 39,
-      text: "Haltestelle gesperrt! Bus fährt bis Ende Oktober von der Haltestelle Bahnhof ab.",
-      statement: "Die Bushaltestelle ist normal in Betrieb.",
-      answer: "Falsch",
-      explanation: "Die Haltestelle ist gesperrt.",
-    },
-    {
-      id: 40,
-      text: "Veranstaltung: Konzert am Freitag, 20:00 Uhr. Einlass ab 19:00 Uhr.",
-      statement: "Das Konzert beginnt um 20:00 Uhr.",
-      answer: "Richtig",
-      explanation: "Der Konzertbeginn ist um 20:00 Uhr.",
-    },
-    {
-      id: 41,
-      text: "Apotheke: Notdienst heute von 20:00 bis 8:00 Uhr. Klingeln Sie bitte.",
-      statement: "Die Apotheke hat heute Nacht Notdienst.",
-      answer: "Richtig",
-      explanation: "Notdienst von 20:00 bis 8:00 Uhr.",
-    },
-    {
-      id: 42,
-      text: "Waschmaschine Nummer 3 ist defekt. Bitte Nummer 4 oder 5 benutzen.",
-      statement: "Alle Waschmaschinen funktionieren.",
-      answer: "Falsch",
-      explanation: "Waschmaschine Nummer 3 ist defekt.",
-    },
-    {
-      id: 43,
-      text: "Bitte Türe schließen! Klimaanlage in Betrieb.",
-      statement: "Die Klimaanlage ist eingeschaltet.",
-      answer: "Richtig",
-      explanation: "Die Klimaanlage ist in Betrieb.",
-    },
-    {
-      id: 44,
-      text: "Schule: Morgen unterrichtsfrei wegen Lehrerkonferenz.",
-      statement: "Morgen haben die Schüler keinen Unterricht.",
-      answer: "Richtig",
-      explanation: "Morgen ist unterrichtsfrei.",
-    },
-    {
-      id: 45,
-      text: "Liebe Nachbarn, ich bin vom 10. bis 20. Juli im Urlaub. Pakete bitte bei Frau Huber, Wohnung 12, abgeben.",
-      statement: "Die Person ist den ganzen August im Urlaub.",
-      answer: "Falsch",
-      explanation: "Der Urlaub ist vom 10. bis 20. Juli, nicht im August.",
-    },
-    {
-      id: 46,
-      text: "Zu verschenken: Kinderbücher, guter Zustand. Vor der Tür in Karton.",
-      statement: "Die Bücher kosten etwas.",
-      answer: "Falsch",
-      explanation: "Die Bücher werden verschenkt, sie kosten nichts.",
-    },
-    {
-      id: 47,
-      text: "Reinigung Schmidt: Express-Service – Ihre Kleidung in 24 Stunden fertig.",
-      statement: "Die Reinigung braucht nur einen Tag.",
-      answer: "Richtig",
-      explanation: "Express-Service: fertig in 24 Stunden = 1 Tag.",
-    },
-    {
-      id: 48,
-      text: "Stadtfest: Samstag und Sonntag, 12:00–22:00 Uhr. Eintritt frei!",
-      statement: "Für das Stadtfest muss man bezahlen.",
-      answer: "Falsch",
-      explanation: "Der Eintritt ist frei.",
-    },
-    {
-      id: 49,
-      text: "Parkhaus: Erste Stunde kostenlos. Danach 2 Euro pro Stunde.",
-      statement: "Man kann eine Stunde gratis parken.",
-      answer: "Richtig",
-      explanation: "Die erste Stunde ist kostenlos.",
-    },
-    {
-      id: 50,
-      text: "Treppe gesperrt! Bitte Aufzug benutzen.",
-      statement: "Die Treppe ist gesperrt.",
-      answer: "Richtig",
-      explanation: "Die Treppe ist gesperrt, man soll den Aufzug nehmen.",
-    },
-    {
-      id: 51,
-      text: "Imbiss: Täglich außer Dienstag geöffnet. 11:00–21:00 Uhr.",
-      statement: "Der Imbiss ist dienstags geöffnet.",
-      answer: "Falsch",
-      explanation: "Der Imbiss ist außer Dienstag geöffnet – dienstags geschlossen.",
-    },
-    {
-      id: 52,
-      text: "Blumen zu kaufen: Rose, Tulpe, Lilie. Heute 20% Rabatt auf alles!",
-      statement: "Heute gibt es einen Rabatt auf alle Blumen.",
-      answer: "Richtig",
-      explanation: "Heute gibt es 20% Rabatt auf alles.",
-    },
-    {
-      id: 53,
-      text: "Bitte Besucher melden! Alle Besucher müssen sich am Empfang anmelden.",
-      statement: "Besucher können direkt ins Gebäude gehen.",
-      answer: "Falsch",
-      explanation: "Besucher müssen sich am Empfang anmelden.",
-    },
-    {
-      id: 54,
-      text: "Zug nach Berlin: Abfahrt 14:32, Gleis 5. Heute 10 Minuten Verspätung.",
-      statement: "Der Zug nach Berlin hat heute Verspätung.",
-      answer: "Richtig",
-      explanation: "Der Zug hat 10 Minuten Verspätung.",
-    },
-    {
-      id: 55,
-      text: "Café: Hunde willkommen! Bitte die Leine anlassen.",
-      statement: "Hunde sind in diesem Café nicht erlaubt.",
-      answer: "Falsch",
-      explanation: "Hunde sind willkommen, müssen aber an der Leine bleiben.",
-    },
-    {
-      id: 56,
-      text: "Stellenanzeige: Wir suchen eine Verkäuferin/einen Verkäufer für Teilzeit (20 Std./Woche).",
-      statement: "Die Stelle ist eine Vollzeitstelle.",
-      answer: "Falsch",
-      explanation: "Es handelt sich um eine Teilzeitstelle mit 20 Stunden pro Woche.",
-    },
-    {
-      id: 57,
-      text: "Warmwasser: Heute von 10:00 bis 14:00 Uhr kein Warmwasser wegen Wartungsarbeiten.",
-      statement: "Heute gibt es zwischen 10 und 14 Uhr kein Warmwasser.",
-      answer: "Richtig",
-      explanation: "Wegen Wartungsarbeiten kein Warmwasser von 10:00 bis 14:00 Uhr.",
-    },
-    {
-      id: 58,
-      text: "Bitte keine Lebensmittel im Büro. Danke!",
-      statement: "Man darf Essen ins Büro mitbringen.",
-      answer: "Falsch",
-      explanation: "Lebensmittel sind im Büro nicht erlaubt.",
-    },
-    {
-      id: 59,
-      text: "Kleiderspende: Wir nehmen gut erhaltene Winterkleidung an. Mo–Fr, 9:00–16:00 Uhr.",
-      statement: "Man kann dort alte Kleidung abgeben.",
-      answer: "Richtig",
-      explanation: "Gut erhaltene Winterkleidung wird montags bis freitags angenommen.",
-    },
-    {
-      id: 60,
-      text: "Schwimmen verboten! Strömungsgefahr!",
-      statement: "Hier ist das Schwimmen gefährlich.",
-      answer: "Richtig",
-      explanation: "Schwimmen ist wegen Strömungsgefahr verboten.",
-    },
-    {
-      id: 61,
-      text: "Kindergarten: Bitte bringen Sie Ihr Kind bis spätestens 9:00 Uhr.",
-      statement: "Kinder müssen vor 9:00 Uhr im Kindergarten sein.",
-      answer: "Richtig",
-      explanation: "Die Kinder sollen bis spätestens 9:00 Uhr gebracht werden.",
-    },
-    {
-      id: 62,
-      text: "Hier parken verboten! Fahrzeuge werden kostenpflichtig abgeschleppt.",
-      statement: "Parken ist hier kostenlos erlaubt.",
-      answer: "Falsch",
-      explanation:
-        "Parken ist verboten und falsch geparkte Autos werden kostenpflichtig abgeschleppt.",
-    },
-    {
-      id: 63,
-      text: "Hausordnung: Ruhezeit täglich von 13:00 bis 15:00 und von 22:00 bis 7:00 Uhr.",
-      statement: "Mittags von 13 bis 15 Uhr soll es ruhig sein.",
-      answer: "Richtig",
-      explanation: "Die Mittagsruhe gilt von 13:00 bis 15:00 Uhr.",
-    },
-    {
-      id: 64,
-      text: "Friseur Bella: Termine online oder telefonisch. Keine Laufkundschaft.",
-      statement: "Man kann ohne Termin zum Friseur kommen.",
-      answer: "Falsch",
-      explanation: "Laufkundschaft wird nicht angenommen, nur Termine.",
-    },
-    {
-      id: 65,
-      text: "Sonderangebot: Kaufe 3, zahle 2! Nur diese Woche.",
-      statement: "Das Angebot gilt nur diese Woche.",
-      answer: "Richtig",
-      explanation: "Das Angebot ist nur diese Woche gültig.",
-    },
-    {
-      id: 66,
-      text: "Umkleideraum: Bitte keine Wertsachen zurücklassen. Kein Haftung für Verluste.",
-      statement: "Der Betreiber haftet für gestohlene Wertsachen.",
-      answer: "Falsch",
-      explanation: "Es gibt keine Haftung für Verluste.",
-    },
-    {
-      id: 67,
-      text: "Marktstand: Frische Eier vom Bauernhof. 10 Stück – 3,50 Euro.",
-      statement: "Die Eier kommen vom Bauernhof.",
-      answer: "Richtig",
-      explanation: "Die Eier sind frische Bauernhof-Eier.",
-    },
-    {
-      id: 68,
-      text: "Bahnhof: Schließfächer im Untergeschoss. Preis: 2 Euro für 24 Stunden.",
-      statement: "Die Schließfächer sind im Erdgeschoss.",
-      answer: "Falsch",
-      explanation: "Die Schließfächer befinden sich im Untergeschoss.",
-    },
-    {
-      id: 69,
-      text: "Achtung Allergiker! Dieses Produkt enthält Nüsse.",
-      statement: "Das Produkt ist für Nussallergiker geeignet.",
-      answer: "Falsch",
-      explanation: "Das Produkt enthält Nüsse und ist daher für Nussallergiker ungeeignet.",
-    },
-    {
-      id: 70,
-      text: "Wochenkarte: Unbegrenzte Fahrten mit Bus und Bahn für 7 Tage. 25 Euro.",
-      statement: "Mit der Wochenkarte kann man 7 Tage beliebig oft fahren.",
-      answer: "Richtig",
-      explanation: "Die Wochenkarte erlaubt unbegrenzte Fahrten für 7 Tage.",
-    },
-    {
-      id: 71,
-      text: "Aufgepasst: Dieser Bereich wird videoüberwacht.",
-      statement: "Es gibt keine Kameras in diesem Bereich.",
-      answer: "Falsch",
-      explanation: "Der Bereich wird videoüberwacht.",
-    },
-    {
-      id: 72,
-      text: "Sportverein: Probetraining kostenlos! Einfach vorbeikommen.",
-      statement: "Das Probetraining ist gratis.",
-      answer: "Richtig",
-      explanation: "Das Probetraining ist kostenlos.",
-    },
-    {
-      id: 73,
-      text: "Ausstellung: Fotografieren ohne Blitz erlaubt.",
-      statement: "In der Ausstellung darf man fotografieren.",
-      answer: "Richtig",
-      explanation: "Fotografieren ohne Blitz ist erlaubt.",
-    },
-    {
-      id: 74,
-      text: "Lieferung: Ihr Paket wird morgen zwischen 10:00 und 14:00 Uhr geliefert.",
-      statement: "Das Paket kommt heute an.",
-      answer: "Falsch",
-      explanation: "Das Paket wird morgen geliefert.",
-    },
-    {
-      id: 75,
-      text: "Frühjahrsfest: Samstag, 1. April, ab 15:00 Uhr im Stadtpark. Bei Regen fällt das Fest aus.",
-      statement: "Das Fest findet bei jedem Wetter statt.",
-      answer: "Falsch",
-      explanation: "Bei Regen fällt das Fest aus.",
-    },
-    {
-      id: 76,
-      text: "Kühlschrank defekt! Bitte keine Lebensmittel reinstellen.",
-      statement: "Der Kühlschrank funktioniert nicht.",
-      answer: "Richtig",
-      explanation: "Der Kühlschrank ist defekt.",
-    },
-    {
-      id: 77,
-      text: "Kursgebühr: 120 Euro pro Semester. Bezahlung bis zum 15. des Monats.",
-      statement: "Die Kursgebühr beträgt 120 Euro.",
-      answer: "Richtig",
-      explanation: "Der Kurs kostet 120 Euro pro Semester.",
-    },
-    {
-      id: 78,
-      text: "Bitte schalten Sie Ihr Mobiltelefon auf stumm. Kinofilm beginnt gleich.",
-      statement: "Der Film fängt bald an.",
-      answer: "Richtig",
-      explanation: "Der Kinofilm beginnt gleich.",
-    },
-    {
-      id: 79,
-      text: "Drogerie Müller: Heute 30 Minuten länger geöffnet bis 20:30 Uhr.",
-      statement: "Die Drogerie schließt heute früher als sonst.",
-      answer: "Falsch",
-      explanation: "Die Drogerie ist heute 30 Minuten länger geöffnet.",
-    },
-    {
-      id: 80,
-      text: "Restaurant: Tischreservierung empfohlen. Tel: 0800-123456.",
-      statement: "Man sollte im Restaurant einen Tisch reservieren.",
-      answer: "Richtig",
-      explanation: "Eine Tischreservierung wird empfohlen.",
-    },
-    {
-      id: 81,
-      text: "Weg gesperrt! Umleitung über Waldstraße.",
-      statement: "Man kann diesen Weg benutzen.",
-      answer: "Falsch",
-      explanation: "Der Weg ist gesperrt, man muss die Umleitung nehmen.",
-    },
-    {
-      id: 82,
-      text: "Anmeldung zum Schwimmkurs: Nur für Kinder von 6 bis 10 Jahren.",
-      statement: "Ein 5-jähriges Kind kann sich für den Schwimmkurs anmelden.",
-      answer: "Falsch",
-      explanation: "Der Kurs ist nur für Kinder von 6 bis 10 Jahren.",
-    },
-    {
-      id: 83,
-      text: "Tagesmenu: Suppe + Hauptgericht + Dessert für 12 Euro.",
-      statement: "Das Tagesmenu enthält drei Gänge.",
-      answer: "Richtig",
-      explanation: "Suppe, Hauptgericht und Dessert = drei Gänge.",
-    },
-    {
-      id: 84,
-      text: "Impfung: Grippeschutzimpfung jetzt möglich. Bitte Termin vereinbaren.",
-      statement: "Man kann ohne Termin geimpft werden.",
-      answer: "Falsch",
-      explanation: "Es muss ein Termin vereinbart werden.",
-    },
-    {
-      id: 85,
-      text: "Verein: Mitgliedschaft kostet 5 Euro pro Monat. Kinder bis 14 Jahren gratis.",
-      statement: "Kinder unter 14 Jahren zahlen keine Mitgliedsgebühr.",
-      answer: "Richtig",
-      explanation: "Kinder bis 14 Jahren sind gratis Mitglied.",
-    },
-    {
-      id: 86,
-      text: "Achtung: Glatteisgefahr! Bitte langsam fahren.",
-      statement: "Die Straße ist rutschig.",
-      answer: "Richtig",
-      explanation: "Glatteisgefahr bedeutet, dass die Straße rutschig ist.",
-    },
-    {
-      id: 87,
-      text: "Gepäckaufbewahrung: Geöffnet von 7:00 bis 21:00 Uhr. Max. 3 Koffer pro Person.",
-      statement: "Man kann unbegrenzt viele Koffer abgeben.",
-      answer: "Falsch",
-      explanation: "Maximal 3 Koffer pro Person sind erlaubt.",
-    },
-    {
-      id: 88,
-      text: "Neujahrsfest: Das Büro bleibt vom 24. Dezember bis 2. Januar geschlossen.",
-      statement: "Das Büro ist am 1. Januar geschlossen.",
-      answer: "Richtig",
-      explanation: "Der 1. Januar liegt innerhalb des Schließzeitraums.",
-    },
-    {
-      id: 89,
-      text: "Bitte keinen Müll auf der Straße wegwerfen! Strafe: bis zu 500 Euro.",
-      statement: "Müll auf der Straße werfen ist kostenlos.",
-      answer: "Falsch",
-      explanation: "Es gibt eine Strafe von bis zu 500 Euro.",
-    },
-    {
-      id: 90,
-      text: "Tanzkurs: Anfänger – Dienstag 19:00 Uhr. Fortgeschrittene – Donnerstag 20:00 Uhr.",
-      statement: "Der Anfängerkurs findet dienstags statt.",
-      answer: "Richtig",
-      explanation: "Anfänger haben ihren Kurs dienstags um 19:00 Uhr.",
-    },
-    {
-      id: 91,
-      text: "Waschraum: Bitte hinterlassen Sie den Raum sauber. Danke!",
-      statement: "Man soll den Waschraum sauber halten.",
-      answer: "Richtig",
-      explanation: "Der Raum soll sauber hinterlassen werden.",
-    },
-    {
-      id: 92,
-      text: "Internetcafé: 1 Euro pro 30 Minuten. Drucken: 20 Cent pro Seite.",
-      statement: "Eine Stunde Internet kostet 2 Euro.",
-      answer: "Richtig",
-      explanation: "30 Minuten = 1 Euro, also 60 Minuten = 2 Euro.",
-    },
-    {
-      id: 93,
-      text: "Bitte Fahrrad anschließen! Nicht gesicherte Fahrräder werden entfernt.",
-      statement: "Man darf sein Fahrrad ohne Schloss abstellen.",
-      answer: "Falsch",
-      explanation: "Nicht gesicherte Fahrräder werden entfernt.",
-    },
-    {
-      id: 94,
-      text: "Veranstaltungsort: Parkplätze begrenzt. Öffentliche Verkehrsmittel empfohlen.",
-      statement: "Es gibt genug Parkplätze für alle Besucher.",
-      answer: "Falsch",
-      explanation:
-        "Die Parkplätze sind begrenzt, daher werden öffentliche Verkehrsmittel empfohlen.",
-    },
-    {
-      id: 95,
-      text: "Angebot: Kaufen Sie zwei Pizzen und bekommen Sie eine dritte gratis!",
-      statement: "Bei zwei Pizzen bekommt man eine kostenlos dazu.",
-      answer: "Richtig",
-      explanation: "Zwei kaufen, eine gratis bekommen.",
-    },
-    {
-      id: 96,
-      text: "Zahnarzt: Bitte erscheinen Sie 10 Minuten vor Ihrem Termin.",
-      statement: "Man soll pünktlich zum Termin kommen.",
-      answer: "Falsch",
-      explanation: "Man soll 10 Minuten früher erscheinen, nicht nur pünktlich.",
-    },
-    {
-      id: 97,
-      text: "Kunstausstellung: Täglich geöffnet. Letzter Einlass eine Stunde vor Schließung.",
-      statement: "Man kann bis zur Schließungszeit eintreten.",
-      answer: "Falsch",
-      explanation: "Der letzte Einlass ist eine Stunde vor Schließung.",
-    },
-    {
-      id: 98,
-      text: "Haustiere sind in dieser Wohnung nicht erlaubt.",
-      statement: "Man darf in dieser Wohnung keine Tiere halten.",
-      answer: "Richtig",
-      explanation: "Haustiere sind in der Wohnung nicht erlaubt.",
-    },
-    {
-      id: 99,
-      text: "Lesen Sie bitte die Gebrauchsanweisung vor der ersten Benutzung.",
-      statement: "Man soll die Anleitung vor dem ersten Benutzen lesen.",
-      answer: "Richtig",
-      explanation: "Die Gebrauchsanweisung soll vor der ersten Benutzung gelesen werden.",
-    },
-    {
-      id: 100,
-      text: "Sportplatz: Bitte Sportschuhe tragen. Straßenschuhe verboten.",
-      statement: "Man darf auf dem Sportplatz Straßenschuhe tragen.",
-      answer: "Falsch",
-      explanation: "Straßenschuhe sind verboten, man muss Sportschuhe tragen.",
-    },
-  ],
+  lesson3: [
+  {
+    "id": 1,
+    "text": "Internetcafé: 1 Euro pro 30 Minuten. Drucken: 20 Cent pro Seite.",
+    "statement": "Eine Stunde Internet kostet 2 Euro.",
+    "answer": "Richtig",
+    "explanation": "30 Minuten = 1 Euro, also 60 Minuten = 2 Euro."
+  },
+  {
+    "id": 2,
+    "text": "Schwimmbad: Kinder unter 12 Jahren nur mit Erwachsenen erlaubt.",
+    "statement": "Kinder dürfen alleine ins Schwimmbad.",
+    "answer": "Falsch",
+    "explanation": "Kinder unter 12 Jahren brauchen einen Erwachsenen."
+  },
+  {
+    "id": 3,
+    "text": "Fahrrad zu verkaufen: Damenrad, 28 Zoll, guter Zustand. Preis: 80 Euro VB.",
+    "statement": "Das Fahrrad kostet genau 80 Euro.",
+    "answer": "Falsch",
+    "explanation": "VB bedeutet Verhandlungsbasis – der Preis ist verhandelbar."
+  },
+  {
+    "id": 4,
+    "text": "Sprachschule: Wir bieten Kurse in Englisch, Spanisch, Französisch und Deutsch an.",
+    "statement": "Die Sprachschule hat auch Deutschkurse.",
+    "answer": "Richtig",
+    "explanation": "Deutsch wird als Kurssprache angeboten."
+  },
+  {
+    "id": 5,
+    "text": "Kleiderspende: Wir nehmen gut erhaltene Winterkleidung an. Mo–Fr, 9:00–16:00 Uhr.",
+    "statement": "Man kann dort alte Kleidung abgeben.",
+    "answer": "Richtig",
+    "explanation": "Gut erhaltene Winterkleidung wird montags bis freitags angenommen."
+  },
+  {
+    "id": 6,
+    "text": "Achtung Allergiker! Dieses Produkt enthält Nüsse.",
+    "statement": "Das Produkt ist für Nussallergiker geeignet.",
+    "answer": "Falsch",
+    "explanation": "Das Produkt enthält Nüsse und ist daher für Nussallergiker ungeeignet."
+  },
+  {
+    "id": 7,
+    "text": "Achtung: Glatteisgefahr! Bitte langsam fahren.",
+    "statement": "Die Straße ist rutschig.",
+    "answer": "Richtig",
+    "explanation": "Glatteisgefahr bedeutet, dass die Straße rutschig ist."
+  },
+  {
+    "id": 8,
+    "text": "Heute: Frische Erdbeeren – 2 kg für nur 3 Euro!",
+    "statement": "Erdbeeren kosten heute 3 Euro für 2 kg.",
+    "answer": "Richtig",
+    "explanation": "2 kg Erdbeeren kosten 3 Euro."
+  },
+  {
+    "id": 9,
+    "text": "Frühjahrsfest: Samstag, 1. April, ab 15:00 Uhr im Stadtpark. Bei Regen fällt das Fest aus.",
+    "statement": "Das Fest findet bei jedem Wetter statt.",
+    "answer": "Falsch",
+    "explanation": "Bei Regen fällt das Fest aus."
+  },
+  {
+    "id": 10,
+    "text": "Bitte leise! Prüfung im Gange.",
+    "statement": "Im Raum nebenan findet gerade eine Prüfung statt.",
+    "answer": "Richtig",
+    "explanation": "Das Schild bittet um Ruhe wegen einer Prüfung."
+  },
+  {
+    "id": 11,
+    "text": "Imbiss: Täglich außer Dienstag geöffnet. 11:00–21:00 Uhr.",
+    "statement": "Der Imbiss ist dienstags geöffnet.",
+    "answer": "Falsch",
+    "explanation": "Der Imbiss ist außer Dienstag geöffnet – dienstags geschlossen."
+  },
+  {
+    "id": 12,
+    "text": "Zug nach Berlin: Abfahrt 14:32, Gleis 5. Heute 10 Minuten Verspätung.",
+    "statement": "Der Zug nach Berlin hat heute Verspätung.",
+    "answer": "Richtig",
+    "explanation": "Der Zug hat 10 Minuten Verspätung."
+  },
+  {
+    "id": 13,
+    "text": "Neujahrsfest: Das Büro bleibt vom 24. Dezember bis 2. Januar geschlossen.",
+    "statement": "Das Büro ist am 1. Januar geschlossen.",
+    "answer": "Richtig",
+    "explanation": "Der 1. Januar liegt innerhalb des Schließzeitraums."
+  },
+  {
+    "id": 14,
+    "text": "Veranstaltung: Konzert am Freitag, 20:00 Uhr. Einlass ab 19:00 Uhr.",
+    "statement": "Das Konzert beginnt um 20:00 Uhr.",
+    "answer": "Richtig",
+    "explanation": "Der Konzertbeginn ist um 20:00 Uhr."
+  },
+  {
+    "id": 15,
+    "text": "Lesen Sie bitte die Gebrauchsanweisung vor der ersten Benutzung.",
+    "statement": "Man soll die Anleitung vor dem ersten Benutzen lesen.",
+    "answer": "Richtig",
+    "explanation": "Die Gebrauchsanweisung soll vor der ersten Benutzung gelesen werden."
+  },
+  {
+    "id": 16,
+    "text": "Bitte Fahrrad anschließen! Nicht gesicherte Fahrräder werden entfernt.",
+    "statement": "Man darf sein Fahrrad ohne Schloss abstellen.",
+    "answer": "Falsch",
+    "explanation": "Nicht gesicherte Fahrräder werden entfernt."
+  },
+  {
+    "id": 17,
+    "text": "Verein: Mitgliedschaft kostet 5 Euro pro Monat. Kinder bis 14 Jahren gratis.",
+    "statement": "Kinder unter 14 Jahren zahlen keine Mitgliedsgebühr.",
+    "answer": "Richtig",
+    "explanation": "Kinder bis 14 Jahren sind gratis Mitglied."
+  },
+  {
+    "id": 18,
+    "text": "Hier parken verboten! Fahrzeuge werden kostenpflichtig abgeschleppt.",
+    "statement": "Parken ist hier kostenlos erlaubt.",
+    "answer": "Falsch",
+    "explanation": "Parken ist verboten und falsch geparkte Autos werden kostenpflichtig abgeschleppt."
+  },
+  {
+    "id": 19,
+    "text": "Drogerie Müller: Heute 30 Minuten länger geöffnet bis 20:30 Uhr.",
+    "statement": "Die Drogerie schließt heute früher als sonst.",
+    "answer": "Falsch",
+    "explanation": "Die Drogerie ist heute 30 Minuten länger geöffnet."
+  },
+  {
+    "id": 20,
+    "text": "Rauchen verboten! Dies gilt auch für E-Zigaretten.",
+    "statement": "E-Zigaretten sind hier erlaubt.",
+    "answer": "Falsch",
+    "explanation": "E-Zigaretten sind auch verboten."
+  },
+  {
+    "id": 21,
+    "text": "Anmeldung zum Schwimmkurs: Nur für Kinder von 6 bis 10 Jahren.",
+    "statement": "Ein 5-jähriges Kind kann sich für den Schwimmkurs anmelden.",
+    "answer": "Falsch",
+    "explanation": "Der Kurs ist nur für Kinder von 6 bis 10 Jahren."
+  },
+  {
+    "id": 22,
+    "text": "Zimmer frei! Ruhige Lage, Frühstück inklusive. Tel: 0123-456789.",
+    "statement": "Das Frühstück ist im Zimmerpreis enthalten.",
+    "answer": "Richtig",
+    "explanation": "Frühstück ist inklusive."
+  },
+  {
+    "id": 23,
+    "text": "Kühlschrank defekt! Bitte keine Lebensmittel reinstellen.",
+    "statement": "Der Kühlschrank funktioniert nicht.",
+    "answer": "Richtig",
+    "explanation": "Der Kühlschrank ist defekt."
+  },
+  {
+    "id": 24,
+    "text": "Reinigung Schmidt: Express-Service – Ihre Kleidung in 24 Stunden fertig.",
+    "statement": "Die Reinigung braucht nur einen Tag.",
+    "answer": "Richtig",
+    "explanation": "Express-Service: fertig in 24 Stunden = 1 Tag."
+  },
+  {
+    "id": 25,
+    "text": "Tierarzt Dr. Hoffmann: Notdienst auch nachts und am Wochenende.",
+    "statement": "Der Tierarzt ist nur montags bis freitags erreichbar.",
+    "answer": "Falsch",
+    "explanation": "Es gibt auch Notdienst nachts und am Wochenende."
+  },
+  {
+    "id": 26,
+    "text": "Bibliothek: Bücher können für 3 Wochen ausgeliehen werden.",
+    "statement": "Man kann Bücher für 3 Wochen leihen.",
+    "answer": "Richtig",
+    "explanation": "Die Leihfrist beträgt 3 Wochen."
+  },
+  {
+    "id": 27,
+    "text": "Waschmaschine Nummer 3 ist defekt. Bitte Nummer 4 oder 5 benutzen.",
+    "statement": "Alle Waschmaschinen funktionieren.",
+    "answer": "Falsch",
+    "explanation": "Waschmaschine Nummer 3 ist defekt."
+  },
+  {
+    "id": 28,
+    "text": "Bitte schalten Sie Ihr Mobiltelefon auf stumm. Kinofilm beginnt gleich.",
+    "statement": "Der Film fängt bald an.",
+    "answer": "Richtig",
+    "explanation": "Der Kinofilm beginnt gleich."
+  },
+  {
+    "id": 29,
+    "text": "Vorsicht! Frisch gestrichen. Bitte nicht berühren.",
+    "statement": "Man soll die Wand nicht anfassen.",
+    "answer": "Richtig",
+    "explanation": "Die Wand ist frisch gestrichen und soll nicht berührt werden."
+  },
+  {
+    "id": 30,
+    "text": "Blumen zu kaufen: Rose, Tulpe, Lilie. Heute 20% Rabatt auf alles!",
+    "statement": "Heute gibt es einen Rabatt auf alle Blumen.",
+    "answer": "Richtig",
+    "explanation": "Heute gibt es 20% Rabatt auf alles."
+  },
+  {
+    "id": 31,
+    "text": "Bitte Türe schließen! Klimaanlage in Betrieb.",
+    "statement": "Die Klimaanlage ist eingeschaltet.",
+    "answer": "Richtig",
+    "explanation": "Die Klimaanlage ist in Betrieb."
+  },
+  {
+    "id": 32,
+    "text": "Yoga-Kurs: Mittwoch und Freitag, 18:00–19:30 Uhr. Anfänger willkommen!",
+    "statement": "Der Yogakurs ist nur für Fortgeschrittene.",
+    "answer": "Falsch",
+    "explanation": "Anfänger sind willkommen."
+  },
+  {
+    "id": 33,
+    "text": "Geldautomat außer Betrieb. Nächster Automat: 200 Meter links.",
+    "statement": "Dieser Geldautomat funktioniert.",
+    "answer": "Falsch",
+    "explanation": "Der Geldautomat ist außer Betrieb."
+  },
+  {
+    "id": 34,
+    "text": "Haltestelle gesperrt! Bus fährt bis Ende Oktober von der Haltestelle Bahnhof ab.",
+    "statement": "Die Bushaltestelle ist normal in Betrieb.",
+    "answer": "Falsch",
+    "explanation": "Die Haltestelle ist gesperrt."
+  },
+  {
+    "id": 35,
+    "text": "Kostenloses WLAN für Hotelgäste. Passwort an der Rezeption.",
+    "statement": "Hotelgäste können gratis WLAN nutzen.",
+    "answer": "Richtig",
+    "explanation": "Das WLAN ist kostenlos für Hotelgäste."
+  },
+  {
+    "id": 36,
+    "text": "Friseur Bella: Termine online oder telefonisch. Keine Laufkundschaft.",
+    "statement": "Man kann ohne Termin zum Friseur kommen.",
+    "answer": "Falsch",
+    "explanation": "Laufkundschaft wird nicht angenommen, nur Termine."
+  },
+  {
+    "id": 37,
+    "text": "Kunstausstellung: Täglich geöffnet. Letzter Einlass eine Stunde vor Schließung.",
+    "statement": "Man kann bis zur Schließungszeit eintreten.",
+    "answer": "Falsch",
+    "explanation": "Der letzte Einlass ist eine Stunde vor Schließung."
+  },
+  {
+    "id": 38,
+    "text": "Lebensmittel nach dem Öffnen im Kühlschrank aufbewahren. Verbrauch: innerhalb von 3 Tagen.",
+    "statement": "Das Produkt muss nach dem Öffnen gekühlt werden.",
+    "answer": "Richtig",
+    "explanation": "Es muss im Kühlschrank aufbewahrt werden."
+  },
+  {
+    "id": 39,
+    "text": "Parkplatz nur für Kunden. Maximale Parkdauer: 2 Stunden.",
+    "statement": "Man kann hier unbegrenzt parken.",
+    "answer": "Falsch",
+    "explanation": "Die maximale Parkdauer beträgt 2 Stunden."
+  },
+  {
+    "id": 40,
+    "text": "Umkleideraum: Bitte keine Wertsachen zurücklassen. Kein Haftung für Verluste.",
+    "statement": "Der Betreiber haftet für gestohlene Wertsachen.",
+    "answer": "Falsch",
+    "explanation": "Es gibt keine Haftung für Verluste."
+  },
+  {
+    "id": 41,
+    "text": "Weg gesperrt! Umleitung über Waldstraße.",
+    "statement": "Man kann diesen Weg benutzen.",
+    "answer": "Falsch",
+    "explanation": "Der Weg ist gesperrt, man muss die Umleitung nehmen."
+  },
+  {
+    "id": 42,
+    "text": "Bitte keine Lebensmittel im Büro. Danke!",
+    "statement": "Man darf Essen ins Büro mitbringen.",
+    "answer": "Falsch",
+    "explanation": "Lebensmittel sind im Büro nicht erlaubt."
+  },
+  {
+    "id": 43,
+    "text": "Busfahrplan: Bus Nr. 7 fährt werktags alle 15 Minuten.",
+    "statement": "Bus Nr. 7 fährt am Wochenende alle 15 Minuten.",
+    "answer": "Falsch",
+    "explanation": "Der 15-Minuten-Takt gilt nur werktags."
+  },
+  {
+    "id": 44,
+    "text": "Ausstellung: Fotografieren ohne Blitz erlaubt.",
+    "statement": "In der Ausstellung darf man fotografieren.",
+    "answer": "Richtig",
+    "explanation": "Fotografieren ohne Blitz ist erlaubt."
+  },
+  {
+    "id": 45,
+    "text": "Kursgebühr: 120 Euro pro Semester. Bezahlung bis zum 15. des Monats.",
+    "statement": "Die Kursgebühr beträgt 120 Euro.",
+    "answer": "Richtig",
+    "explanation": "Der Kurs kostet 120 Euro pro Semester."
+  },
+  {
+    "id": 46,
+    "text": "Kinderspielplatz: Nur für Kinder bis 12 Jahre.",
+    "statement": "Der Spielplatz ist für Kinder bis 12 Jahre.",
+    "answer": "Richtig",
+    "explanation": "Der Spielplatz ist für Kinder bis 12 Jahre."
+  },
+  {
+    "id": 47,
+    "text": "Achtung! Dieser Bereich ist nur für Mitarbeiter. Zutritt verboten.",
+    "statement": "Alle Personen dürfen diesen Bereich betreten.",
+    "answer": "Falsch",
+    "explanation": "Nur Mitarbeiter haben Zutritt."
+  },
+  {
+    "id": 48,
+    "text": "Café: Hunde willkommen! Bitte die Leine anlassen.",
+    "statement": "Hunde sind in diesem Café nicht erlaubt.",
+    "answer": "Falsch",
+    "explanation": "Hunde sind willkommen, müssen aber an der Leine bleiben."
+  },
+  {
+    "id": 49,
+    "text": "Liebe Nachbarn, ich bin vom 10. bis 20. Juli im Urlaub. Pakete bitte bei Frau Huber, Wohnung 12, abgeben.",
+    "statement": "Die Person ist den ganzen August im Urlaub.",
+    "answer": "Falsch",
+    "explanation": "Der Urlaub ist vom 10. bis 20. Juli, nicht im August."
+  },
+  {
+    "id": 50,
+    "text": "Café Luna: Frühstück täglich von 8:00 bis 11:00 Uhr.",
+    "statement": "Im Café Luna gibt es Frühstück bis 12:00 Uhr.",
+    "answer": "Falsch",
+    "explanation": "Das Frühstück endet um 11:00 Uhr."
+  },
+  {
+    "id": 51,
+    "text": "Zahnarzt: Bitte erscheinen Sie 10 Minuten vor Ihrem Termin.",
+    "statement": "Man soll pünktlich zum Termin kommen.",
+    "answer": "Falsch",
+    "explanation": "Man soll 10 Minuten früher erscheinen, nicht nur pünktlich."
+  },
+  {
+    "id": 52,
+    "text": "Apotheke: Notdienst heute von 20:00 bis 8:00 Uhr. Klingeln Sie bitte.",
+    "statement": "Die Apotheke hat heute Nacht Notdienst.",
+    "answer": "Richtig",
+    "explanation": "Notdienst von 20:00 bis 8:00 Uhr."
+  },
+  {
+    "id": 53,
+    "text": "Schule: Morgen unterrichtsfrei wegen Lehrerkonferenz.",
+    "statement": "Morgen haben die Schüler keinen Unterricht.",
+    "answer": "Richtig",
+    "explanation": "Morgen ist unterrichtsfrei."
+  },
+  {
+    "id": 54,
+    "text": "Bitte Abstand halten! Mindestabstand 1,5 Meter.",
+    "statement": "Man soll mindestens 2 Meter Abstand halten.",
+    "answer": "Falsch",
+    "explanation": "Der Mindestabstand beträgt 1,5 Meter."
+  },
+  {
+    "id": 56,
+    "text": "Bitte Hände waschen! Seife und Handtücher sind vorhanden.",
+    "statement": "Es gibt keine Seife im Raum.",
+    "answer": "Falsch",
+    "explanation": "Seife und Handtücher sind vorhanden."
+  },
+  {
+    "id": 57,
+    "text": "Aufgepasst: Dieser Bereich wird videoüberwacht.",
+    "statement": "Es gibt keine Kameras in diesem Bereich.",
+    "answer": "Falsch",
+    "explanation": "Der Bereich wird videoüberwacht."
+  },
+  {
+    "id": 58,
+    "text": "Kein Handy im Unterricht! Handys bitte ausschalten.",
+    "statement": "Man darf im Unterricht das Handy benutzen.",
+    "answer": "Falsch",
+    "explanation": "Handys sind im Unterricht verboten."
+  },
+  {
+    "id": 59,
+    "text": "Waschraum: Bitte hinterlassen Sie den Raum sauber. Danke!",
+    "statement": "Man soll den Waschraum sauber halten.",
+    "answer": "Richtig",
+    "explanation": "Der Raum soll sauber hinterlassen werden."
+  },
+  {
+    "id": 60,
+    "text": "Stellenanzeige: Wir suchen eine Verkäuferin/einen Verkäufer für Teilzeit (20 Std./Woche).",
+    "statement": "Die Stelle ist eine Vollzeitstelle.",
+    "answer": "Falsch",
+    "explanation": "Es handelt sich um eine Teilzeitstelle mit 20 Stunden pro Woche."
+  },
+  {
+    "id": 61,
+    "text": "Aufzug außer Betrieb. Bitte benutzen Sie die Treppe.",
+    "statement": "Der Aufzug funktioniert nicht.",
+    "answer": "Richtig",
+    "explanation": "Der Aufzug ist außer Betrieb."
+  },
+  {
+    "id": 62,
+    "text": "Hausordnung: Ruhezeit täglich von 13:00 bis 15:00 und von 22:00 bis 7:00 Uhr.",
+    "statement": "Mittags von 13 bis 15 Uhr soll es ruhig sein.",
+    "answer": "Richtig",
+    "explanation": "Die Mittagsruhe gilt von 13:00 bis 15:00 Uhr."
+  },
+  {
+    "id": 63,
+    "text": "Sportverein: Probetraining kostenlos! Einfach vorbeikommen.",
+    "statement": "Das Probetraining ist gratis.",
+    "answer": "Richtig",
+    "explanation": "Das Probetraining ist kostenlos."
+  },
+  {
+    "id": 64,
+    "text": "Sportplatz: Bitte Sportschuhe tragen. Straßenschuhe verboten.",
+    "statement": "Man darf auf dem Sportplatz Straßenschuhe tragen.",
+    "answer": "Falsch",
+    "explanation": "Straßenschuhe sind verboten, man muss Sportschuhe tragen."
+  },
+  {
+    "id": 65,
+    "text": "Sonderangebot: Kaufe 3, zahle 2! Nur diese Woche.",
+    "statement": "Das Angebot gilt nur diese Woche.",
+    "answer": "Richtig",
+    "explanation": "Das Angebot ist nur diese Woche gültig."
+  },
+  {
+    "id": 66,
+    "text": "Bäckerei Müller: Montag bis Freitag 7:00–18:00 Uhr geöffnet. Samstag 7:00–13:00 Uhr. Sonntag geschlossen.",
+    "statement": "Die Bäckerei ist am Sonntag geöffnet.",
+    "answer": "Falsch",
+    "explanation": "Die Bäckerei ist am Sonntag geschlossen."
+  },
+  {
+    "id": 67,
+    "text": "Marktstand: Frische Eier vom Bauernhof. 10 Stück – 3,50 Euro.",
+    "statement": "Die Eier kommen vom Bauernhof.",
+    "answer": "Richtig",
+    "explanation": "Die Eier sind frische Bauernhof-Eier."
+  },
+  {
+    "id": 68,
+    "text": "Kursanmeldung: Deutschkurs A1 beginnt am 5. September. Anmeldung bis 30. August.",
+    "statement": "Der Deutschkurs beginnt im Oktober.",
+    "answer": "Falsch",
+    "explanation": "Der Kurs beginnt am 5. September."
+  },
+  {
+    "id": 69,
+    "text": "Warmwasser: Heute von 10:00 bis 14:00 Uhr kein Warmwasser wegen Wartungsarbeiten.",
+    "statement": "Heute gibt es zwischen 10 und 14 Uhr kein Warmwasser.",
+    "answer": "Richtig",
+    "explanation": "Wegen Wartungsarbeiten kein Warmwasser von 10:00 bis 14:00 Uhr."
+  },
+  {
+    "id": 70,
+    "text": "Flohmarkt jeden Samstag von 8:00 bis 14:00 Uhr auf dem Marktplatz.",
+    "statement": "Der Flohmarkt findet samstags statt.",
+    "answer": "Richtig",
+    "explanation": "Der Flohmarkt ist jeden Samstag."
+  },
+  {
+    "id": 71,
+    "text": "Arztpraxis Dr. Schmidt: Termine nur nach telefonischer Anmeldung.",
+    "statement": "Man braucht einen Termin zum Arztbesuch.",
+    "answer": "Richtig",
+    "explanation": "Termine müssen telefonisch vereinbart werden."
+  },
+  {
+    "id": 72,
+    "text": "Gepäckaufbewahrung: Geöffnet von 7:00 bis 21:00 Uhr. Max. 3 Koffer pro Person.",
+    "statement": "Man kann unbegrenzt viele Koffer abgeben.",
+    "answer": "Falsch",
+    "explanation": "Maximal 3 Koffer pro Person sind erlaubt."
+  },
+  {
+    "id": 73,
+    "text": "Treppe gesperrt! Bitte Aufzug benutzen.",
+    "statement": "Die Treppe ist gesperrt.",
+    "answer": "Richtig",
+    "explanation": "Die Treppe ist gesperrt, man soll den Aufzug nehmen."
+  },
+  {
+    "id": 74,
+    "text": "Museum: Eintritt frei für Kinder unter 6 Jahren.",
+    "statement": "Kinder unter 6 Jahren zahlen keinen Eintritt.",
+    "answer": "Richtig",
+    "explanation": "Der Eintritt ist frei für Kinder unter 6 Jahren."
+  },
+  {
+    "id": 75,
+    "text": "Fitnessstudio: Neu! Ab 1. Oktober täglich von 6:00 bis 23:00 Uhr geöffnet.",
+    "statement": "Das Fitnessstudio öffnet jeden Tag um 6:00 Uhr.",
+    "answer": "Richtig",
+    "explanation": "Das Studio öffnet täglich um 6:00 Uhr."
+  },
+  {
+    "id": 76,
+    "text": "Bitte Besucher melden! Alle Besucher müssen sich am Empfang anmelden.",
+    "statement": "Besucher können direkt ins Gebäude gehen.",
+    "answer": "Falsch",
+    "explanation": "Besucher müssen sich am Empfang anmelden."
+  },
+  {
+    "id": 77,
+    "text": "Verkauf! Alle Winterjacken jetzt 50% günstiger.",
+    "statement": "Winterjacken sind auf 50% reduziert.",
+    "answer": "Richtig",
+    "explanation": "Es gibt 50% Rabatt auf Winterjacken."
+  },
+  {
+    "id": 78,
+    "text": "Achtung! Hund im Auto. Bitte Fenster nicht öffnen.",
+    "statement": "Im Auto ist ein Hund.",
+    "answer": "Richtig",
+    "explanation": "Das Schild sagt, dass ein Hund im Auto ist."
+  },
+  {
+    "id": 79,
+    "text": "Tagesmenu: Suppe + Hauptgericht + Dessert für 12 Euro.",
+    "statement": "Das Tagesmenu enthält drei Gänge.",
+    "answer": "Richtig",
+    "explanation": "Suppe, Hauptgericht und Dessert = drei Gänge."
+  },
+  {
+    "id": 80,
+    "text": "Lieferung: Ihr Paket wird morgen zwischen 10:00 und 14:00 Uhr geliefert.",
+    "statement": "Das Paket kommt heute an.",
+    "answer": "Falsch",
+    "explanation": "Das Paket wird morgen geliefert."
+  },
+  {
+    "id": 81,
+    "text": "Wohnung zu vermieten: 3 Zimmer, 80 m², Kaltmiete 900 Euro.",
+    "statement": "Die Wohnung hat 3 Zimmer.",
+    "answer": "Richtig",
+    "explanation": "Die Wohnung hat 3 Zimmer."
+  },
+  {
+    "id": 82,
+    "text": "Wochenkarte: Unbegrenzte Fahrten mit Bus und Bahn für 7 Tage. 25 Euro.",
+    "statement": "Mit der Wochenkarte kann man 7 Tage beliebig oft fahren.",
+    "answer": "Richtig",
+    "explanation": "Die Wochenkarte erlaubt unbegrenzte Fahrten für 7 Tage."
+  },
+  {
+    "id": 83,
+    "text": "Parkhaus: Erste Stunde kostenlos. Danach 2 Euro pro Stunde.",
+    "statement": "Man kann eine Stunde gratis parken.",
+    "answer": "Richtig",
+    "explanation": "Die erste Stunde ist kostenlos."
+  },
+  {
+    "id": 84,
+    "text": "Tanzkurs: Anfänger – Dienstag 19:00 Uhr. Fortgeschrittene – Donnerstag 20:00 Uhr.",
+    "statement": "Der Anfängerkurs findet dienstags statt.",
+    "answer": "Richtig",
+    "explanation": "Anfänger haben ihren Kurs dienstags um 19:00 Uhr."
+  },
+  {
+    "id": 85,
+    "text": "Kindergarten: Bitte bringen Sie Ihr Kind bis spätestens 9:00 Uhr.",
+    "statement": "Kinder müssen vor 9:00 Uhr im Kindergarten sein.",
+    "answer": "Richtig",
+    "explanation": "Die Kinder sollen bis spätestens 9:00 Uhr gebracht werden."
+  },
+  {
+    "id": 86,
+    "text": "Stadtfest: Samstag und Sonntag, 12:00–22:00 Uhr. Eintritt frei!",
+    "statement": "Für das Stadtfest muss man bezahlen.",
+    "answer": "Falsch",
+    "explanation": "Der Eintritt ist frei."
+  },
+  {
+    "id": 87,
+    "text": "Stadtbibliothek: Montag geschlossen. Di–Fr 10:00–18:00. Sa 10:00–14:00.",
+    "statement": "Die Bibliothek ist am Montag geöffnet.",
+    "answer": "Falsch",
+    "explanation": "Die Bibliothek ist am Montag geschlossen."
+  },
+  {
+    "id": 88,
+    "text": "Achtung: Baustelle! Fußgänger bitte auf der anderen Straßenseite gehen.",
+    "statement": "Fußgänger sollen auf dieser Seite bleiben.",
+    "answer": "Falsch",
+    "explanation": "Fußgänger sollen die andere Straßenseite benutzen."
+  },
+  {
+    "id": 89,
+    "text": "Kein Eingang! Bitte benutzen Sie den Hintereingang.",
+    "statement": "Man soll den Vordereingang benutzen.",
+    "answer": "Falsch",
+    "explanation": "Man soll den Hintereingang benutzen."
+  },
+  {
+    "id": 90,
+    "text": "Veranstaltungsort: Parkplätze begrenzt. Öffentliche Verkehrsmittel empfohlen.",
+    "statement": "Es gibt genug Parkplätze für alle Besucher.",
+    "answer": "Falsch",
+    "explanation": "Die Parkplätze sind begrenzt, daher werden öffentliche Verkehrsmittel empfohlen."
+  },
+  {
+    "id": 91,
+    "text": "Kantine: Mittagessen von 12:00 bis 14:00 Uhr. Heute: Gemüsesuppe und Schnitzel.",
+    "statement": "In der Kantine gibt es heute Schnitzel.",
+    "answer": "Richtig",
+    "explanation": "Das Tagesmenü enthält Schnitzel."
+  },
+  {
+    "id": 92,
+    "text": "Schwimmen verboten! Strömungsgefahr!",
+    "statement": "Hier ist das Schwimmen gefährlich.",
+    "answer": "Richtig",
+    "explanation": "Schwimmen ist wegen Strömungsgefahr verboten."
+  },
+  {
+    "id": 93,
+    "text": "Supermarkt heute bis 22:00 Uhr geöffnet. Morgen ab 8:00 Uhr.",
+    "statement": "Der Supermarkt schließt heute um 22:00 Uhr.",
+    "answer": "Richtig",
+    "explanation": "Der Supermarkt ist heute bis 22:00 Uhr offen."
+  },
+  {
+    "id": 94,
+    "text": "Bahnhof: Schließfächer im Untergeschoss. Preis: 2 Euro für 24 Stunden.",
+    "statement": "Die Schließfächer sind im Erdgeschoss.",
+    "answer": "Falsch",
+    "explanation": "Die Schließfächer befinden sich im Untergeschoss."
+  },
+  {
+    "id": 95,
+    "text": "Impfung: Grippeschutzimpfung jetzt möglich. Bitte Termin vereinbaren.",
+    "statement": "Man kann ohne Termin geimpft werden.",
+    "answer": "Falsch",
+    "explanation": "Es muss ein Termin vereinbart werden."
+  },
+  {
+    "id": 96,
+    "text": "Haustiere sind in dieser Wohnung nicht erlaubt.",
+    "statement": "Man darf in dieser Wohnung keine Tiere halten.",
+    "answer": "Richtig",
+    "explanation": "Haustiere sind in der Wohnung nicht erlaubt."
+  },
+  {
+    "id": 97,
+    "text": "Bitte keinen Müll auf der Straße wegwerfen! Strafe: bis zu 500 Euro.",
+    "statement": "Müll auf der Straße werfen ist kostenlos.",
+    "answer": "Falsch",
+    "explanation": "Es gibt eine Strafe von bis zu 500 Euro."
+  },
+  {
+    "id": 98,
+    "text": "Zu verschenken: Kinderbücher, guter Zustand. Vor der Tür in Karton.",
+    "statement": "Die Bücher kosten etwas.",
+    "answer": "Falsch",
+    "explanation": "Die Bücher werden verschenkt, sie kosten nichts."
+  },
+  {
+    "id": 98,
+    "text": "Angebot: Kaufen Sie zwei Pizzen und bekommen Sie eine dritte gratis!",
+    "statement": "Bei zwei Pizzen bekommt man eine kostenlos dazu.",
+    "answer": "Richtig",
+    "explanation": "Zwei kaufen, eine gratis bekommen."
+  },
+  {
+    "id": 99,
+    "text": "Hallenbad: Montag Damenschwimmen. Herren haben keinen Zutritt.",
+    "statement": "Männer dürfen montags ins Hallenbad.",
+    "answer": "Falsch",
+    "explanation": "Montags ist Damenschwimmen, Herren haben keinen Zutritt."
+  },
+  {
+    "id": 100,
+    "text": "Restaurant: Tischreservierung empfohlen. Tel: 0800-123456.",
+    "statement": "Man sollte im Restaurant einen Tisch reservieren.",
+    "answer": "Richtig",
+    "explanation": "Eine Tischreservierung wird empfohlen."
+  }
+],
   schreiben1: [
   {
     "id": 1,
