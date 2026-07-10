@@ -18589,7 +18589,7 @@ const D = {
     "statement": "Man sollte im Restaurant einen Tisch reservieren.",
     "answer": "Richtig",
     "explanation": "Eine Tischreservierung wird empfohlen."
-  }
+  },
 ],
   schreiben1: [
   {
