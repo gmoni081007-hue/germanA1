@@ -17889,7 +17889,7 @@ const D = {
         "Option a bietet deutsche Radiosender zum Online-Hören, ideal zum Üben des Deutschen. Option b verkauft Radio-Geräte – das Gerät hilft nicht beim Deutsch üben, wenn man noch kein Radio hat.",
     },
   ],
-  lesson3: [
+  lesen3: [
   {
     "id": 1,
     "text": "Internetcafé: 1 Euro pro 30 Minuten. Drucken: 20 Cent pro Seite.",
