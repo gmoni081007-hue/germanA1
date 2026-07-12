@@ -10662,15 +10662,16 @@ const D = {
         },
         {
           number: 2,
-          statement: "Sofias Wohnung ist weit vom Bahnhof.",
-          answer: "Falsch",
-          explanation: "She says 'in der Nähe vom Bahnhof' — near the station.",
-        },
-        {
-          number: 3,
           statement: "Sofia möchte Anna zum Essen einladen.",
           answer: "Richtig",
           explanation: "Sofia says 'ich koche gerne für dich.'",
+         
+        },
+        {
+          number: 3,
+           statement: "Sofias Wohnung ist weit vom Bahnhof.",
+          answer: "Falsch",
+          explanation: "She says 'in der Nähe vom Bahnhof' — near the station.",
         },
       ],
     },
@@ -10681,15 +10682,16 @@ const D = {
       questions: [
         {
           number: 1,
-          statement: "Tom soll Milch und Brot kaufen.",
-          answer: "Richtig",
-          explanation: "'Bitte kauf auch Milch und Brot!'",
-        },
-        {
-          number: 2,
           statement: "Der Supermarkt in der Straße ist bis 22 Uhr offen.",
           answer: "Falsch",
           explanation: "That supermarket is closed. The one in Bahnhofstraße is open until 22:00.",
+          
+        },
+        {
+          number: 2,
+          statement: "Tom soll Milch und Brot kaufen.",
+          answer: "Richtig",
+          explanation: "'Bitte kauf auch Milch und Brot!'",
         },
         {
           number: 3,
@@ -10737,8 +10739,8 @@ const D = {
         },
         {
           number: 3,
-          statement: "Die Studenten sollen einen Ausweis mitbringen.",
-          answer: "Richtig",
+          statement: "Die Studenten sollen einen Ausweis nichts mitbringen.",
+          answer: "Falsch",
           explanation: "'Bitte bringen Sie Ihren Ausweis mit.'",
         },
       ],
@@ -10750,15 +10752,16 @@ const D = {
       questions: [
         {
           number: 1,
-          statement: "Felix kommt um 21 Uhr an.",
-          answer: "Richtig",
-          explanation: "'ich komme erst um 21 Uhr an.'",
-        },
-        {
-          number: 2,
           statement: "Felix kann sein Auto nicht nehmen, weil es verkauft ist.",
           answer: "Falsch",
           explanation: "The car is in the repair shop (Werkstatt), not sold.",
+          
+        },
+        {
+          number: 2,
+          statement: "Felix kommt um 21 Uhr an.",
+          answer: "Richtig",
+          explanation: "'ich komme erst um 21 Uhr an.'",
         },
       ],
     },
@@ -10769,8 +10772,8 @@ const D = {
       questions: [
         {
           number: 1,
-          statement: "Paul Schneider ist seit drei Tagen krank.",
-          answer: "Richtig",
+          statement: "Paul Schneider ist seit zwei Tagen krank.",
+          answer: "Falsch",
           explanation: "'Ich habe seit drei Tagen Halsschmerzen und Fieber.'",
         },
         {
@@ -11225,9 +11228,9 @@ const D = {
         },
         {
           number: 2,
-          statement: "Am Dienstag beginnt der Unterricht um 9 Uhr.",
-          answer: "Falsch",
-          explanation: "School starts at 8:00, not 9:00 on Tuesday.",
+          statement: "Am Dienstag beginnt der Unterricht um 8 Uhr.",
+          answer: "Richtig",
+          explanation: "School starts at 8:00.",
         },
         {
           number: 3,
@@ -11269,15 +11272,16 @@ const D = {
         },
         {
           number: 2,
-          statement: "Die Wanderung beginnt am Sonntag.",
-          answer: "Falsch",
-          explanation: "'am Samstag um 8 Uhr' — the hike is on Saturday.",
-        },
-        {
-          number: 3,
           statement: "Nach der Wanderung gibt es ein Picknick.",
           answer: "Richtig",
           explanation: "'Danach machen wir ein Picknick.'",
+          
+        },
+        {
+          number: 3,
+          statement: "Die Wanderung beginnt am Sonntag.",
+          answer: "Falsch",
+          explanation: "'am Samstag um 8 Uhr' — the hike is on Saturday.",
         },
       ],
     },
@@ -11288,15 +11292,16 @@ const D = {
       questions: [
         {
           number: 1,
-          statement: "Die Reparatur kostet ungefähr 350 Euro.",
-          answer: "Richtig",
-          explanation: "'Die Reparatur kostet ca. 350 Euro.'",
-        },
-        {
-          number: 2,
           statement: "Herr Krause hat das Problem noch nicht gefunden.",
           answer: "Falsch",
           explanation: "'Wir haben das Problem mit dem Motor gefunden.'",
+          
+        },
+        {
+          number: 2,
+          statement: "Die Reparatur kostet ungefähr 350 Euro.",
+          answer: "Richtig",
+          explanation: "'Die Reparatur kostet ca. 350 Euro.'",
         },
       ],
     },
@@ -17965,17 +17970,18 @@ const D = {
   },
   {
     "id": 11,
-    "text": "Imbiss: Täglich außer Dienstag geöffnet. 11:00–21:00 Uhr.",
-    "statement": "Der Imbiss ist dienstags geöffnet.",
-    "answer": "Falsch",
-    "explanation": "Der Imbiss ist außer Dienstag geöffnet – dienstags geschlossen."
-  },
-  {
-    "id": 12,
     "text": "Zug nach Berlin: Abfahrt 14:32, Gleis 5. Heute 10 Minuten Verspätung.",
     "statement": "Der Zug nach Berlin hat heute Verspätung.",
     "answer": "Richtig",
     "explanation": "Der Zug hat 10 Minuten Verspätung."
+   
+  },
+  {
+    "id": 12,
+     "text": "Imbiss: Täglich außer Dienstag geöffnet. 11:00–21:00 Uhr.",
+    "statement": "Der Imbiss ist dienstags geöffnet.",
+    "answer": "Falsch",
+    "explanation": "Der Imbiss ist außer Dienstag geöffnet – dienstags geschlossen."
   },
   {
     "id": 13,
