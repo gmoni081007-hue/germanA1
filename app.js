@@ -1779,7 +1779,7 @@ function renderSp1() {
       <div class="sp2-label">💬 Beispiel · Sich vorstellen</div>
       <p class="sp1-example-de">${escHtml(sp1Example.de)}</p>
       <p class="sp1-example-en">${escHtml(sp1Example.en)}</p>
-      ${sectionDescHtml('sp2')}
+     
       <button class="sp2-speak-btn" onclick="sp1SpeakExample()">🔊 Beispiel hören</button>
     </div>
     <div class="sp2-search">
