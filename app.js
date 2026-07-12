@@ -87,7 +87,7 @@ function showPanel(name, navEl) {
   else if (name === "lesen2") renderL2();
   else if (name === "lesen3") renderL3();
   else if (name === "schreiben1") renderS1();
-  else if (name === "schreiben2") renderS2();
+  else if (name === "schreiben2") { renderS2(); s2gInit(); }
   else if (name === "sprechen1") renderSp1();
   else if (name === "sprechen2") renderSp2();
   else if (name === "sprechen3") renderSp3();
@@ -1096,6 +1096,493 @@ function toggleS2Sample() {
 }
 
 // ════════════════════════════════════════════════
+// SCHREIBEN 2 – Interactive Guide (intro before the 44 letters)
+// ════════════════════════════════════════════════
+const s2gContent = {
+  overview: [
+    { icon: "✉️", title: "The Task", text: "You get a short situation with 3 required points. You write a short email or letter answering all 3 points." },
+    { icon: "🎯", title: "The Goal", text: "Show that you can write simple, correct sentences and cover every point — not that you write a lot." },
+    { icon: "🧭", title: "First Decision", text: "Before writing a single word, decide: is this letter formal (Sie) or informal (du)? Everything else follows from that." },
+    { icon: "⏱️", title: "Time Management", text: "Read the task twice, underline the 3 points, choose your style, then write directly — don't overthink each sentence." },
+  ],
+  formal: {
+    label: "Formal Letter",
+    emoji: "🎩",
+    when: ["Writing to someone you don't know", "Writing to an office, institute, school, or company", "The question shows \"Herr/Frau\" + a surname", "The person's gender or identity is unknown"],
+    pronoun: "Sie · Ihre · Ihnen",
+    tone: "Polite, respectful, no first names",
+    greeting: "Sehr geehrte Damen und Herren,",
+    closing: "Mit freundlichen Grüßen",
+    example: {
+      prompt: "Sie möchten im Juli Frankfurt besuchen. Schreiben Sie eine E-Mail an die Touristeninformation:\n– Warum schreiben Sie?\n– Bitten Sie: Informationen über Restaurants, Museen usw.\n– Fragen Sie: Hoteladressen?",
+      answer: "Sehr geehrte Damen und Herren,\nmein Name ist Usama Ehsan. Ich möchte im Juli nach Frankfurt reisen. Ich brauche Informationen über Restaurants und Museen in Frankfurt. Können Sie mir auch ein paar Hotels empfehlen?\nVielen Dank im Voraus für Ihre Hilfe.\n\nMit freundlichen Grüßen\nUsama Ehsan",
+    },
+  },
+  informal: {
+    label: "Informal Letter",
+    emoji: "😊",
+    when: ["Writing to a friend or family member", "The question gives you only a first name", "Writing to a Freund/Freundin, Nachbar/Nachbarin", "Writing to a Kollege/Kollegin with no \"Herr/Frau\" + name given"],
+    pronoun: "du · dein · dir",
+    tone: "Friendly, casual, first names",
+    greeting: "Lieber Thomas,",
+    closing: "Viele Grüße",
+    example: {
+      prompt: "Sie möchten Ihren Geburtstag feiern und Ihren Freund Thomas einladen. Schreiben Sie Thomas eine E-Mail:\n– Warum schreiben Sie?\n– Sagen Sie: Wann und wo feiern Sie?\n– Fragen Sie: kommen?",
+      answer: "Lieber Thomas,\nwie geht es dir? Ich hoffe, es geht dir gut. Ich möchte dich zu meinem Geburtstag einladen. Die Feier ist am Freitag um 18:00 Uhr bei mir zu Hause. Kannst du kommen?\nIch freue mich auf deine Antwort.\n\nViele Grüße\nUsama",
+    },
+  },
+  structure: ["Greeting", "Opening sentence", "Answer Point 1", "Answer Point 2", "Answer Point 3", "Closing sentence", "Signature"],
+  greetingsFormal: [
+    { de: "Sehr geehrter Herr [Name],", en: "one man, name known" },
+    { de: "Sehr geehrte Frau [Name],", en: "one woman, name known" },
+    { de: "Sehr geehrte Damen und Herren,", en: "person / gender unknown" },
+    { de: "Sehr geehrter Herr [Name] und sehr geehrter Herr [Name],", en: "two men" },
+    { de: "Sehr geehrte Frau [Name] und sehr geehrte Frau [Name],", en: "two women" },
+    { de: "Sehr geehrter Herr [Name] und sehr geehrte Frau [Name],", en: "one man + one woman" },
+  ],
+  greetingsInformal: [
+    { de: "Lieber [Name],", en: "one male friend" },
+    { de: "Liebe [Name],", en: "one female friend" },
+    { de: "Lieber [Name] und lieber [Name],", en: "two male friends" },
+    { de: "Liebe [Name] und liebe [Name],", en: "two female friends" },
+    { de: "Lieber [Name] und liebe [Name],", en: "one male + one female friend" },
+  ],
+  sentenceCategories: [
+    { title: "Giving Information", icon: "ℹ️", items: [
+      { de: "Ich brauche Informationen über …", en: "I need information about …" },
+      { de: "Ich möchte ein paar Informationen über … haben.", en: "I would like to have some information about …" },
+    ]},
+    { title: "Accepting an Invitation", icon: "✅", items: [
+      { de: "Ich komme gern.", en: "I will gladly come." },
+    ]},
+    { title: "Declining an Invitation", icon: "🚫", items: [
+      { de: "Leider kann ich nicht kommen.", en: "Unfortunately I cannot come." },
+    ]},
+    { title: "Saying When You'll Arrive", icon: "🕒", items: [
+      { de: "Ich komme um [Uhrzeit].", en: "I will come at [time]." },
+      { de: "Ich komme etwas später.", en: "I will come a little later." },
+      { de: "Ich habe einen Termin um [Uhrzeit] und komme etwas später.", en: "I have an appointment at [time] and will come a little later." },
+    ]},
+    { title: "Asking a Question", icon: "❓", items: [
+      { de: "Wann beginnt [die Feier / das Konzert]?", en: "When does [the party / the concert] begin?" },
+      { de: "Wo ist die Feier? / Wo findet die Feier statt?", en: "Where is the celebration? / Where does it take place?" },
+      { de: "Wie viel kostet [der Kurs / das Ticket]?", en: "How much does [the course / the ticket] cost?" },
+    ]},
+    { title: "Requesting Something", icon: "🙏", items: [
+      { de: "Können Sie mir bitte (mehr) Informationen zu [Thema] schicken?", en: "Can you please send me (more) information about …?" },
+      { de: "Kannst du / Können Sie mir bitte helfen?", en: "Can you please help me?" },
+      { de: "Können Sie mir eine Liste mit [Dingen] schicken?", en: "Can you please send me a list of …?" },
+    ]},
+  ],
+  closingSentences: [
+    { de: "Vielen Dank im Voraus für Ihre Hilfe.", en: "Thanks in advance for your help.", tag: "Formal" },
+    { de: "Ich freue mich auf Ihre Antwort.", en: "I will be happy for your answer.", tag: "Formal" },
+    { de: "Ich freue mich auf deine Antwort.", en: "I will be happy for your answer.", tag: "Informal" },
+  ],
+  signOffs: [
+    { de: "Mit freundlichen Grüßen", en: "Kind regards", tag: "Formal" },
+    { de: "Viele Grüße", en: "Best wishes", tag: "Informal" },
+  ],
+  strategySteps: [
+    { title: "Read the question", text: "Read the whole task once, without writing anything yet." },
+    { title: "Identify the 3 points", text: "Underline or note the 3 things you must mention — every point earns marks." },
+    { title: "Choose your style", text: "Look for \"Herr/Frau + Name\" (formal) or a first name / Freund (informal)." },
+    { title: "Write the greeting", text: "Match the greeting exactly to the person and style you chose." },
+    { title: "Answer every point", text: "Write one clear sentence per point, in the order they were asked." },
+    { title: "Write the closing", text: "Add a closing sentence, then the correct sign-off and your name." },
+    { title: "Check before finishing", text: "Re-read for capital nouns, verb position, and article endings." },
+  ],
+  examinerTips: [
+    "Cover all three required points",
+    "Match your greeting to formal or informal style",
+    "Keep the verb in the correct position (2nd position in main clauses)",
+    "Capitalize every noun",
+    "Check article endings match the case (der → den/dem, die → der …)",
+    "End with a matching closing sentence and Grußformel",
+    "Write on rough paper first, then transfer neatly to the Antwortbogen",
+  ],
+  mistakes: [
+    "Mixing formal \"Sie\" with informal \"du\" in the same letter",
+    "Using the wrong greeting for the person's gender or number",
+    "Forgetting to answer one of the three points",
+    "Writing nouns in lowercase",
+    "Wrong article ending after prepositions (e.g. \"zu seiner Feier\", not \"zu sein Feier\")",
+    "Verb not placed correctly in the sentence",
+    "Missing the closing sentence or the signature",
+    "Copying the question instead of writing an original sentence",
+  ],
+  quiz: [
+    {
+      q: "You're writing to \"Frau Fischer\", someone you don't know personally. Which greeting is correct?",
+      options: ["Liebe Frau Fischer,", "Sehr geehrte Frau Fischer,", "Hallo Frau Fischer,", "Frau Fischer,"],
+      correct: 1,
+      why: "\"Frau\" + a surname always signals a formal letter.",
+    },
+    {
+      q: "\"Lieber Thomas,\" is a formal or informal greeting?",
+      options: ["Formal", "Informal"],
+      correct: 1,
+      why: "A first name with \"Lieber/Liebe\" is always informal.",
+    },
+    {
+      q: "What comes right after the greeting in a Schreiben Teil 2 email?",
+      options: ["The closing sentence", "Your signature", "The opening sentence", "Answer point 3"],
+      correct: 2,
+      why: "Structure: Greeting → Opening sentence → the 3 points → Closing → Signature.",
+    },
+    {
+      q: "Which sign-off matches \"Sehr geehrte Damen und Herren,\"?",
+      options: ["Viele Grüße", "Mit freundlichen Grüßen", "Bis bald", "Dein Freund"],
+      correct: 1,
+      why: "A formal greeting always needs a formal sign-off.",
+    },
+    {
+      q: "Which sentence correctly declines an invitation?",
+      options: ["Ich komme gern.", "Ich freue mich auf deine Antwort.", "Leider kann ich nicht kommen.", "Wie geht es dir?"],
+      correct: 2,
+      why: "\"Leider kann ich nicht kommen\" politely says you cannot attend.",
+    },
+  ],
+};
+
+let s2gRendered = false;
+let s2gScrollBound = false;
+const s2gQuizState = {};
+
+function s2gEsc(s) {
+  return escHtml(s).replace(/\n/g, "&#10;");
+}
+
+function s2gCopyBtn(text) {
+  return `<button class="s2g-copy-btn" data-copy="${s2gEsc(text)}" onclick="s2gCopy(this)">📋 Copy</button>`;
+}
+
+function s2gPhraseRow(item) {
+  return `<div class="s2g-phrase">
+    <div class="s2g-phrase-text">
+      <div class="s2g-phrase-de">${escHtml(item.de)}</div>
+      <div class="s2g-phrase-en">${escHtml(item.en)}</div>
+    </div>
+    ${s2gCopyBtn(item.de)}
+  </div>`;
+}
+
+function s2gExampleCard(id, ex) {
+  return `<div class="s2g-accordion" id="${id}">
+    <button class="s2g-accordion-head" onclick="s2gToggleAcc('${id}')">
+      <span>📄 See a real example</span><span class="s2g-acc-arrow">▾</span>
+    </button>
+    <div class="s2g-accordion-body">
+      <div class="s2g-example-label">Task</div>
+      <pre class="s2g-example-block">${escHtml(ex.prompt)}</pre>
+      <div class="s2g-example-label">Sample Answer</div>
+      <pre class="s2g-example-block s2g-example-answer">${escHtml(ex.answer)}</pre>
+    </div>
+  </div>`;
+}
+
+function s2gLetterCard(side, data) {
+  return `<div class="s2g-letter-card s2g-${side}">
+    <div class="s2g-letter-top"><span class="s2g-letter-emoji">${data.emoji}</span><h3>${escHtml(data.label)}</h3></div>
+    <div class="s2g-letter-sub">Use when…</div>
+    <ul class="s2g-letter-list">${data.when.map((w) => `<li>${escHtml(w)}</li>`).join("")}</ul>
+    <div class="s2g-letter-grid">
+      <div><span>Pronoun</span><strong>${escHtml(data.pronoun)}</strong></div>
+      <div><span>Tone</span><strong>${escHtml(data.tone)}</strong></div>
+    </div>
+    <div class="s2g-letter-grid">
+      <div><span>Greeting</span><strong>${escHtml(data.greeting)}</strong></div>
+      <div><span>Closing</span><strong>${escHtml(data.closing)}</strong></div>
+    </div>
+    ${s2gExampleCard("s2g-ex-" + side, data.example)}
+  </div>`;
+}
+
+function s2gRenderGuide() {
+  const c = s2gContent;
+  const html = `
+  <div class="s2g">
+    <nav class="s2g-nav">
+      <div class="s2g-nav-inner">
+        <span class="s2g-nav-brand">✉️ Schreiben Teil 2 Guide</span>
+        <div class="s2g-nav-links">
+          <a href="#s2g-formal">Formal/Informal</a>
+          <a href="#s2g-structure">Structure</a>
+          <a href="#s2g-greetings">Greetings</a>
+          <a href="#s2g-phrases">Phrases</a>
+          <a href="#s2g-mistakes">Mistakes</a>
+          <a href="#s2g-quiz">Practice Quiz</a>
+        </div>
+        <button class="s2g-skip" onclick="s2gStartPracticing()">Skip to 44 Letters →</button>
+      </div>
+    </nav>
+
+    <header class="s2g-hero">
+      <div class="s2g-hero-shape s2g-shape1"></div>
+      <div class="s2g-hero-shape s2g-shape2"></div>
+      <div class="s2g-hero-shape s2g-shape3"></div>
+      <div class="s2g-hero-icon">📮</div>
+      <h1 class="s2g-reveal">🇩🇪 Schreiben Teil 2</h1>
+      <p class="s2g-hero-sub s2g-reveal">Master Goethe A1 Letter Writing Before You Start Practicing</p>
+      <p class="s2g-hero-desc s2g-reveal">Learn the complete format, greetings, sentence patterns, examiner tips, and common mistakes — then put it into practice on 44 real exam-style letters.</p>
+      <button class="s2g-cta s2g-reveal" onclick="s2gScrollTo('s2g-overview')">🚀 Start Learning</button>
+    </header>
+
+    <section class="s2g-section" id="s2g-overview">
+      <h2 class="s2g-reveal">What is Schreiben Teil 2?</h2>
+      <div class="s2g-cards s2g-cards-4">
+        ${c.overview.map((o) => `<div class="s2g-info-card s2g-reveal"><div class="s2g-info-icon">${o.icon}</div><h4>${escHtml(o.title)}</h4><p>${escHtml(o.text)}</p></div>`).join("")}
+      </div>
+    </section>
+
+    <section class="s2g-section" id="s2g-formal">
+      <h2 class="s2g-reveal">Formal vs Informal Letters</h2>
+      <div class="s2g-letters-grid">
+        <div class="s2g-reveal">${s2gLetterCard("formal", c.formal)}</div>
+        <div class="s2g-reveal">${s2gLetterCard("informal", c.informal)}</div>
+      </div>
+    </section>
+
+    <section class="s2g-section" id="s2g-structure">
+      <h2 class="s2g-reveal">Letter Structure</h2>
+      <div class="s2g-timeline">
+        ${c.structure.map((step, i) => `
+          <div class="s2g-tl-item s2g-reveal">
+            <div class="s2g-tl-dot">${i + 1}</div>
+            <div class="s2g-tl-label">${escHtml(step)}</div>
+          </div>`).join("")}
+      </div>
+    </section>
+
+    <section class="s2g-section" id="s2g-greetings">
+      <h2 class="s2g-reveal">Greetings (Anrede)</h2>
+      <div class="s2g-two-col">
+        <div class="s2g-reveal">
+          <div class="s2g-col-title">🎩 Formal Greetings</div>
+          <div class="s2g-phrase-list">${c.greetingsFormal.map(s2gPhraseRow).join("")}</div>
+        </div>
+        <div class="s2g-reveal">
+          <div class="s2g-col-title">😊 Informal Greetings</div>
+          <div class="s2g-phrase-list">${c.greetingsInformal.map(s2gPhraseRow).join("")}</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="s2g-section" id="s2g-phrases">
+      <h2 class="s2g-reveal">Useful Sentence Patterns</h2>
+      <div class="s2g-cat-grid">
+        ${c.sentenceCategories.map((cat) => `
+          <div class="s2g-cat-card s2g-reveal">
+            <div class="s2g-cat-head">${cat.icon} ${escHtml(cat.title)}</div>
+            <div class="s2g-phrase-list">${cat.items.map(s2gPhraseRow).join("")}</div>
+          </div>`).join("")}
+      </div>
+    </section>
+
+    <section class="s2g-section" id="s2g-closing">
+      <h2 class="s2g-reveal">Closing Phrases</h2>
+      <div class="s2g-chip-row s2g-reveal">
+        ${c.closingSentences.map((s) => `<div class="s2g-chip" title="${escHtml(s.en)}"><span class="s2g-chip-tag">${escHtml(s.tag)}</span>${escHtml(s.de)}</div>`).join("")}
+      </div>
+      <div class="s2g-chip-row s2g-reveal">
+        ${c.signOffs.map((s) => `<div class="s2g-chip s2g-chip-signoff" title="${escHtml(s.en)}"><span class="s2g-chip-tag">${escHtml(s.tag)}</span>${escHtml(s.de)}</div>`).join("")}
+      </div>
+    </section>
+
+    <section class="s2g-section" id="s2g-strategy">
+      <h2 class="s2g-reveal">Writing Strategy</h2>
+      <div class="s2g-strategy-list">
+        ${c.strategySteps.map((s, i) => `
+          <div class="s2g-strategy-item s2g-reveal">
+            <div class="s2g-strategy-num">${i + 1}</div>
+            <div><div class="s2g-strategy-title">${escHtml(s.title)}</div><div class="s2g-strategy-text">${escHtml(s.text)}</div></div>
+          </div>`).join("")}
+      </div>
+    </section>
+
+    <section class="s2g-section" id="s2g-tips">
+      <h2 class="s2g-reveal">Examiner Tips</h2>
+      <div class="s2g-cards s2g-cards-2">
+        ${c.examinerTips.map((t) => `<div class="s2g-check-card s2g-reveal"><span class="s2g-check-mark">✔</span>${escHtml(t)}</div>`).join("")}
+      </div>
+    </section>
+
+    <section class="s2g-section" id="s2g-mistakes">
+      <h2 class="s2g-reveal">Common Mistakes</h2>
+      <div class="s2g-cards s2g-cards-2">
+        ${c.mistakes.map((m) => `<div class="s2g-warn-card s2g-reveal"><span class="s2g-warn-mark">❌</span>${escHtml(m)}</div>`).join("")}
+      </div>
+    </section>
+
+    <section class="s2g-section" id="s2g-revision">
+      <h2 class="s2g-reveal">Quick Revision Sheet</h2>
+      <div class="s2g-revision s2g-reveal">
+        <div class="s2g-revision-col">
+          <div class="s2g-revision-head">🎩 Formal</div>
+          <div>Sehr geehrte Damen und Herren,</div>
+          <div>mein Name ist [Full Name].</div>
+          <div>… (answer the 3 points) …</div>
+          <div>Vielen Dank im Voraus für Ihre Hilfe.</div>
+          <div><strong>Mit freundlichen Grüßen</strong></div>
+        </div>
+        <div class="s2g-revision-col">
+          <div class="s2g-revision-head">😊 Informal</div>
+          <div>Lieber/Liebe [Name],</div>
+          <div>wie geht es dir?</div>
+          <div>… (answer the 3 points) …</div>
+          <div>Ich freue mich auf deine Antwort.</div>
+          <div><strong>Viele Grüße</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="s2g-section" id="s2g-quiz">
+      <h2 class="s2g-reveal">Mini Practice</h2>
+      <div class="s2g-quiz-list">
+        ${c.quiz.map((q, qi) => `
+          <div class="s2g-quiz-card s2g-reveal" id="s2g-quiz-${qi}">
+            <div class="s2g-quiz-q">${qi + 1}. ${escHtml(q.q)}</div>
+            <div class="s2g-quiz-opts">
+              ${q.options.map((op, oi) => `<button class="s2g-quiz-opt" onclick="s2gAnswerQuiz(${qi},${oi})">${escHtml(op)}</button>`).join("")}
+            </div>
+            <div class="s2g-quiz-fb" id="s2g-quiz-fb-${qi}"></div>
+          </div>`).join("")}
+      </div>
+    </section>
+
+    <section class="s2g-final">
+      <div class="s2g-final-card s2g-reveal">
+        <h2>🎯 Ready to Practice?</h2>
+        <p>You have completed the guide. Now it's time to solve all 44 Goethe A1 Schreiben Teil 2 practice letters.</p>
+        <button class="s2g-cta" onclick="s2gStartPracticing()">🚀 Start Practicing</button>
+      </div>
+    </section>
+  </div>`;
+
+  document.getElementById("s2-guide").innerHTML = html;
+}
+
+function s2gInit() {
+  if (!s2gRendered) {
+    s2gRenderGuide();
+    s2gRendered = true;
+    s2gSetupObserver();
+  }
+  if (!s2gScrollBound) {
+    const area = document.querySelector(".content-area");
+    if (area) {
+      area.addEventListener("scroll", s2gOnScroll);
+      s2gScrollBound = true;
+    }
+  }
+  s2gOnScroll();
+}
+
+function s2gSetupObserver() {
+  const els = document.querySelectorAll("#s2-guide .s2g-reveal");
+  if (!("IntersectionObserver" in window)) {
+    els.forEach((el) => el.classList.add("s2g-visible"));
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("s2g-visible");
+          io.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+  els.forEach((el) => io.observe(el));
+}
+
+function s2gOnScroll() {
+  if (currentPanel !== "schreiben2") return;
+  const area = document.querySelector(".content-area");
+  const fill = document.getElementById("s2g-progress-fill");
+  const fab = document.getElementById("s2g-fab");
+  if (!area || !fill) return;
+  const max = area.scrollHeight - area.clientHeight;
+  const pct = max > 0 ? Math.min(100, (area.scrollTop / max) * 100) : 0;
+  fill.style.width = pct + "%";
+  if (fab) fab.classList.toggle("s2g-fab-visible", area.scrollTop > 400);
+}
+
+function s2gScrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function s2gScrollTop() {
+  const area = document.querySelector(".content-area");
+  if (area) area.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function s2gStartPracticing() {
+  const wrap = document.getElementById("s2-practice-section");
+  if (wrap) wrap.classList.remove("s2g-practice-hidden");
+  setTimeout(() => s2gScrollTo("s2-practice-section"), 50);
+}
+
+function s2gToggleAcc(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.toggle("s2g-open");
+}
+
+function s2gCopy(btn) {
+  const text = btn.getAttribute("data-copy").replace(/&#10;/g, "\n");
+  const done = () => {
+    const orig = btn.textContent;
+    btn.textContent = "✅ Copied";
+    btn.classList.add("s2g-copied");
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.classList.remove("s2g-copied");
+    }, 1200);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done).catch(() => s2gFallbackCopy(text, done));
+  } else {
+    s2gFallbackCopy(text, done);
+  }
+}
+
+function s2gFallbackCopy(text, done) {
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand("copy");
+    done();
+  } catch (e) {}
+  document.body.removeChild(ta);
+}
+
+function s2gAnswerQuiz(qi, oi) {
+  if (s2gQuizState[qi] !== undefined) return;
+  s2gQuizState[qi] = oi;
+  const q = s2gContent.quiz[qi];
+  const card = document.getElementById("s2g-quiz-" + qi);
+  const fb = document.getElementById("s2g-quiz-fb-" + qi);
+  const opts = card.querySelectorAll(".s2g-quiz-opt");
+  opts.forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.correct) btn.classList.add("s2g-opt-correct");
+    else if (i === oi) btn.classList.add("s2g-opt-wrong");
+  });
+  fb.innerHTML =
+    oi === q.correct
+      ? `<span class="s2g-fb-good">✔ Correct!</span> ${escHtml(q.why)}`
+      : `<span class="s2g-fb-bad">✘ Not quite.</span> ${escHtml(q.why)}`;
+  fb.classList.add("s2g-fb-visible");
+}
+
+// ════════════════════════════════════════════════
 // ════════════════════════════════════════════════
 // SPRECHEN 1 – Sich vorstellen (self-introduction)
 // ════════════════════════════════════════════════
@@ -1107,6 +1594,19 @@ const sp1ThemaColors = {
   Wohnort: "#00695c",
   Kontakt: "#455a64",
   Sprachen: "#6a1b9a",
+  Name: "#d32f2f",
+  Alter: "#c2185b",
+  Studium: "#1565c0",
+  Beruf: "#5d4037",
+  Familie: "#7b1fa2",
+  "Essen & Trinken": "#ef6c00",
+  Haustier: "#6d4c41",
+  Freizeit: "#2e7d32",
+  Reisen: "#00838f",
+  Verkehr: "#616161",
+  Wetter: "#0097a7",
+  "Deutsch lernen": "#ad1457",
+  Sonstiges: "#37474f",
 };
 const sp1State = { category: "Alle", search: "", cards: {} };
 const sp1ExamCardFields = ["Name?", "Alter?", "Land?", "Wohnort?", "Sprachen?", "Beruf?", "Hobby?"];
