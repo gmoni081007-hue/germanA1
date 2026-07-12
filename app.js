@@ -83,7 +83,7 @@ const sectionDescriptions = {
     <ul>
       <li><strong>Questions:</strong> 4</li>
       <li><strong>Marks:</strong> 4 (1 mark each)</li>
-      <li><strong>Audio:</strong> Played twice</li>
+      <li><strong>Audio:</strong> Played Once</li>
     </ul>
 
     Listen to public announcements and decide whether each statement is <strong>Richtig</strong> or <strong>Falsch</strong>.
@@ -189,7 +189,7 @@ const sectionDescriptions = {
     <br><br>
 
     <strong>Important:</strong>
-    The questions in this practice are <strong>examples only</strong>. In the real Goethe A1 exam, the examiner may ask <strong>different questions</strong> on the same topics or similar everyday situations.
+    The questions in this practice are <strong>examples only</strong>. In the real Goethe A1 exam, the you or your partner may ask <strong>different questions</strong> on the same topics or similar everyday situations.
 
     <br><br>
 
@@ -213,7 +213,7 @@ const sectionDescriptions = {
 
     <strong>Useful Patterns:</strong>
     <ul>
-      <li>Können Sie mir bitte ... geben?</li>
+      <li>Können Sie mir bitte ... geben/kaufen/nehemen?</li>
       <li>Kann ich bitte ... haben?</li>
       <li>Darf ich ... benutzen?</li>
       <li>Ich brauche bitte ...</li>
