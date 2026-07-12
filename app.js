@@ -54,6 +54,128 @@ const panelMeta = {
   sprechen2: { title: "🗣 Sprechen Teil 2", sub: "Answer Questions – 298 prompts" },
   sprechen3: { title: "🙋 Sprechen Teil 3", sub: "Asking Questions – 163 cards" },
 };
+const sectionDescriptions = {
+  h1: `
+    <strong>Hören Teil 1 – Short Conversations</strong><br><br>
+    Listen to short everyday conversations and choose the correct answer (A, B, or C). The audio is played twice in the real exam.<br><br>
+
+    <strong>Focus on:</strong>
+    <ul>
+      <li>Names, numbers, dates, prices, times, and locations.</li>
+      <li>Understanding the main idea instead of every word.</li>
+      <li>Listening carefully during the second playback to confirm your answer.</li>
+    </ul>
+  `,
+
+  h2: `
+    <strong>Hören Teil 2 – Announcements</strong><br><br>
+    Listen to short public announcements and decide whether each statement is <strong>Richtig</strong> or <strong>Falsch</strong>. The recording is played twice.<br><br>
+
+    <strong>Focus on:</strong>
+    <ul>
+      <li>Important details such as places, times, directions, and instructions.</li>
+      <li>Compare the spoken information with the written statement carefully.</li>
+    </ul>
+  `,
+
+  h3: `
+    <strong>Hören Teil 3 – Telephone Messages</strong><br><br>
+    Listen to short phone messages or voicemails and choose the correct answer from three options. The recording is played twice.<br><br>
+
+    <strong>Focus on:</strong>
+    <ul>
+      <li>Who is speaking, why they are calling, and what action is needed.</li>
+    </ul>
+  `,
+
+  l1: `
+    <strong>Lesen Teil 1 – Personal Messages</strong><br><br>
+    Read short emails, notes, or messages and decide whether each statement is <strong>Richtig</strong> or <strong>Falsch</strong>.<br><br>
+
+    <strong>Focus on:</strong>
+    <ul>
+      <li>Main idea and important details.</li>
+      <li>Dates, locations, activities, and plans.</li>
+    </ul>
+  `,
+
+  l2: `
+    <strong>Lesen Teil 2 – Matching Situations</strong><br><br>
+    Read an everyday situation and choose the advertisement or website that best matches the person's needs.<br><br>
+
+    <strong>Tip:</strong>
+    Read all options carefully before selecting your answer.
+  `,
+
+  l3: `
+    <strong>Lesen Teil 3 – Signs and Notices</strong><br><br>
+    Read short public signs and decide whether the given statement is <strong>Richtig</strong> or <strong>Falsch</strong>.<br><br>
+
+    <strong>Focus on:</strong>
+    <ul>
+      <li>Warnings, permissions, opening hours, and directions.</li>
+    </ul>
+  `,
+
+  s1: `
+    <strong>Schreiben Teil 1 – Form Filling</strong><br><br>
+    Read a short scenario and complete a German registration form using the given information.<br><br>
+
+    <strong>Focus on:</strong>
+    <ul>
+      <li>Correct spelling, dates, numbers, and names.</li>
+      <li>Use only the information provided in the scenario.</li>
+    </ul>
+  `,
+
+  s2: `
+    <strong>Schreiben Teil 2 – Email Writing</strong><br><br>
+    Write a short informal email that covers all the required points from the question.<br><br>
+
+    <strong>Your email should include:</strong>
+    <ul>
+      <li>A greeting.</li>
+      <li>All required points.</li>
+      <li>Simple and correct German sentences.</li>
+      <li>A closing sentence.</li>
+    </ul>
+  `,
+
+  sp1: `
+    <strong>Sprechen Teil 1 – Self Introduction</strong><br><br>
+    Introduce yourself using the information on your exam card, such as your name, age, country, city, languages, occupation, and hobbies.<br><br>
+
+    <strong>Tip:</strong>
+    Speak naturally using complete sentences whenever possible.
+  `,
+
+  sp2: `
+    <strong>Sprechen Teil 2 – Asking & Answering Questions</strong><br><br>
+    Practice answering simple questions about everyday topics such as family, hobbies, shopping, food, travel, work, health, school, and free time.<br><br>
+
+    <strong>Important:</strong> The questions in this practice are <strong>examples only</strong>. In the real Goethe A1 exam, the examiner may ask <strong>different questions</strong> on the same or similar topics. The goal is to help you build confidence so you can answer any basic A1 conversation question naturally.<br><br>
+
+    <strong>Tip:</strong>
+    Give short, complete, and natural answers instead of memorizing long responses.
+  `,
+
+  sp3: `
+    <strong>Sprechen Teil 3 – Making Requests</strong><br><br>
+    Practice making polite requests using everyday objects shown on the cards. Your partner or examiner will respond appropriately.<br><br>
+
+    <strong>Useful sentence patterns:</strong>
+    <ul>
+      <li>Können Sie mir bitte ... geben?</li>
+      <li>Kann ich bitte ... haben?</li>
+      <li>Darf ich ... benutzen?</li>
+      <li>Ich brauche bitte ...</li>
+    </ul>
+  `
+};
+
+function sectionDescHtml(key) {
+  return `<div class="section-desc">${sectionDescriptions[key] || ""}</div>`;
+}
 
 function showPanel(name, navEl) {
   document.querySelectorAll(".panel").forEach((p) => p.classList.remove("active"));
@@ -619,10 +741,13 @@ function renderH1() {
     : `<div style="font-size:12px;color:var(--muted);margin-bottom:8px;font-style:italic">Listen to the audio, then answer. Transcript shows after 2 plays.</div>`;
 
   document.getElementById("h1-layout").innerHTML = `
-    <div class="quiz-meta">
-      <h2>Hören Teil 1</h2>
-      <div class="quiz-controls">${quizScoreHtml(key)}</div>
-    </div>
+<div class="quiz-meta">
+    <h2>Hören Teil 1</h2>
+    <div class="quiz-controls">${quizScoreHtml(key)}</div>
+</div>
+${sectionDescHtml('h1')}
+
+
     <div class="q-progress"><div class="q-progress-bar" style="width:${((s.idx + 1) / data.length) * 100}%"></div></div>
     <div class="question-card">
       <div class="question-num">Question ${s.idx + 1} of ${data.length} · Topic: ${escHtml(q.topic || "")}</div>
@@ -675,6 +800,7 @@ function renderH2() {
       <h2>Hören Teil 2</h2>
       <div class="quiz-controls">${quizScoreHtml(key)}</div>
     </div>
+    ${sectionDescHtml('h2')}
     <div class="q-progress"><div class="q-progress-bar" style="width:${((s.idx + 1) / data.length) * 100}%"></div></div>
     <div class="question-card">
       <div class="question-num">Question ${s.idx + 1} of ${data.length} · Context: ${escHtml(q.context || "")}</div>
@@ -735,6 +861,7 @@ function renderH3() {
       <h2>Hören Teil 3</h2>
       <div class="quiz-controls">${quizScoreHtml(key)}</div>
     </div>
+    ${sectionDescHtml('h3')}
     <div class="q-progress"><div class="q-progress-bar" style="width:${((s.idx + 1) / data.length) * 100}%"></div></div>
     <div class="question-card">
       <div class="question-num">Question ${s.idx + 1} of ${data.length}</div>
@@ -797,6 +924,7 @@ function renderL1() {
       <h2>Lesen Teil 1</h2>
       <div class="quiz-controls">${quizScoreHtml(key)}</div>
     </div>
+    ${sectionDescHtml('l1')}
     <div class="q-progress"><div class="q-progress-bar" style="width:${((s.idx + 1) / data.length) * 100}%"></div></div>
     <div class="question-card">
       <div class="question-num">Set ${s.idx + 1} of ${data.length}</div>
@@ -854,6 +982,7 @@ function renderL2() {
       <h2>Lesen Teil 2</h2>
       <div class="quiz-controls">${quizScoreHtml(key)}</div>
     </div>
+    ${sectionDescHtml('l2')}
     <div class="q-progress"><div class="q-progress-bar" style="width:${((s.idx + 1) / data.length) * 100}%"></div></div>
     <div class="question-card">
       <div class="question-num">Question ${s.idx + 1} of ${data.length}</div>
@@ -899,7 +1028,7 @@ function renderL3() {
     <div class="quiz-meta">
       <h2>Lesen Teil 3</h2>
       <div class="quiz-controls">${quizScoreHtml(key)}</div>
-    </div>
+    </div>${sectionDescHtml('l3')}
     <div class="q-progress"><div class="q-progress-bar" style="width:${((s.idx + 1) / data.length) * 100}%"></div></div>
     <div class="question-card">
       <div class="question-num">Question ${s.idx + 1} of ${data.length}</div>
@@ -963,7 +1092,7 @@ function renderS1() {
   document.getElementById("s1-layout").innerHTML = `
     <div class="quiz-meta">
       <h2>Schreiben Teil 1</h2>
-    </div>
+    </div>${sectionDescHtml('s1')}
     <div class="q-progress"><div class="q-progress-bar" style="width:${((s.idx + 1) / data.length) * 100}%"></div></div>
     <div class="scenario-box"><strong>Scenario:</strong><br>${escHtml(q.context)}</div>
     <div class="form-card">
@@ -1071,7 +1200,7 @@ function renderS2() {
   document.getElementById("s2-layout").innerHTML = `
     <div class="quiz-meta">
       <h2>Schreiben Teil 2</h2>
-    </div>
+    </div>${sectionDescHtml('s2')}
     <div class="q-progress"><div class="q-progress-bar" style="width:${((s.idx + 1) / data.length) * 100}%"></div></div>
     <div class="email-card compact">
       <h3>${escHtml(q.topic || "")}</h3>
@@ -1136,8 +1265,10 @@ function sp1Filtered() {
 function renderSp1() {
   const total = D.sprechen1.length;
   document.getElementById("sp1-layout").innerHTML = `
+  ${sectionDescHtml('sp1')}
     <div class="sp1-examcard">
       <div class="sp1-examcard-head">Start Deutsch 1</div>
+      
       <div class="sp1-examcard-sub">Übungssatz · Sprechen Teil 1</div>
       <div class="sp1-examcard-body">
         <div class="sp1-examcard-label">Teil 1 &nbsp;·&nbsp; Sich vorstellen</div>
@@ -1148,6 +1279,7 @@ function renderSp1() {
       <div class="sp2-label">💬 Beispiel · Sich vorstellen</div>
       <p class="sp1-example-de">${escHtml(sp1Example.de)}</p>
       <p class="sp1-example-en">${escHtml(sp1Example.en)}</p>
+      ${sectionDescHtml('sp2')}
       <button class="sp2-speak-btn" onclick="sp1SpeakExample()">🔊 Beispiel hören</button>
     </div>
     <div class="sp2-search">
@@ -1297,6 +1429,7 @@ function sp2Filtered() {
 function renderSp2() {
   const total = D.sprechen2.length;
   document.getElementById("sp2-layout").innerHTML = `
+   ${sectionDescHtml('sp2')}
     <div class="sp2-controls">
       <button class="sp2-set-btn" data-set="all" onclick="sp2SetShow('all')">📚 Alle ${total} Karten</button>
       <button class="sp2-set-btn" data-set="set1" onclick="sp2SetShow('set1')">🟡 Set 1: 1–${sp2Mid}</button>
@@ -1437,6 +1570,7 @@ function sp3Filtered() {
 }
 function renderSp3() {
   document.getElementById("sp3-layout").innerHTML = `
+  ${sectionDescHtml('sp3')}
     <div class="sp3-search">
       <input type="text" id="sp3-search-input" placeholder="🔍 Wort, Übersetzung oder Kategorie suchen…"
         autocomplete="off" oninput="sp3State.search=this.value;sp3RenderCards()" />
